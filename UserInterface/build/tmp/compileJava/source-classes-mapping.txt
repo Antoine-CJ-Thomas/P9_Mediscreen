@@ -1,0 +1,12 @@
+userInterface/proxy/UserProxy.java
+ userInterface.proxy.UserProxy
+userInterface/service/UserService.java
+ userInterface.service.UserService
+userInterface/Application.java
+ userInterface.Application
+userInterface/service/UserServiceInterface.java
+ userInterface.service.UserServiceInterface
+userInterface/model/User.java
+ userInterface.model.User
+userInterface/controller/UserController.java
+ userInterface.controller.UserController

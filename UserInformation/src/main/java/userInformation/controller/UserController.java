@@ -1,5 +1,7 @@
 package userInformation.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ import java.util.List;
 
 @RestController
 public class UserController {
+
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     private Logger logger = LogManager.getLogger(getClass().getSimpleName());
 
@@ -33,16 +37,16 @@ public class UserController {
     }
 
     @GetMapping("/getUser")
-    public User getUser(@RequestParam int id) {
+    public String getUser(@RequestParam int id) throws JsonProcessingException {
         logger.info("getUser(" + id + ")");
 
-        return userServiceInterface.getUser(id);
+        return objectMapper.writeValueAsString(userServiceInterface.getUser(id));
     }
 
     @GetMapping("/getUserList")
-    public List<User> getUserList() {
+    public String getUserList() throws JsonProcessingException {
         logger.info("getUserList()");
 
-        return userServiceInterface.getUserList();
+        return objectMapper.writeValueAsString(userServiceInterface.getUserList());
     }
 }
