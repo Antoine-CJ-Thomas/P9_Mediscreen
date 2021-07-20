@@ -1,19 +1,40 @@
 package userInterface.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Component
 public class User {
 
     private Integer userId;
+
+    @NotBlank
+    @Size(min=1, max=32)
     private String firstName;
+
+    @NotBlank
+    @Size(min=1, max=32)
     private String lastName;
+
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
+
+    @NotNull
     private char gender;
+
+    @NotBlank
+    @Size(min=8, max=64)
     private String address;
-    private int phoneNumber;
+
+    @NotBlank
+    @Size(min=8, max=32)
+    private String phoneNumber;
 
     public User() {
 
@@ -67,11 +88,11 @@ public class User {
         this.address = address;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

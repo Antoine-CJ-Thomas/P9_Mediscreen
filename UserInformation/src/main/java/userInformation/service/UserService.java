@@ -42,9 +42,23 @@ public class UserService implements UserServiceInterface {
         logger.info("getUserList()");
 
         Iterable<User> userIterable = userRepository.findAll();
-
         List<User> userList = (List<User>) userIterable;
 
         return userList;
+    }
+
+    @Override
+    public void updateUser(int id, User user) {
+        logger.info("updateUser(" + id + "," + user + ")");
+
+        user.setUserId(id);
+
+        userRepository.save(user);
+    }
+
+    @Override
+    public void deleteUser(int id) {
+
+        userRepository.deleteById(id);
     }
 }

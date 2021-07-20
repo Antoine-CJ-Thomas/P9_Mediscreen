@@ -39,4 +39,18 @@ public class UserService implements UserServiceInterface {
 
         return userProxy.getUserList();
     }
+
+    @Override
+    public void updateUser(int id, User user) {
+        logger.info("updateUser(" + id + "," + user + ")");
+
+        userProxy.updateUser(id, user);
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        logger.info("deleteUser(" + id + ")");
+
+        userProxy.deleteUser(id);
+    }
 }

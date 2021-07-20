@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<html>
 
 	<head>
 
 		<meta charset="utf-8"/>
 		<title>User List</title>
-		<link rel="stylesheet" type="text/css" href="../../css/user_list.css">
+		<link rel="stylesheet" href="/css/user_list.css">
 
 	</head>
 
@@ -24,7 +25,7 @@
 
 		<section>
 
-			<div class="section_div">
+			<div id="section_div">
 
 				<table id="user_table">
 
@@ -48,16 +49,16 @@
 							<td th:text="${user.userId}"></td>
 							<td th:text="${user.firstName}"></td>
 							<td th:text="${user.lastName}"></td>
-							<td th:text="${user.birthDate}"></td>
+							<td th:text="${#dates.format(user.birthDate, 'dd-MM-yyyy')}"></td>
 							<td th:text="${user.gender}"></td>
 							<td th:text="${user.address}"></td>
 							<td th:text="${user.phoneNumber}"></td>
 
-							<td style="width: 15%" class="text-center">
+							<td>
 
-								<a th:href="@{/readUser/{id}(id=${user.userId})}">Open</a>
+								<a th:href="@{/openUser/{id}(id=${user.userId})}">Open</a>
 								<label>|</label>
-								<a th:href="@{/updateUser/{id}(id=${user.userId})}">Edit</a>
+								<a th:href="@{/editUser/{id}(id=${user.userId})}">Edit</a>
 								<label>|</label>
 								<a th:href="@{/deleteUser/{id}(id=${user.userId})}">Delete</a>
 

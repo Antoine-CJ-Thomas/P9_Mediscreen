@@ -11,4 +11,8 @@ public interface UserServiceInterface {
     public User getUser(int id);
 
     public List<User> getUserList();
+
+    public void updateUser(int id, User user);
+
+    public void deleteUser(int id);
 }

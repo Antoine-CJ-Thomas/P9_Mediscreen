@@ -2,7 +2,7 @@ package userInterface.proxy;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import userInterface.model.User;
 
 import java.util.List;
@@ -12,8 +12,14 @@ import java.util.List;
 public interface UserProxy {
 
     @GetMapping(value = "/getUser", produces = "application/json")
-    public User getUser(int id);
+    public User getUser(@RequestParam int id);
 
     @GetMapping(value = "/getUserList", produces = "application/json")
     public List<User> getUserList();
+
+    @PutMapping(value = "/updateUser", produces = "application/json")
+    public void updateUser(@RequestParam int id, @RequestBody User user);
+
+    @DeleteMapping(value = "/deleteUser", produces = "application/json")
+    public void deleteUser(@RequestParam int id);
 }

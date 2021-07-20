@@ -5,9 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import userInformation.model.User;
 import userInformation.service.UserService;
 import userInformation.service.UserServiceInterface;
@@ -48,5 +46,19 @@ public class UserController {
         logger.info("getUserList()");
 
         return objectMapper.writeValueAsString(userServiceInterface.getUserList());
+    }
+
+    @PutMapping("/updateUser")
+    public void updateUser(@RequestParam int id, @RequestBody User user) {
+        logger.info("updateUser(" + id + "," + user + ")");
+
+        userServiceInterface.updateUser(id, user);
+    }
+
+    @DeleteMapping("/deleteUser")
+    public void deleteUser(@RequestParam int id) {
+        logger.info("deleteUser(" + id + ")");
+
+        userServiceInterface.deleteUser(id);
     }
 }

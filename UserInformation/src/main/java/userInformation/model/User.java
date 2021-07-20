@@ -31,7 +31,7 @@ public class User {
     private String address;
 
     @Column(name="phone_number")
-    private int phoneNumber;
+    private String phoneNumber;
 
     public User() {
 
@@ -85,11 +85,11 @@ public class User {
         this.address = address;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

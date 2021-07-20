@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+		<title>User Information</title>
+        <link rel="stylesheet" href="/css/user_edit.css" />
+
+    </head>
+
+    <body>
+
+	<header>
+
+		<div id="header_div">
+
+			<h1>User Information</h1>
+			<a href="/userList">User List</a>
+
+		</div>
+
+	</header>
+
+    	<section>
+
+			<div id="section_div">
+
+				<form method="post" th:action="@{/updateUser/{id}(id=${user.userId})}" th:object="${user}" id="update_form">
+
+					<div class="update_form_div">
+						<label>First Name :</label>
+						<input type="text" th:field="*{firstName}" placeholder="First Name">
+						<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+					</div>
+
+					<div class="update_form_div">
+						<label>Last Name :</label>
+						<input type="text" th:field="*{lastName}" placeholder="Last Name">
+						<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+					</div>
+
+					<div class="update_form_div">
+						<label>Birth Date :</label>
+						<input type="date" th:field="*{birthDate}">
+						<p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></p>
+					</div>
+
+					<div class="update_form_div">
+						<label>Address :</label>
+						<input type="text" th:field="*{address}" placeholder="Address">
+						<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+					</div>
+
+					<div class="update_form_div">
+						<label>Phone Number :</label>
+						<input type="text" th:field="*{phoneNumber}" placeholder="XX XX XX XX XX">
+						<p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+					</div>
+
+					<div class="update_form_div">
+						<div class="radio_update_form_div">
+							<label>Gender :</label>
+							<input type="radio" th:field="*{gender}" th:value="M">M</label>
+							<input type="radio" th:field="*{gender}" th:value="F">F</label>
+						</div>
+						<p class="text-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></p>
+					</div>
+
+					<div class="update_form_div">
+						<input type="hidden" th:field="*{userId}">
+						<button type="submit" >Update</button>
+					</div>
+
+				</form>
+
+			</div>
+
+    	</section>
+
+		<footer>
+
+		</footer>
+
+    </body>
+
+</html>
