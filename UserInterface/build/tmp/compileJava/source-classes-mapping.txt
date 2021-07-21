@@ -2,11 +2,11 @@ userInterface/Application.java
  userInterface.Application
 userInterface/proxy/UserProxy.java
  userInterface.proxy.UserProxy
-userInterface/model/User.java
- userInterface.model.User
-userInterface/service/UserServiceInterface.java
- userInterface.service.UserServiceInterface
 userInterface/controller/UserController.java
  userInterface.controller.UserController
+userInterface/service/UserServiceInterface.java
+ userInterface.service.UserServiceInterface
+userInterface/model/User.java
+ userInterface.model.User
 userInterface/service/UserService.java
  userInterface.service.UserService

@@ -6,6 +6,6 @@ CREATE TABLE user_information (
                 birth_date DATE NOT NULL,
                 gender VARCHAR(1) NOT NULL,
                 address VARCHAR(64) NOT NULL,
-                phone_number VARCHAR(32) NOT NULL,
+                phone_number VARCHAR(15) NOT NULL,
                 PRIMARY KEY (user_id)
 );

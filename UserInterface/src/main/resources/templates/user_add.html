@@ -54,7 +54,7 @@
 
 					<div class="insert_form_div">
 						<label>Phone Number :</label>
-						<input type="text" th:field="*{phoneNumber}" placeholder="XX XX XX XX XX">
+						<input type="text" th:field="*{phoneNumber}" placeholder="Phone Number">
 						<p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
 					</div>
 
@@ -70,7 +70,7 @@
 					<div class="insert_form_div">
 						<input type="hidden" th:field="*{userId}">
 						<button type="submit" >Add</button>
-						<a href="/userList">Back to the user list</a>
+						<a href="/userList">Back To The User List</a>
 					</div>
 
 				</form>

@@ -14,11 +14,11 @@ public class User {
     private Integer userId;
 
     @NotBlank
-    @Size(min=1, max=32)
+    @Size(min=4, max=32)
     private String firstName;
 
     @NotBlank
-    @Size(min=1, max=32)
+    @Size(min=4, max=32)
     private String lastName;
 
     @NotNull
@@ -33,7 +33,7 @@ public class User {
     private String address;
 
     @NotBlank
-    @Size(min=8, max=32)
+    @Size(min=5, max=15)
     private String phoneNumber;
 
     public User() {
