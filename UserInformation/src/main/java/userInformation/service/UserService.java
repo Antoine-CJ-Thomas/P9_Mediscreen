@@ -23,21 +23,23 @@ public class UserService implements UserServiceInterface {
     }
 
     public UserService(UserRepository userRepository) {
+        logger.info("UserService(" + userRepository + ")");
 
         this.userRepository = userRepository;
     }
 
     @Override
     public void insertUser(User user) {
+        logger.info("insertUser(" + user + ")");
 
         userRepository.save(user);
     }
 
     @Override
     public User selectUser(int id) {
-        logger.info("getUser(" + id + ")");
+        logger.info("selectUser(" + id + ")");
 
-        Optional<User> userOptional = userRepository.findById(1);
+        Optional<User> userOptional = userRepository.findById(id);
         User user = userOptional.get();
 
         return user;
@@ -45,10 +47,9 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public List<User> selectUserList() {
-        logger.info("getUserList()");
+        logger.info("selectUserList()");
 
-        Iterable<User> userIterable = userRepository.findAll();
-        List<User> userList = (List<User>) userIterable;
+        List<User> userList = (List<User>) userRepository.findAll();
 
         return userList;
     }

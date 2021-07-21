@@ -37,6 +37,16 @@ public class User {
 
     }
 
+    public User(String firstName, String lastName, Date birthDate, String gender, String address, String phoneNumber) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
     public Integer getUserId() {
         return userId;
     }
