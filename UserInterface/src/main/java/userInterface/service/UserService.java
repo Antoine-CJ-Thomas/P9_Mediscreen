@@ -27,6 +27,13 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
+    public void insertUser(User user) {
+        logger.info("insertUser(" + "," + user + ")");
+
+        userProxy.insertUser(user);
+    }
+
+    @Override
     public User getUser(int id) {
         logger.info("getUser(" + id + ")");
 

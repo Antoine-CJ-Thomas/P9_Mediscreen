@@ -34,6 +34,13 @@ public class UserController {
         this.userServiceInterface = userServiceInterface;
     }
 
+    @PostMapping("/insertUser")
+    public void insertUser(@RequestBody User user) {
+        logger.info("insertUser(" + user + ")");
+
+        userServiceInterface.insertUser(user);
+    }
+
     @GetMapping("/getUser")
     public String getUser(@RequestParam int id) throws JsonProcessingException {
         logger.info("getUser(" + id + ")");

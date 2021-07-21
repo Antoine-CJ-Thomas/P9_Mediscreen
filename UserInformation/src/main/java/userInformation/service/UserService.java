@@ -28,6 +28,12 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
+    public void insertUser(User user) {
+
+        userRepository.save(user);
+    }
+
+    @Override
     public User getUser(int id) {
         logger.info("getUser(" + id + ")");
 

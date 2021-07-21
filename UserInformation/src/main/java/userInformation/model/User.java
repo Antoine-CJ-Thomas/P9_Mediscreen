@@ -25,7 +25,7 @@ public class User {
     private Date birthDate;
 
     @Column(name="gender")
-    private char gender;
+    private String gender;
 
     @Column(name="address")
     private String address;
@@ -69,11 +69,11 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

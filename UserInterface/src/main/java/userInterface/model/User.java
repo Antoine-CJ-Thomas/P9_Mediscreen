@@ -25,8 +25,8 @@ public class User {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
 
-    @NotNull
-    private char gender;
+    @NotBlank
+    private String gender;
 
     @NotBlank
     @Size(min=8, max=64)
@@ -72,11 +72,11 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

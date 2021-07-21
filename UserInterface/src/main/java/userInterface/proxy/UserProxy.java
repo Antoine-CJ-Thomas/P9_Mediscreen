@@ -11,6 +11,9 @@ import java.util.List;
 @FeignClient(name = "userInformation", url = "http://localhost:8080")
 public interface UserProxy {
 
+    @PostMapping(value = "/insertUser", produces = "application/json")
+    public void insertUser(@RequestBody User user);
+
     @GetMapping(value = "/getUser", produces = "application/json")
     public User getUser(@RequestParam int id);
 

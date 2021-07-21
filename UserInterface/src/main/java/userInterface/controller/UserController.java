@@ -35,6 +35,34 @@ public class UserController {
         this.userServiceInterface = userServiceInterface;
     }
 
+    @GetMapping("/addUser")
+    public String editUser(Model model) {
+        logger.info("addUser(" + model + ")");
+
+        model.addAttribute("user", new User());
+
+        return "/user_add.html";
+    }
+
+    @PostMapping("/insertUser")
+    public String insertUser(@Valid User user, BindingResult bindingResult, Model model) {
+        logger.info("insertUser(" + "," + user + "," + bindingResult + "," + model + ")");
+
+        if (bindingResult.hasErrors() == false) {
+
+            userServiceInterface.insertUser(user);
+
+            return ("redirect:/userList");
+        }
+
+        else {
+
+            model.addAttribute("user", user);
+
+            return "/user_add.html";
+        }
+    }
+
     @GetMapping("/userList")
     public String getUserList(Model model) {
         logger.info("getUserList(" + model + ")");

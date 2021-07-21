@@ -40,13 +40,13 @@ section {
 	align-items: center;
 }
 
-#update_form {
+#insert_form {
 
 	width: 100%;
 
 }
 
-.update_form_div {
+.insert_form_div {
 
 	width: 100%;
 
@@ -58,7 +58,7 @@ section {
 	align-items: center;
 }
 
-.update_form_div label {
+.insert_form_div label {
 
 	width: 20%;
 	height: 20px;
@@ -69,7 +69,7 @@ section {
 
 }
 
-.update_form_div input {
+.insert_form_div input {
 
 	width: 20%;
 	height: 40px;
@@ -80,7 +80,7 @@ section {
 
 }
 
-.update_form_div p {
+.insert_form_div p {
 
 	width: 20%;
 	height: 40px;
@@ -92,7 +92,7 @@ section {
 
 }
 
-.update_form_div button {
+.insert_form_div button {
 
 	width: 20%;
 	height: 40px;
@@ -110,7 +110,7 @@ section {
 	border: none;
 }
 
-.update_form_div a {
+.insert_form_div a {
 
 	width: 20%;
 	height: 40px;
@@ -127,7 +127,7 @@ section {
 	border-radius: 8px;
 }
 
-.radio_update_form_div {
+.radio_insert_form_div {
 
 	width: 20%;
 	height: 40px;

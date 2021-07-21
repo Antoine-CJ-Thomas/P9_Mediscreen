@@ -4,10 +4,11 @@ import org.springframework.stereotype.Component;
 import userInformation.model.User;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public interface UserServiceInterface {
+
+    void insertUser(User user);
 
     public User getUser(int id);
 

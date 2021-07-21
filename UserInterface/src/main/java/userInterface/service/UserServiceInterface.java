@@ -15,4 +15,6 @@ public interface UserServiceInterface {
     public void updateUser(int id, User user);
 
     public void deleteUser(int id);
+
+    public void insertUser(User user);
 }
