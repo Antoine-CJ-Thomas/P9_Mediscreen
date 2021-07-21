@@ -34,7 +34,7 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public User getUser(int id) {
+    public User selectUser(int id) {
         logger.info("getUser(" + id + ")");
 
         Optional<User> userOptional = userRepository.findById(1);
@@ -44,7 +44,7 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public List<User> getUserList() {
+    public List<User> selectUserList() {
         logger.info("getUserList()");
 
         Iterable<User> userIterable = userRepository.findAll();

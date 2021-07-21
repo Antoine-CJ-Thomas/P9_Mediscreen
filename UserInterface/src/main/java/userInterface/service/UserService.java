@@ -37,14 +37,14 @@ public class UserService implements UserServiceInterface {
     public User getUser(int id) {
         logger.info("getUser(" + id + ")");
 
-        return userProxy.getUser(id);
+        return userProxy.selectUser(id);
     }
 
     @Override
     public List<User> getUserList() {
         logger.info("getUserList()");
 
-        return userProxy.getUserList();
+        return userProxy.selectUserList();
     }
 
     @Override

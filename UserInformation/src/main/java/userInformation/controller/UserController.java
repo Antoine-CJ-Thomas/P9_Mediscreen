@@ -41,18 +41,18 @@ public class UserController {
         userServiceInterface.insertUser(user);
     }
 
-    @GetMapping("/getUser")
-    public String getUser(@RequestParam int id) throws JsonProcessingException {
-        logger.info("getUser(" + id + ")");
+    @GetMapping("/selectUser")
+    public String selectUser(@RequestParam int id) throws JsonProcessingException {
+        logger.info("selectUser(" + id + ")");
 
-        return objectMapper.writeValueAsString(userServiceInterface.getUser(id));
+        return objectMapper.writeValueAsString(userServiceInterface.selectUser(id));
     }
 
-    @GetMapping("/getUserList")
-    public String getUserList() throws JsonProcessingException {
-        logger.info("getUserList()");
+    @GetMapping("/selectUserList")
+    public String selectUserList() throws JsonProcessingException {
+        logger.info("selectUserList()");
 
-        return objectMapper.writeValueAsString(userServiceInterface.getUserList());
+        return objectMapper.writeValueAsString(userServiceInterface.selectUserList());
     }
 
     @PutMapping("/updateUser")

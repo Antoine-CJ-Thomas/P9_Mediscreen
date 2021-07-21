@@ -10,9 +10,9 @@ public interface UserServiceInterface {
 
     void insertUser(User user);
 
-    public User getUser(int id);
+    public User selectUser(int id);
 
-    public List<User> getUserList();
+    public List<User> selectUserList();
 
     public void updateUser(int id, User user);
 

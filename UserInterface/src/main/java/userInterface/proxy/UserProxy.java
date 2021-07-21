@@ -14,11 +14,11 @@ public interface UserProxy {
     @PostMapping(value = "/insertUser", produces = "application/json")
     public void insertUser(@RequestBody User user);
 
-    @GetMapping(value = "/getUser", produces = "application/json")
-    public User getUser(@RequestParam int id);
+    @GetMapping(value = "/selectUser", produces = "application/json")
+    public User selectUser(@RequestParam int id);
 
-    @GetMapping(value = "/getUserList", produces = "application/json")
-    public List<User> getUserList();
+    @GetMapping(value = "/selectUserList", produces = "application/json")
+    public List<User> selectUserList();
 
     @PutMapping(value = "/updateUser", produces = "application/json")
     public void updateUser(@RequestParam int id, @RequestBody User user);
