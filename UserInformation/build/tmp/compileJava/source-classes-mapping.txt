@@ -1,12 +1,12 @@
 userInformation/repository/UserRepository.java
  userInformation.repository.UserRepository
-userInformation/Application.java
- userInformation.Application
+userInformation/service/UserService.java
+ userInformation.service.UserService
 userInformation/model/User.java
  userInformation.model.User
 userInformation/service/UserServiceInterface.java
  userInformation.service.UserServiceInterface
 userInformation/controller/UserController.java
  userInformation.controller.UserController
-userInformation/service/UserService.java
- userInformation.service.UserService
+userInformation/Application.java
+ userInformation.Application

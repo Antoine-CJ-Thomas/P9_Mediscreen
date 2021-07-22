@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import userInterface.model.User;
 import userInterface.service.UserService;
 import userInterface.service.UserServiceInterface;
@@ -36,10 +36,10 @@ public class UserController {
     }
 
     @GetMapping("/addUser")
-    public String editUser(Model model) {
+    public String addUser(User user, Model model) {
         logger.info("addUser(" + model + ")");
 
-        model.addAttribute("user", new User());
+        model.addAttribute("user", user);
 
         return "/user_add.html";
     }
@@ -64,34 +64,25 @@ public class UserController {
     }
 
     @GetMapping("/userList")
-    public String getUserList(Model model) {
-        logger.info("getUserList(" + model + ")");
+    public String userList(Model model) {
+        logger.info("userList(" + model + ")");
 
-        model.addAttribute("userList", userServiceInterface.getUserList());
+        model.addAttribute("userList", userServiceInterface.selectUserList());
 
         return "/user_list.html";
     }
 
-    @GetMapping("/openUser/{id}")
-    public String openUser(@PathVariable("id") int id, Model model) {
-        logger.info("openUser(" + id + "," + model + ")");
-
-        model.addAttribute("user", userServiceInterface.getUser(id));
-
-        return "/user_open.html";
-    }
-
-    @GetMapping("/editUser/{id}")
-    public String editUser(@PathVariable("id") int id, Model model) {
+    @GetMapping("/editUser")
+    public String editUser(@RequestParam int id, Model model) {
         logger.info("editUser(" + id + "," + model + ")");
 
-        model.addAttribute("user", userServiceInterface.getUser(id));
+        model.addAttribute("user", userServiceInterface.selectUser(id));
 
         return "/user_edit.html";
     }
 
-    @PostMapping("/updateUser/{id}")
-    public String updateUser(@PathVariable("id") int id, @Valid User user, BindingResult bindingResult, Model model) {
+    @PostMapping("/updateUser")
+    public String updateUser(@RequestParam int id, @Valid User user, BindingResult bindingResult, Model model) {
         logger.info("updateUser(" + id + "," + user + "," + bindingResult + "," + model + ")");
 
         if (bindingResult.hasErrors() == false) {
@@ -107,8 +98,8 @@ public class UserController {
         }
     }
 
-    @GetMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable("id") int id, Model model) {
+    @GetMapping("/deleteUser")
+    public String deleteUser(@RequestParam int id, Model model) {
         logger.info("deleteUser(" + id + "," + model + ")");
 
         userServiceInterface.deleteUser(id);

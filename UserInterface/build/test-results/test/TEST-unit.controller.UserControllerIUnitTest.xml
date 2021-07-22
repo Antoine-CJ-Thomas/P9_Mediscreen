@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.UserControllerIUnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-07-22T15:49:25" hostname="PC-ANTOINE" time="0.209">
+  <properties/>
+  <testcase name="addUser()" classname="unit.controller.UserControllerIUnitTest" time="0.122"/>
+  <testcase name="updateUser()" classname="unit.controller.UserControllerIUnitTest" time="0.075"/>
+  <testcase name="insertUser()" classname="unit.controller.UserControllerIUnitTest" time="0.003"/>
+  <testcase name="editUser()" classname="unit.controller.UserControllerIUnitTest" time="0.002"/>
+  <testcase name="deleteUser()" classname="unit.controller.UserControllerIUnitTest" time="0.002"/>
+  <testcase name="getUserList()" classname="unit.controller.UserControllerIUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-07-22 17:49:25.768  INFO 18968 --- [    Test worker] UserController                           : UserController(Mock for UserServiceInterface, hashCode: 278925784)
+2021-07-22 17:49:25.860  INFO 18968 --- [    Test worker] UserController                           : addUser(Mock for Model, hashCode: 1305494531)
+2021-07-22 17:49:25.877  INFO 18968 --- [    Test worker] UserController                           : UserController(Mock for UserServiceInterface, hashCode: 1704938358)
+2021-07-22 17:49:25.950  INFO 18968 --- [    Test worker] UserController                           : updateUser(1,Mock for User, hashCode: 1431759283,Mock for BindingResult, hashCode: 2067218736,Mock for Model, hashCode: 1150702435)
+2021-07-22 17:49:25.952  INFO 18968 --- [    Test worker] UserController                           : UserController(Mock for UserServiceInterface, hashCode: 390030387)
+2021-07-22 17:49:25.953  INFO 18968 --- [    Test worker] UserController                           : insertUser(,Mock for User, hashCode: 2026378608,Mock for BindingResult, hashCode: 696184372,Mock for Model, hashCode: 1418756808)
+2021-07-22 17:49:25.955  INFO 18968 --- [    Test worker] UserController                           : UserController(Mock for UserServiceInterface, hashCode: 954362517)
+2021-07-22 17:49:25.956  INFO 18968 --- [    Test worker] UserController                           : editUser(1,Mock for Model, hashCode: 3775340)
+2021-07-22 17:49:25.958  INFO 18968 --- [    Test worker] UserController                           : UserController(Mock for UserServiceInterface, hashCode: 1583925777)
+2021-07-22 17:49:25.958  INFO 18968 --- [    Test worker] UserController                           : deleteUser(1,Mock for Model, hashCode: 238982614)
+2021-07-22 17:49:25.961  INFO 18968 --- [    Test worker] UserController                           : UserController(Mock for UserServiceInterface, hashCode: 631496774)
+2021-07-22 17:49:25.962  INFO 18968 --- [    Test worker] UserController                           : userList(Mock for Model, hashCode: 1762524517)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

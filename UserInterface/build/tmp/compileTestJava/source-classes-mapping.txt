@@ -1,0 +1,8 @@
+unit/service/UserServiceUnitTest.java
+ unit.service.UserServiceUnitTest
+unit/model/UserUnitTest.java
+ unit.model.UserUnitTest
+integration/UserControllerIntegrationTest.java
+ integration.UserControllerIntegrationTest
+unit/controller/UserControllerIUnitTest.java
+ unit.controller.UserControllerIUnitTest

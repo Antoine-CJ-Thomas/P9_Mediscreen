@@ -8,9 +8,9 @@ import java.util.List;
 @Component
 public interface UserServiceInterface {
 
-    public User getUser(int id);
+    public User selectUser(int id);
 
-    public List<User> getUserList();
+    public List<User> selectUserList();
 
     public void updateUser(int id, User user);
 

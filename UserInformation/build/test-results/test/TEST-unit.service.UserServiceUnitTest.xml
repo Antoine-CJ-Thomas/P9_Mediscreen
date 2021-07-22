@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.UserServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-22T15:50:03" hostname="PC-ANTOINE" time="0.022">
+  <properties/>
+  <testcase name="selectUser()" classname="unit.service.UserServiceUnitTest" time="0.011"/>
+  <testcase name="updateUser()" classname="unit.service.UserServiceUnitTest" time="0.003"/>
+  <testcase name="selectUserList()" classname="unit.service.UserServiceUnitTest" time="0.002"/>
+  <testcase name="insertUser()" classname="unit.service.UserServiceUnitTest" time="0.002"/>
+  <testcase name="deleteUser()" classname="unit.service.UserServiceUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-07-22 17:50:03.604  INFO 9620 --- [    Test worker] UserService                              : UserService(Mock for UserRepository, hashCode: 474287022)
+2021-07-22 17:50:03.612  INFO 9620 --- [    Test worker] UserService                              : selectUser(1)
+2021-07-22 17:50:03.615  INFO 9620 --- [    Test worker] UserService                              : UserService(Mock for UserRepository, hashCode: 1201152084)
+2021-07-22 17:50:03.616  INFO 9620 --- [    Test worker] UserService                              : updateUser(1,Mock for User, hashCode: 1332251761)
+2021-07-22 17:50:03.619  INFO 9620 --- [    Test worker] UserService                              : UserService(Mock for UserRepository, hashCode: 1072642886)
+2021-07-22 17:50:03.620  INFO 9620 --- [    Test worker] UserService                              : selectUserList()
+2021-07-22 17:50:03.622  INFO 9620 --- [    Test worker] UserService                              : UserService(Mock for UserRepository, hashCode: 963847791)
+2021-07-22 17:50:03.622  INFO 9620 --- [    Test worker] UserService                              : insertUser(Mock for User, hashCode: 854797876)
+2021-07-22 17:50:03.624  INFO 9620 --- [    Test worker] UserService                              : UserService(Mock for UserRepository, hashCode: 1332601084)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
