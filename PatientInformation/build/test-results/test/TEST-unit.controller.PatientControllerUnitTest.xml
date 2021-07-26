@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.PatientControllerUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-26T12:42:40" hostname="PC-ANTOINE" time="0.084">
+  <properties/>
+  <testcase name="delete()" classname="unit.controller.PatientControllerUnitTest" time="0.035"/>
+  <testcase name="insert()" classname="unit.controller.PatientControllerUnitTest" time="0.042"/>
+  <testcase name="select()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="update()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="list()" classname="unit.controller.PatientControllerUnitTest" time="0.003"/>
+  <system-out><![CDATA[2021-07-26 14:42:40.178  INFO 2696 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1091793600)
+2021-07-26 14:42:40.178  INFO 2696 --- [    Test worker] PatientController                        : delete(1)
+2021-07-26 14:42:40.198  INFO 2696 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 695049145)
+2021-07-26 14:42:40.238  INFO 2696 --- [    Test worker] PatientController                        : insert(Mock for Patient, hashCode: 1373105305)
+2021-07-26 14:42:40.239  INFO 2696 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 474016723)
+2021-07-26 14:42:40.240  INFO 2696 --- [    Test worker] PatientController                        : select(1)
+2021-07-26 14:42:40.241  INFO 2696 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 83325145)
+2021-07-26 14:42:40.242  INFO 2696 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 94229263)
+2021-07-26 14:42:40.244  INFO 2696 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1799377921)
+2021-07-26 14:42:40.244  INFO 2696 --- [    Test worker] PatientController                        : list()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8"/>
+		<title>Patient List</title>
+		<link rel="stylesheet" href="/css/patient_list.css">
+
+	</head>
+
+	<body>
+
+		<header>
+
+			<div id="header_div">
+
+				<h1>Patient list extracted from the database : </h1>
+				<a href="/patient/add">Add A New Patient</a>
+
+			</div>
+
+		</header>
+
+		<section>
+
+			<div id="section_div">
+
+				<table id="patient_table">
+
+					<tr>
+
+						<th>Id</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Birth Date</th>
+						<th>Gender</th>
+						<th>Address</th>
+						<th>Phone Number</th>
+						<th>Action</th>
+
+					</tr>
+
+					<tbody>
+
+						<tr th:each="patient : ${patientList}">
+
+							<td th:text="${patient.id}"></td>
+							<td th:text="${patient.firstName}"></td>
+							<td th:text="${patient.lastName}"></td>
+							<td th:text="${#dates.format(patient.birthDate, 'dd-MM-yyyy')}"></td>
+							<td th:text="${patient.gender}"></td>
+							<td th:text="${patient.address}"></td>
+							<td th:text="${patient.phoneNumber}"></td>
+
+							<td>
+
+								<a th:href="@{/patient/open(id=${patient.id})}">Open</a>
+								<label>|</label>
+								<a th:href="@{/patient/edit(id=${patient.id})}">Edit</a>
+								<label>|</label>
+								<a th:href="@{/patient/delete(id=${patient.id})}">Delete</a>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</section>
+
+		<footer>
+
+		</footer>
+
+	</body>
+
+</html>

@@ -1,8 +1,12 @@
-unit/service/UserServiceUnitTest.java
- unit.service.UserServiceUnitTest
-unit/model/UserUnitTest.java
- unit.model.UserUnitTest
-integration/UserControllerIntegrationTest.java
- integration.UserControllerIntegrationTest
-unit/controller/UserControllerIUnitTest.java
- unit.controller.UserControllerIUnitTest
+unit/controller/PatientControllerIUnitTest.java
+ unit.controller.PatientControllerIUnitTest
+unit/model/PatientUnitTest.java
+ unit.model.PatientUnitTest
+integration/HomeControllerIntegrationTest.java
+ integration.HomeControllerIntegrationTest
+unit/controller/HomeControllerIUnitTest.java
+ unit.controller.HomeControllerIUnitTest
+integration/PatientControllerIntegrationTest.java
+ integration.PatientControllerIntegrationTest
+unit/service/PatientServiceUnitTest.java
+ unit.service.PatientServiceUnitTest

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.PatientControllerIUnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-26T12:42:56" hostname="PC-ANTOINE" time="0.044">
+  <properties/>
+  <testcase name="delete()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
+  <testcase name="insert()" classname="unit.controller.PatientControllerIUnitTest" time="0.039"/>
+  <testcase name="update()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-07-26 14:42:56.815  INFO 6068 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 121982561)
+2021-07-26 14:42:56.815  INFO 6068 --- [    Test worker] PatientController                        : delete(1,Mock for Model, hashCode: 983033705)
+2021-07-26 14:42:56.817  INFO 6068 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 2005583685)
+2021-07-26 14:42:56.854  INFO 6068 --- [    Test worker] PatientController                        : insert(,Mock for Patient, hashCode: 637226819,Mock for BindingResult, hashCode: 1088748659,Mock for Model, hashCode: 39322759)
+2021-07-26 14:42:56.857  INFO 6068 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 281311807)
+2021-07-26 14:42:56.858  INFO 6068 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 1728509081,Mock for BindingResult, hashCode: 33844135,Mock for Model, hashCode: 1414092209)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

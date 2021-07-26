@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.PatientServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-26T12:42:56" hostname="PC-ANTOINE" time="0.044">
+  <properties/>
+  <testcase name="delete()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="insert()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="select()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="update()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="list()" classname="unit.service.PatientServiceUnitTest" time="0.038"/>
+  <system-out><![CDATA[2021-07-26 14:42:56.882  INFO 6068 --- [    Test worker] PatientService                           : delete(1)
+2021-07-26 14:42:56.884  INFO 6068 --- [    Test worker] PatientService                           : insert(,Mock for Patient, hashCode: 2012976479)
+2021-07-26 14:42:56.886  INFO 6068 --- [    Test worker] PatientService                           : select(1)
+2021-07-26 14:42:56.888  INFO 6068 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 1999201069)
+2021-07-26 14:42:56.926  INFO 6068 --- [    Test worker] PatientService                           : list()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
