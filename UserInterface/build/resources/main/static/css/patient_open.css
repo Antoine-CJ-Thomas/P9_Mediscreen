@@ -1,0 +1,139 @@
+header {
+
+    font-family: Arial;
+}
+
+section {
+
+    font-family: Arial;
+}
+
+#section_div {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#information_div {
+
+    height: 800px;
+
+    width: 30%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+    border: 1px solid brown;
+
+}
+
+.information_slot_div {
+
+    width: 90%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid green;
+
+}
+
+#note_div {
+
+    width: 30%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid yellow;
+
+
+}
+
+#note_list_div {
+
+    width: 90%;
+    height: 400px;
+
+
+    border: 1px solid #ccc;
+    font: 1em;
+
+    overflow: auto;
+
+    border: 1px solid red;
+
+}
+
+#new_note_div {
+
+    width: 90%;
+    height: 400px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+    border: 1px solid red;
+}
+
+#new_note_div input {
+
+    width: 90%;
+    height: 90%;
+}
+
+#risk_div {
+
+    width: 30%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid pink;
+
+}
+
+#general_criteria_div {
+
+    width: 90%;
+    height: 300px;
+
+    border: 1px solid blue;
+
+}
+
+#medical_criteria_div {
+
+    width: 90%;
+    height: 300px;
+
+    border: 1px solid blue;
+
+}
+
+#risk_result_div {
+
+    width: 90%;
+    height: 200px;
+
+    border: 1px solid blue;
+
+
+}
+
+footer {
+
+    font-family: Arial;
+}

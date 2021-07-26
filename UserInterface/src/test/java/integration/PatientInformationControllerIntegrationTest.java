@@ -19,7 +19,7 @@ import java.util.List;
 
 @SpringBootTest(classes= Application.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class PatientControllerIntegrationTest {
+public class PatientInformationControllerIntegrationTest {
 
     @Autowired
     private PatientProxy patientProxy;

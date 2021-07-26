@@ -18,20 +18,20 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/patient")
-public class PatientController {
+public class PatientInformationController {
 
     private Logger logger = LogManager.getLogger(getClass().getSimpleName());
 
     @Autowired
     private PatientServiceInterface patientServiceInterface;
 
-    public PatientController() {
+    public PatientInformationController() {
         logger.info("PatientController()");
 
         patientServiceInterface = new PatientService();
     }
 
-    public PatientController(PatientServiceInterface patientServiceInterface) {
+    public PatientInformationController(PatientServiceInterface patientServiceInterface) {
         logger.info("PatientController(" + patientServiceInterface + ")");
 
         this.patientServiceInterface = patientServiceInterface;

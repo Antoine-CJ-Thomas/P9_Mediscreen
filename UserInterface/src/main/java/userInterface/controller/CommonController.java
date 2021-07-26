@@ -10,27 +10,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import userInterface.model.Patient;
 import userInterface.service.PatientService;
 import userInterface.service.PatientServiceInterface;
-
-import javax.validation.Valid;
+import userInterface.service.NoteServiceInterface;
 
 @Controller
-public class HomeController {
+public class CommonController {
 
     private Logger logger = LogManager.getLogger(getClass().getSimpleName());
 
     @Autowired
     private PatientServiceInterface patientServiceInterface;
 
-    public HomeController() {
+    @Autowired
+    private NoteServiceInterface noteServiceInterface;
+
+    public CommonController() {
         logger.info("HomeController()");
 
         patientServiceInterface = new PatientService();
     }
 
-    public HomeController(PatientServiceInterface patientServiceInterface) {
+    public CommonController(PatientServiceInterface patientServiceInterface,
+                            NoteServiceInterface noteServiceInterface) {
         logger.info("HomeController(" + patientServiceInterface + ")");
 
         this.patientServiceInterface = patientServiceInterface;
+        this.noteServiceInterface = noteServiceInterface;
     }
 
     @GetMapping("/patient/list")
@@ -40,6 +44,16 @@ public class HomeController {
         model.addAttribute("patientList", patientServiceInterface.list());
 
         return "/patient_list.html";
+    }
+
+    @GetMapping("/patient/open")
+    public String openPatient(@RequestParam int id, Model model) {
+        logger.info("openPatient(" + model + ")");
+
+        model.addAttribute("patient", patientServiceInterface.select(id));
+        model.addAttribute("noteList", noteServiceInterface.list(id));
+
+        return "/patient_open.html";
     }
 
     @GetMapping("/patient/add")

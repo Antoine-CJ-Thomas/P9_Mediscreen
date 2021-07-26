@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+		<title>Add a new patient</title>
+        <link rel="stylesheet" href="/css/patient_open.css" />
+
+    </head>
+
+    <body>
+
+	<header>
+
+	</header>
+
+    	<section>
+
+			<div id="section_div">
+
+				<div id="information_div">
+
+					<div class="information_slot_div">
+						<label>First Name :</label>
+						<label th:text="*{patient.firstName}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Last Name :</label>
+						<label th:text="*{patient.lastName}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Birth Date :</label>
+						<label th:text="${#dates.format(patient.birthDate, 'dd-MM-yyyy')}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Address :</label>
+						<label th:text="*{patient.address}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Phone Number :</label>
+						<label th:text="*{patient.phoneNumber}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Gender :</label>
+						<label th:text="*{patient.gender}"><label>
+					</div>
+
+				</div>
+
+				<div id="note_div">
+
+					<div id="note_list_div">
+
+						<th:block th:each="note : ${noteList}">
+
+							<p th:utext="${note.date}"></p>
+							<p th:utext="${note.commentary}"></p>
+							<label>-<label>
+
+						</th:block>
+
+					</div>
+
+					<div id="new_note_div">
+
+						<form method="post" th:action="@{/patient/insert}" th:object="${patient}" id="insert_form">
+
+							<div class="commentary_form_div">
+								<input type="text">
+							</div>
+
+							<div class="add_form_div">
+								<input type="hidden" th:field="*{id}">
+								<button type="submit" >Add</button>
+							</div>
+
+						</form>
+
+					</div>
+
+
+				</div>
+
+
+				<div id="risk_div">
+
+
+
+					<div id="general_criteria_div">
+
+
+
+					</div>
+
+
+
+					<div id="medical_criteria_div">
+
+
+
+					</div>
+
+
+
+					<div id="risk_result_div">
+
+
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+    	</section>
+
+		<footer>
+
+		</footer>
+
+    </body>
+
+</html>

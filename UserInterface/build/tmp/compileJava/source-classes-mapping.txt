@@ -1,14 +1,22 @@
-userInterface/service/PatientServiceInterface.java
- userInterface.service.PatientServiceInterface
-userInterface/controller/PatientController.java
- userInterface.controller.PatientController
 userInterface/model/Patient.java
  userInterface.model.Patient
-userInterface/controller/HomeController.java
- userInterface.controller.HomeController
+userInterface/model/Note.java
+ userInterface.model.Note
 userInterface/Application.java
  userInterface.Application
+userInterface/service/NoteServiceInterface.java
+ userInterface.service.NoteServiceInterface
+userInterface/service/PatientServiceInterface.java
+ userInterface.service.PatientServiceInterface
+userInterface/service/NoteService.java
+ userInterface.service.NoteService
+userInterface/proxy/NoteProxy.java
+ userInterface.proxy.NoteProxy
 userInterface/proxy/PatientProxy.java
  userInterface.proxy.PatientProxy
+userInterface/controller/PatientInformationController.java
+ userInterface.controller.PatientInformationController
 userInterface/service/PatientService.java
  userInterface.service.PatientService
+userInterface/controller/CommonController.java
+ userInterface.controller.CommonController

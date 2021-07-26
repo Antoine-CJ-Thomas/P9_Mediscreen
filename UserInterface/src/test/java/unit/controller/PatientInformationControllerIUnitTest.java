@@ -5,22 +5,20 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import userInterface.controller.PatientController;
+import userInterface.controller.PatientInformationController;
 import userInterface.model.Patient;
 import userInterface.service.PatientServiceInterface;
 
-import java.sql.Date;
+public class PatientInformationControllerIUnitTest {
 
-public class PatientControllerIUnitTest {
-
-    private PatientController patientController;
+    private PatientInformationController patientInformationController;
 
     private PatientServiceInterface patientServiceInterface = Mockito.mock(PatientServiceInterface.class);
 
     @BeforeEach
     public void beforeEach() {
 
-        patientController = new PatientController(patientServiceInterface);
+        patientInformationController = new PatientInformationController(patientServiceInterface);
     }
 
     @Test
@@ -34,7 +32,7 @@ public class PatientControllerIUnitTest {
         //WHEN
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
 
-        patientController.insert(patient, bindingResult, model);
+        patientInformationController.insert(patient, bindingResult, model);
 
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).insert(patient);
@@ -52,7 +50,7 @@ public class PatientControllerIUnitTest {
         //WHEN
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
 
-        patientController.update(userId, patient, bindingResult, model);
+        patientInformationController.update(userId, patient, bindingResult, model);
 
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).update(userId, patient);
@@ -67,7 +65,7 @@ public class PatientControllerIUnitTest {
 
         //WHEN
 
-        patientController.delete(userId, model);
+        patientInformationController.delete(userId, model);
 
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).delete(userId);

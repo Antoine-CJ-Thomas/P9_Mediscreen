@@ -18,17 +18,19 @@ public class PatientService implements PatientServiceInterface {
     private PatientProxy patientProxy;
 
     public PatientService() {
+        logger.info("PatientInformationService()");
 
     }
 
     public PatientService(PatientProxy patientProxy) {
+        logger.info("PatientInformationService(" + patientProxy + ")");
 
         this.patientProxy = patientProxy;
     }
 
     @Override
     public void insert(Patient patient) {
-        logger.info("insert(" + "," + patient + ")");
+        logger.info("insert(" + patient + ")");
 
         patientProxy.insert(patient);
     }

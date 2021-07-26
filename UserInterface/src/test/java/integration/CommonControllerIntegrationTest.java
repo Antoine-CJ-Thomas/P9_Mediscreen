@@ -13,7 +13,7 @@ import userInterface.Application;
 
 
 @SpringBootTest(classes= Application.class)
-public class HomeControllerIntegrationTest {
+public class CommonControllerIntegrationTest {
 
     @Autowired
     private WebApplicationContext webApplicationContext;

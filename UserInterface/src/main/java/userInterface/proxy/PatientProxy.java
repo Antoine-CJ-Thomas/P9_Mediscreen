@@ -8,7 +8,7 @@ import userInterface.model.Patient;
 import java.util.List;
 
 @Component
-@FeignClient(name = "userInformation", url = "http://localhost:8080/patient")
+@FeignClient(name = "PatientInformation", url = "http://localhost:8081/patient")
 public interface PatientProxy {
 
     @PostMapping(value = "/insert", produces = "application/json")
