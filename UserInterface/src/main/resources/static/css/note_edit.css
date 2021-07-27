@@ -1,0 +1,133 @@
+header {
+
+    font-family: Arial;
+}
+
+#header_div {
+
+	width : 100%;
+	height : 64px;
+
+	margin-top: 8px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#header_div h1 {
+
+	width : 100%;
+	height : 40px;
+
+    font-size: 1.5em;
+    line-height: 40px;
+ 	font-weight: bold;
+    text-align: center;
+}
+
+section {
+
+    font-family: Arial;
+}
+
+#section_div {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#update_form {
+
+	width: 100%;
+
+}
+
+.update_form_div {
+
+	width: 100%;
+
+	margin-top: 16px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.update_form_div label {
+
+	width: 20%;
+	height: 20px;
+
+	font-size: 1em;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+.update_form_div input {
+
+	width: 20%;
+	height: 40px;
+
+	font-size: 1em;
+    line-height: 20px;
+    text-align: center;
+
+}
+
+.update_form_div p {
+
+	width: 20%;
+	height: 40px;
+
+	color: rgb(255,0,0);
+	font-size: 1em;
+    line-height: 20px;
+    text-align: center;
+
+}
+
+.update_form_div button {
+
+	width: 20%;
+	height: 40px;
+
+	margin-top: 16px;
+
+	color: white;
+    font-size: 1em;
+    line-height: 40px;
+	font-weight: bold;
+    text-align: center;
+	text-decoration: none;
+	background-color: rgb(116,211,106);
+	border-radius: 8px;
+	border: none;
+}
+
+.update_form_div a {
+
+	width: 20%;
+	height: 40px;
+
+	margin-top: 8px;
+
+	color: white;
+    font-size: 1em;
+    line-height: 40px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(97,174,243);
+	border-radius: 8px;
+}
+
+footer {
+
+    font-family: Arial;
+}

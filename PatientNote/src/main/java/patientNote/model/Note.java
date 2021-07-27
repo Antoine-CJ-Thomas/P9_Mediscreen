@@ -1,5 +1,7 @@
 package patientNote.model;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -7,6 +9,9 @@ import java.util.Date;
 
 @Document(collection = "patient_note")
 public class Note {
+
+    @Id
+    private String id;
 
     @Field(value = "patientId")
     private Integer patientId;
@@ -26,6 +31,14 @@ public class Note {
         this.patientId = patientId;
         this.date = date;
         this.commentary = commentary;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getPatientId() {

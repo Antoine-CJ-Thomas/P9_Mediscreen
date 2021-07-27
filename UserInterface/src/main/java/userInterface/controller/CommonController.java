@@ -2,6 +2,7 @@ package userInterface.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,5 +73,15 @@ public class CommonController {
         model.addAttribute("patient", patientServiceInterface.select(id));
 
         return "/patient_edit.html";
+    }
+
+    @GetMapping("/note/edit")
+    public String editNote(@RequestParam int patientId, @RequestParam String noteId, Model model) {
+        logger.info("editNote(" + patientId + "," + noteId + ","  + model + ")");
+
+        model.addAttribute("patient", patientServiceInterface.select(patientId));
+        model.addAttribute("note", noteServiceInterface.select(noteId));
+
+        return "/note_edit.html";
     }
 }

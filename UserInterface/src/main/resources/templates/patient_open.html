@@ -5,7 +5,7 @@
     <head>
 
         <meta charset="utf-8"/>
-		<title>Add a new patient</title>
+		<title>Medical Record</title>
         <link rel="stylesheet" href="/css/patient_open.css" />
 
     </head>
@@ -14,6 +14,13 @@
 
 	<header>
 
+		<div id="header_div">
+
+			<label>Medical Record</label>
+			<a href="/patient/list">Back To The Patient List</a>
+
+		</div>
+
 	</header>
 
     	<section>
@@ -21,6 +28,10 @@
 			<div id="section_div">
 
 				<div id="information_div">
+
+					<div id="information_title_div">
+						<label>Informations</label>
+					</div>
 
 					<div class="information_slot_div">
 						<label>First Name :</label>
@@ -52,17 +63,33 @@
 						<label th:text="*{patient.gender}"><label>
 					</div>
 
+					<div id="information_edit_div">
+
+						<a th:href="@{/patient/edit(id=${patient.id})}">Edit Informations</a>
+
+					</div>
+
 				</div>
 
 				<div id="note_div">
+
+					<div id="note_title_div">
+						<label>Notes</label>
+					</div>
 
 					<div id="note_list_div">
 
 						<th:block th:each="note : ${noteList}">
 
-							<p th:utext="${note.date}"></p>
-							<p th:utext="${note.commentary}"></p>
-							<label>-<label>
+							<div class="note_slot_div">
+
+								<label th:utext="${#dates.format(note.date, 'dd-MM-yyyy')}"></label>
+								<p th:utext="${note.commentary}"></p>
+								<a th:href="@{/note/edit(patientId=${patient.id}, noteId=${note.id})}">Edit</a>
+								<label>|</label>
+								<a th:href="@{/note/delete(patientId=${patient.id}, noteId=${note.id})}">Delete</a>
+
+							</div>
 
 						</th:block>
 
@@ -70,18 +97,7 @@
 
 					<div id="new_note_div">
 
-						<form method="post" th:action="@{/patient/insert}" th:object="${patient}" id="insert_form">
-
-							<div class="commentary_form_div">
-								<input type="text">
-							</div>
-
-							<div class="add_form_div">
-								<input type="hidden" th:field="*{id}">
-								<button type="submit" >Add</button>
-							</div>
-
-						</form>
+						<a href="/note/add">Add A Note</a>
 
 					</div>
 
@@ -90,6 +106,10 @@
 
 
 				<div id="risk_div">
+
+					<div id="risk_title_div">
+						<label>Risks</label>
+					</div>
 
 
 

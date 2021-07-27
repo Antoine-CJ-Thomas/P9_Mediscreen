@@ -1,24 +1,28 @@
 package userInterface.model;
 
+import org.bson.types.ObjectId;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Component
 public class Note {
 
-    @NotBlank
-    @Size(min=4, max=32)
+    private String id;
+
+    @NotNull
     private Integer patientId;
 
-    @NotBlank
-    @Size(min=4, max=32)
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @NotBlank
-    @Size(min=4, max=32)
+    @Size(min=1)
     private String commentary;
 
     public Note() {
@@ -30,6 +34,14 @@ public class Note {
         this.patientId = patientId;
         this.date = date;
         this.commentary = commentary;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getPatientId() {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+		<title>Note Editing</title>
+        <link rel="stylesheet" href="/css/note_edit.css" />
+
+    </head>
+
+    <body>
+
+	<header>
+
+		<div id="header_div">
+
+			<h1>Edit a note</h1>
+
+		</div>
+
+	</header>
+
+    	<section>
+
+			<div id="section_div">
+
+				<form method="post" th:action="@{/note/update/(id=${note.id})}" th:object="${note}" id="update_form">
+
+					<div class="update_form_div">
+						<label>Commentary :</label>
+						<input type="text" th:field="*{commentary}" placeholder="Commentary">
+						<p th:if="${#fields.hasErrors('commentary')}" th:errors="*{commentary}"></p>
+					</div>
+
+					<div class="update_form_div">
+
+						<input type="hidden" th:field="*{patientId}">
+						<input type="hidden" th:field="*{date}">
+
+						<button type="submit" >Update</button>
+						<a th:href="@{/patient/open(id=${patient.id})}">Back</a>
+					</div>
+
+				</form>
+
+			</div>
+
+    	</section>
+
+		<footer>
+
+		</footer>
+
+    </body>
+
+</html>

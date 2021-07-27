@@ -4,11 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import patientNote.model.Note;
 import patientNote.service.NoteService;
 import patientNote.service.NoteServiceInterface;
 
@@ -35,10 +34,31 @@ public class NoteController {
         this.noteServiceInterface = noteServiceInterface;
     }
 
-    @GetMapping("/list")
-    public String list(@RequestParam int id) throws JsonProcessingException {
-        logger.info("list(" + id + ")");
+    @GetMapping("/select")
+    public String select(@RequestParam String id) throws JsonProcessingException {
+        logger.info("select(" + id + ")");
 
-        return objectMapper.writeValueAsString(noteServiceInterface.list(id));
+        return objectMapper.writeValueAsString(noteServiceInterface.select(id));
+    }
+
+    @GetMapping("/list")
+    public String list(@RequestParam int patientId) throws JsonProcessingException {
+        logger.info("list(" + patientId + ")");
+
+        return objectMapper.writeValueAsString(noteServiceInterface.list(patientId));
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestParam String id, @RequestBody Note note) {
+        logger.info("update(" + id + "," + note + ")");
+
+        noteServiceInterface.update(id, note);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam String id) {
+        logger.info("delete(" + id + ")");
+
+        noteServiceInterface.delete(id);
     }
 }

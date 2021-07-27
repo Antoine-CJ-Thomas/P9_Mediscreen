@@ -70,7 +70,7 @@
 					<div class="update_form_div">
 						<input type="hidden" th:field="*{id}">
 						<button type="submit" >Update</button>
-						<a href="/patient/list">Back To The Patient List</a>
+						<a th:href="@{/patient/open(id=${patient.id})}">Back</a>
 					</div>
 
 				</form>

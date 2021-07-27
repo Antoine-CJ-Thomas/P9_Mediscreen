@@ -1,11 +1,11 @@
-patientNote/model/Note.java
- patientNote.model.Note
 patientNote/Application.java
  patientNote.Application
-patientNote/service/NoteService.java
- patientNote.service.NoteService
+patientNote/model/Note.java
+ patientNote.model.Note
 patientNote/repository/NoteRepository.java
  patientNote.repository.NoteRepository
+patientNote/service/NoteService.java
+ patientNote.service.NoteService
 patientNote/controller/NoteController.java
  patientNote.controller.NoteController
 patientNote/service/NoteServiceInterface.java
