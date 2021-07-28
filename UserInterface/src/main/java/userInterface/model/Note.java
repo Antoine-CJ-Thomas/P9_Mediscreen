@@ -17,7 +17,6 @@ public class Note {
     @NotNull
     private Integer patientId;
 
-    @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 

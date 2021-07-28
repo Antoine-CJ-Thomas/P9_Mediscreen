@@ -22,6 +22,20 @@ public class PatientControllerIUnitTest {
     }
 
     @Test
+    public void addPatient() {
+
+        //GIVEN
+        Patient patient = Mockito.mock(Patient.class);
+        Model model = Mockito.mock(Model.class);
+
+        //WHEN
+        patientController.addPatient(patient, model);
+
+        //THEN
+        Mockito.verify(model, Mockito.times(1)).addAttribute("patient", patient);
+    }
+
+    @Test
     public void insert() {
 
         //GIVEN
@@ -36,6 +50,20 @@ public class PatientControllerIUnitTest {
 
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).insert(patient);
+    }
+
+    @Test
+    public void editPatient() {
+
+        //GIVEN
+        Integer userId = 1;
+        Model model = Mockito.mock(Model.class);
+
+        //WHEN
+        patientController.editPatient(userId, model);
+
+        //THEN
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(userId);
     }
 
     @Test

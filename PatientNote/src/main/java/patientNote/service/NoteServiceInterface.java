@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface NoteServiceInterface {
 
+    void insert(Note note);
+
     Note select(String id);
 
     List<Note> list(int patientId);

@@ -38,30 +38,4 @@ public class CommonControllerIntegrationTest {
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
     }
-
-    @Test
-    public void add() throws Exception {
-
-        // GIVEN
-
-        // WHEN
-        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/add")).andReturn();
-
-        // THEN
-        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
-    }
-
-    @Test
-    public void edit() throws Exception {
-
-        // GIVEN
-        Integer userId = 1;
-
-        // WHEN
-        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/edit")
-                .param("id", String.valueOf(userId))).andReturn();
-
-        // THEN
-        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
-    }
 }

@@ -8,6 +8,8 @@ import java.util.List;
 @Component
 public interface PatientServiceInterface {
 
+    void insert(Patient patient);
+
     Patient select(int id);
 
     List<Patient> list();
@@ -15,6 +17,4 @@ public interface PatientServiceInterface {
     void update(int id, Patient patient);
 
     void delete(int id);
-
-    void insert(Patient patient);
 }

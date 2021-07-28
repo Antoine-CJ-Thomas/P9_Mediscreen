@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import userInterface.model.Patient;
 import userInterface.service.PatientService;
 import userInterface.service.PatientServiceInterface;
@@ -37,6 +38,15 @@ public class PatientController {
         this.patientServiceInterface = patientServiceInterface;
     }
 
+    @GetMapping("/add")
+    public String addPatient(Patient patient, Model model) {
+        logger.info("addPatient(" + patient + "," + model + ")");
+
+        model.addAttribute("patient", patient);
+
+        return "/patient_add.html";
+    }
+
     @PostMapping("/insert")
     public String insert(@Valid Patient patient, BindingResult bindingResult, Model model) {
         logger.info("insert(" + "," + patient + "," + bindingResult + "," + model + ")");
@@ -56,15 +66,26 @@ public class PatientController {
         }
     }
 
+    @GetMapping("/edit")
+    public String editPatient(@RequestParam int patientId, Model model) {
+        logger.info("editPatient(" + patientId + "," + model + ")");
+
+        model.addAttribute("patient", patientServiceInterface.select(patientId));
+
+        return "/patient_edit.html";
+    }
+
     @PostMapping("/update")
-    public String update(@RequestParam int id, @Valid Patient patient, BindingResult bindingResult, Model model) {
-        logger.info("update(" + id + "," + patient + "," + bindingResult + "," + model + ")");
+    public String update(@RequestParam int patientId, @Valid Patient patient, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        logger.info("update(" + patientId + "," + patient + "," + bindingResult + "," + model + ")");
 
         if (!bindingResult.hasErrors()) {
 
-            patientServiceInterface.update(id, patient);
+            patientServiceInterface.update(patientId, patient);
 
-            return ("redirect:/patient/list");
+            redirectAttributes.addAttribute("patientId", patientId);
+
+            return ("redirect:/patient/open");
         }
 
         else {
@@ -74,10 +95,10 @@ public class PatientController {
     }
 
     @GetMapping("/delete")
-    public String delete(@RequestParam int id, Model model) {
-        logger.info("delete(" + id + "," + model + ")");
+    public String delete(@RequestParam int patientId, Model model) {
+        logger.info("delete(" + patientId + "," + model + ")");
 
-        patientServiceInterface.delete(id);
+        patientServiceInterface.delete(patientId);
 
         return ("redirect:/patient/list");
     }

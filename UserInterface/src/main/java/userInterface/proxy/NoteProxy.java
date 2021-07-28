@@ -1,17 +1,18 @@
 package userInterface.proxy;
 
-import org.bson.types.ObjectId;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import userInterface.model.Note;
-import userInterface.model.Patient;
 
 import java.util.List;
 
 @Component
 @FeignClient(name = "PatientNote", url = "http://localhost:8082/note")
 public interface NoteProxy {
+
+    @PostMapping(value = "/insert", produces = "application/json")
+    void insert(@RequestBody Note note);
 
     @GetMapping(value = "/select", produces = "application/json")
     Note select(@RequestParam String id);

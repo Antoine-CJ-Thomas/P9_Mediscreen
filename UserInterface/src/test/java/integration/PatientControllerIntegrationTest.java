@@ -45,6 +45,19 @@ public class PatientControllerIntegrationTest {
 
     @Test
     @Order(1)
+    public void add() throws Exception {
+
+        // GIVEN
+
+        // WHEN
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/add")).andReturn();
+
+        // THEN
+        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
+    }
+
+    @Test
+    @Order(2)
     public void insert() throws Exception {
 
         // GIVEN
@@ -64,7 +77,22 @@ public class PatientControllerIntegrationTest {
     }
 
     @Test
-    @Order(2)
+    @Order(3)
+    public void edit() throws Exception {
+
+        // GIVEN
+        Integer userId = 1;
+
+        // WHEN
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/edit")
+                .param("id", String.valueOf(userId))).andReturn();
+
+        // THEN
+        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
+    }
+
+    @Test
+    @Order(4)
     public void update() throws Exception {
 
         // GIVEN
@@ -93,7 +121,7 @@ public class PatientControllerIntegrationTest {
     }
 
     @Test
-    @Order(3)
+    @Order(5)
     public void delete() throws Exception {
 
         // GIVEN

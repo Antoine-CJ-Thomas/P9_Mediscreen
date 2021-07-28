@@ -4,21 +4,21 @@ userInterface/proxy/PatientProxy.java
  userInterface.proxy.PatientProxy
 userInterface/Application.java
  userInterface.Application
+userInterface/proxy/NoteProxy.java
+ userInterface.proxy.NoteProxy
 userInterface/service/PatientService.java
  userInterface.service.PatientService
 userInterface/service/PatientServiceInterface.java
  userInterface.service.PatientServiceInterface
-userInterface/controller/PatientController.java
- userInterface.controller.PatientController
-userInterface/model/Note.java
- userInterface.model.Note
 userInterface/service/NoteServiceInterface.java
  userInterface.service.NoteServiceInterface
 userInterface/service/NoteService.java
  userInterface.service.NoteService
-userInterface/proxy/NoteProxy.java
- userInterface.proxy.NoteProxy
+userInterface/model/Note.java
+ userInterface.model.Note
 userInterface/controller/CommonController.java
  userInterface.controller.CommonController
 userInterface/controller/NoteController.java
  userInterface.controller.NoteController
+userInterface/controller/PatientController.java
+ userInterface.controller.PatientController

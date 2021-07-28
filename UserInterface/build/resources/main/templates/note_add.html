@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+		<title>Add Note</title>
+        <link rel="stylesheet" href="/css/note_add.css" />
+
+    </head>
+
+    <body>
+
+	<header>
+
+		<div id="header_div">
+
+			<label>Add a new note to the patient</label>
+			<a th:href="@{/patient/open(patientId=${patientId})}">Back To Medical Record</a>
+
+		</div>
+
+	</header>
+
+    	<section>
+
+			<div id="section_div">
+
+				<div id="insert_form_div">
+
+					<form method="post" th:action="@{/note/insert}" th:object="${note}" id="insert_form">
+
+						<div class="form_slot_div">
+							<label>Commentary :</label>
+							<textarea  rows = "20" th:field = "*{commentary}"></textarea>
+							<p th:if="${#fields.hasErrors('commentary')}" th:errors="*{commentary}"></p>
+						</div>
+
+						<div class="form_slot_div">
+							<input type="hidden" th:field="*{patientId}">
+							<button type="submit" >Insert</button>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+
+    	</section>
+
+		<footer>
+
+		</footer>
+
+    </body>
+
+</html>

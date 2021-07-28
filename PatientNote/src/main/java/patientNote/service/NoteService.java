@@ -30,6 +30,13 @@ public class NoteService implements NoteServiceInterface {
     }
 
     @Override
+    public void insert(Note note) {
+        logger.info("insert(" + note + ")");
+
+        noteRepository.save(note);
+    }
+
+    @Override
     public Note select(String id) {
         logger.info("select(" + id + ")");
 

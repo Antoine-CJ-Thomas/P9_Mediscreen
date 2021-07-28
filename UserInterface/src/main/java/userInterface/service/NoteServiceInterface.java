@@ -1,6 +1,5 @@
 package userInterface.service;
 
-import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 import userInterface.model.Note;
 
@@ -8,6 +7,8 @@ import java.util.List;
 
 @Component
 public interface NoteServiceInterface {
+
+    void insert(Note note);
 
     Note select(String id);
 

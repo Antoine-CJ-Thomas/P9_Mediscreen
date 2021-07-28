@@ -23,20 +23,6 @@ public class CommonControllerIUnitTest {
     }
 
     @Test
-    public void addPatient() {
-
-        //GIVEN
-        Patient patient = Mockito.mock(Patient.class);
-        Model model = Mockito.mock(Model.class);
-
-        //WHEN
-        commonController.addPatient(patient, model);
-
-        //THEN
-        Mockito.verify(model, Mockito.times(1)).addAttribute("patient", patient);
-    }
-
-    @Test
     public void listPatient() {
 
         //GIVEN
@@ -47,19 +33,5 @@ public class CommonControllerIUnitTest {
 
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).list();
-    }
-
-    @Test
-    public void editPatient() {
-
-        //GIVEN
-        Integer userId = 1;
-        Model model = Mockito.mock(Model.class);
-
-        //WHEN
-        commonController.editPatient(userId, model);
-
-        //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(userId);
     }
 }

@@ -16,7 +16,7 @@
 
 		<div id="header_div">
 
-			<label>Medical Record</label>
+			<label>Medical Record of the patient</label>
 			<a href="/patient/list">Back To The Patient List</a>
 
 		</div>
@@ -65,7 +65,7 @@
 
 					<div id="information_edit_div">
 
-						<a th:href="@{/patient/edit(id=${patient.id})}">Edit Informations</a>
+						<a th:href="@{/patient/edit(patientId=${patient.id})}">Edit Informations</a>
 
 					</div>
 
@@ -83,7 +83,7 @@
 
 							<div class="note_slot_div">
 
-								<label th:utext="${#dates.format(note.date, 'dd-MM-yyyy')}"></label>
+								<label th:utext="${#dates.format(note.date, 'dd-MM-yyyy HH:mm')}"></label>
 								<p th:utext="${note.commentary}"></p>
 								<a th:href="@{/note/edit(patientId=${patient.id}, noteId=${note.id})}">Edit</a>
 								<label>|</label>
@@ -97,7 +97,7 @@
 
 					<div id="new_note_div">
 
-						<a href="/note/add">Add A Note</a>
+						<a th:href="@{/note/add(patientId=${patient.id})}">Add A Note</a>
 
 					</div>
 

@@ -5,26 +5,42 @@ header {
 
 #header_div {
 
-	width : 100%;
-	height : 64px;
-
 	margin-top: 8px;
 
+    padding: 1em;
+
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
 }
 
-#header_div h1 {
+#header_div label {
 
-	width : 100%;
+	width: 50%;
 	height : 40px;
 
     font-size: 1.5em;
     line-height: 40px;
  	font-weight: bold;
-    text-align: center;
+}
+
+#header_div a {
+
+	width: 15%;
+	height: 40px;
+
+	color: white;
+    font-size: 1em;
+	font-weight: bold;
+    line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(97,174,243);
+	border-radius: 8px;
 }
 
 section {
@@ -34,10 +50,29 @@ section {
 
 #section_div {
 
+	margin-top: 8px;
+
+    padding: 1em;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+}
+
+#update_form_div {
+
+    width: 20%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
 }
 
 #update_form {
@@ -46,7 +81,7 @@ section {
 
 }
 
-.update_form_div {
+.form_slot_div {
 
 	width: 100%;
 
@@ -58,9 +93,9 @@ section {
 	align-items: center;
 }
 
-.update_form_div label {
+.form_slot_div label {
 
-	width: 20%;
+	width: 100%;
 	height: 20px;
 
 	font-size: 1em;
@@ -69,20 +104,16 @@ section {
 
 }
 
-.update_form_div input {
+.form_slot_div textarea {
 
-	width: 20%;
-	height: 40px;
+	width: 100%;
 
 	font-size: 1em;
-    line-height: 20px;
-    text-align: center;
-
 }
 
-.update_form_div p {
+.form_slot_div p {
 
-	width: 20%;
+	width: 100%;
 	height: 40px;
 
 	color: rgb(255,0,0);
@@ -92,9 +123,9 @@ section {
 
 }
 
-.update_form_div button {
+.form_slot_div button {
 
-	width: 20%;
+	width: 100%;
 	height: 40px;
 
 	margin-top: 16px;
@@ -108,23 +139,6 @@ section {
 	background-color: rgb(116,211,106);
 	border-radius: 8px;
 	border: none;
-}
-
-.update_form_div a {
-
-	width: 20%;
-	height: 40px;
-
-	margin-top: 8px;
-
-	color: white;
-    font-size: 1em;
-    line-height: 40px;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	background-color: rgb(97,174,243);
-	border-radius: 8px;
 }
 
 footer {

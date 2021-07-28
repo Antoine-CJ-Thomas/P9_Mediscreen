@@ -34,6 +34,13 @@ public class NoteController {
         this.noteServiceInterface = noteServiceInterface;
     }
 
+    @PostMapping("/insert")
+    public void insert(@RequestBody Note note) {
+        logger.info("insert(" + note + ")");
+
+        noteServiceInterface.insert(note);
+    }
+
     @GetMapping("/select")
     public String select(@RequestParam String id) throws JsonProcessingException {
         logger.info("select(" + id + ")");
