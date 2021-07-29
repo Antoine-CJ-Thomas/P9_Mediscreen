@@ -2,14 +2,11 @@ package userInterface.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import userInterface.model.Note;
-import userInterface.model.Patient;
 import userInterface.service.PatientService;
 import userInterface.service.PatientServiceInterface;
 import userInterface.service.NoteServiceInterface;
@@ -26,14 +23,14 @@ public class CommonController {
     private NoteServiceInterface noteServiceInterface;
 
     public CommonController() {
-        logger.info("HomeController()");
+        logger.info("CommonController()");
 
         patientServiceInterface = new PatientService();
     }
 
     public CommonController(PatientServiceInterface patientServiceInterface,
                             NoteServiceInterface noteServiceInterface) {
-        logger.info("HomeController(" + patientServiceInterface + ")");
+        logger.info("CommonController(" + patientServiceInterface + ")");
 
         this.patientServiceInterface = patientServiceInterface;
         this.noteServiceInterface = noteServiceInterface;

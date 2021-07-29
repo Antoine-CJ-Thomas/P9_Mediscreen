@@ -34,4 +34,19 @@ public class CommonControllerIUnitTest {
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).list();
     }
+
+    @Test
+    public void openPatient() {
+
+        //GIVEN
+        int patientId = 1;
+        Model model = Mockito.mock(Model.class);
+
+        //WHEN
+        commonController.openPatient(patientId, model);
+
+        //THEN
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(patientId);
+        Mockito.verify(noteServiceInterface, Mockito.times(1)).list(patientId);
+    }
 }

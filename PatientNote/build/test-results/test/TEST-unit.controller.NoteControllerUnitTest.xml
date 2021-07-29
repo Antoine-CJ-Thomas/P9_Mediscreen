@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.NoteControllerUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-29T17:52:15" hostname="PC-ANTOINE" time="0.109">
+  <properties/>
+  <testcase name="delete()" classname="unit.controller.NoteControllerUnitTest" time="0.031"/>
+  <testcase name="insert()" classname="unit.controller.NoteControllerUnitTest" time="0.062"/>
+  <testcase name="select()" classname="unit.controller.NoteControllerUnitTest" time="0.003"/>
+  <testcase name="update()" classname="unit.controller.NoteControllerUnitTest" time="0.004"/>
+  <testcase name="list()" classname="unit.controller.NoteControllerUnitTest" time="0.006"/>
+  <system-out><![CDATA[2021-07-29 19:52:15.525  INFO 5864 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 14283807)
+2021-07-29 19:52:15.526  INFO 5864 --- [    Test worker] NoteController                           : delete(noteId)
+2021-07-29 19:52:15.543  INFO 5864 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 71978058)
+2021-07-29 19:52:15.602  INFO 5864 --- [    Test worker] NoteController                           : insert(Mock for Note, hashCode: 1250592585)
+2021-07-29 19:52:15.606  INFO 5864 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 574732462)
+2021-07-29 19:52:15.606  INFO 5864 --- [    Test worker] NoteController                           : select(noteId)
+2021-07-29 19:52:15.610  INFO 5864 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 238358623)
+2021-07-29 19:52:15.611  INFO 5864 --- [    Test worker] NoteController                           : update(noteId,Mock for Note, hashCode: 640161114)
+2021-07-29 19:52:15.614  INFO 5864 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 939945497)
+2021-07-29 19:52:15.615  INFO 5864 --- [    Test worker] NoteController                           : list(1)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

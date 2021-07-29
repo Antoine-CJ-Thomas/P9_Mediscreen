@@ -39,14 +39,14 @@ public class PatientServiceUnitTest {
     public void select() {
 
         //GIVEN
-        int userId = 1;
+        int patientId = 1;
         Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        Mockito.when(mockedPatientProxy.select(userId)).thenReturn(patient);
+        Mockito.when(mockedPatientProxy.select(patientId)).thenReturn(patient);
 
         //THEN
-        Assertions.assertThat(patientService.select(userId) == patient);
+        Assertions.assertThat(patientService.select(patientId) == patient);
     }
 
     @Test
@@ -66,26 +66,26 @@ public class PatientServiceUnitTest {
     public void update() {
 
         //GIVEN
-        int userId = 1;
+        int patientId = 1;
         Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        patientService.update(userId, patient);
+        patientService.update(patientId, patient);
 
         //THEN
-        Mockito.verify(mockedPatientProxy, Mockito.times(1)).update(userId, patient);
+        Mockito.verify(mockedPatientProxy, Mockito.times(1)).update(patientId, patient);
     }
 
     @Test
     public void delete() {
 
         //GIVEN
-        int userId = 1;
+        int patientId = 1;
 
         //WHEN
-        patientService.delete(userId);
+        patientService.delete(patientId);
 
         //THEN
-        Mockito.verify(mockedPatientProxy, Mockito.times(1)).delete(userId);
+        Mockito.verify(mockedPatientProxy, Mockito.times(1)).delete(patientId);
     }
 }

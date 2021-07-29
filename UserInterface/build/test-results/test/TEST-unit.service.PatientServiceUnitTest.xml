@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.service.PatientServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-26T12:42:56" hostname="PC-ANTOINE" time="0.044">
+<testsuite name="unit.service.PatientServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-29T17:53:07" hostname="PC-ANTOINE" time="0.025">
   <properties/>
-  <testcase name="delete()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
-  <testcase name="insert()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
-  <testcase name="select()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
-  <testcase name="update()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
-  <testcase name="list()" classname="unit.service.PatientServiceUnitTest" time="0.038"/>
-  <system-out><![CDATA[2021-07-26 14:42:56.882  INFO 6068 --- [    Test worker] PatientService                           : delete(1)
-2021-07-26 14:42:56.884  INFO 6068 --- [    Test worker] PatientService                           : insert(,Mock for Patient, hashCode: 2012976479)
-2021-07-26 14:42:56.886  INFO 6068 --- [    Test worker] PatientService                           : select(1)
-2021-07-26 14:42:56.888  INFO 6068 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 1999201069)
-2021-07-26 14:42:56.926  INFO 6068 --- [    Test worker] PatientService                           : list()
+  <testcase name="delete()" classname="unit.service.PatientServiceUnitTest" time="0.005"/>
+  <testcase name="insert()" classname="unit.service.PatientServiceUnitTest" time="0.005"/>
+  <testcase name="select()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="update()" classname="unit.service.PatientServiceUnitTest" time="0.003"/>
+  <testcase name="list()" classname="unit.service.PatientServiceUnitTest" time="0.004"/>
+  <system-out><![CDATA[2021-07-29 19:53:07.724  INFO 2100 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 19700612)
+2021-07-29 19:53:07.725  INFO 2100 --- [    Test worker] PatientService                           : delete(1)
+2021-07-29 19:53:07.731  INFO 2100 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 2059800516)
+2021-07-29 19:53:07.733  INFO 2100 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 276778749)
+2021-07-29 19:53:07.737  INFO 2100 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 668096293)
+2021-07-29 19:53:07.738  INFO 2100 --- [    Test worker] PatientService                           : select(1)
+2021-07-29 19:53:07.740  INFO 2100 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1111951584)
+2021-07-29 19:53:07.741  INFO 2100 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 146114371)
+2021-07-29 19:53:07.744  INFO 2100 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1658271758)
+2021-07-29 19:53:07.746  INFO 2100 --- [    Test worker] PatientService                           : list()
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

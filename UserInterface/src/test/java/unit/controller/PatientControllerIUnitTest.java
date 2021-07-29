@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import userInterface.controller.PatientController;
 import userInterface.model.Patient;
 import userInterface.service.PatientServiceInterface;
@@ -56,46 +57,47 @@ public class PatientControllerIUnitTest {
     public void editPatient() {
 
         //GIVEN
-        Integer userId = 1;
+        Integer patientId = 1;
         Model model = Mockito.mock(Model.class);
 
         //WHEN
-        patientController.editPatient(userId, model);
+        patientController.editPatient(patientId, model);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(userId);
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(patientId);
     }
 
     @Test
     public void update() {
 
         //GIVEN
-        Integer userId = 1;
+        Integer patientId = 1;
         Patient patient = Mockito.mock(Patient.class);
         BindingResult bindingResult = Mockito.mock(BindingResult.class);
+        RedirectAttributes redirectAttributes = Mockito.mock(RedirectAttributes.class);
         Model model = Mockito.mock(Model.class);
 
         //WHEN
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
 
-        patientController.update(userId, patient, bindingResult, model);
+        patientController.update(patientId, patient, bindingResult, redirectAttributes, model);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).update(userId, patient);
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).update(patientId, patient);
     }
 
     @Test
     public void delete() {
 
         //GIVEN
-        Integer userId = 1;
+        Integer patientId = 1;
         Model model = Mockito.mock(Model.class);
 
         //WHEN
 
-        patientController.delete(userId, model);
+        patientController.delete(patientId, model);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).delete(userId);
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).delete(patientId);
     }
 }

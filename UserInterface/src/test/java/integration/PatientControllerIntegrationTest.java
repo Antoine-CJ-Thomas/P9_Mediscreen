@@ -29,7 +29,7 @@ public class PatientControllerIntegrationTest {
 
     private MockMvc mockMvc;
     private MvcResult mvcResult;
-    private static Integer id = 1;
+
     private static String firstName = "testFirstName";
     private static String lastName = "testLastName";
     private static String birthDate = "1990-01-01";
@@ -61,7 +61,6 @@ public class PatientControllerIntegrationTest {
     public void insert() throws Exception {
 
         // GIVEN
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/patient/insert")
@@ -81,11 +80,11 @@ public class PatientControllerIntegrationTest {
     public void edit() throws Exception {
 
         // GIVEN
-        Integer userId = 1;
+        Integer patientId = 1;
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/edit")
-                .param("id", String.valueOf(userId))).andReturn();
+                .param("patientId", String.valueOf(patientId))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -96,19 +95,20 @@ public class PatientControllerIntegrationTest {
     public void update() throws Exception {
 
         // GIVEN
+        int patientId = 0;
         List<Patient> patientList = patientProxy.list();
 
         for (Patient p : patientList) {
 
             if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
 
-                id = p.getId();
+                patientId = p.getId();
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/patient/update")
-                .param("id", String.valueOf(id))
+                .param("patientId", String.valueOf(patientId))
                 .param("firstName", firstName)
                 .param("lastName", lastName)
                 .param("birthDate", birthDate)
@@ -125,19 +125,20 @@ public class PatientControllerIntegrationTest {
     public void delete() throws Exception {
 
         // GIVEN
+        int patientId = 0;
         List<Patient> patientList = patientProxy.list();
 
         for (Patient p : patientList) {
 
             if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
 
-                id = p.getId();
+                patientId = p.getId();
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/delete")
-                .param("id", String.valueOf(id))).andReturn();
+                .param("patientId", String.valueOf(patientId))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);

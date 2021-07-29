@@ -16,9 +16,9 @@ userInterface/service/NoteService.java
  userInterface.service.NoteService
 userInterface/model/Note.java
  userInterface.model.Note
-userInterface/controller/CommonController.java
- userInterface.controller.CommonController
-userInterface/controller/NoteController.java
- userInterface.controller.NoteController
 userInterface/controller/PatientController.java
  userInterface.controller.PatientController
+userInterface/controller/NoteController.java
+ userInterface.controller.NoteController
+userInterface/controller/CommonController.java
+ userInterface.controller.CommonController

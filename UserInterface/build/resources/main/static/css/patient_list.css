@@ -5,20 +5,22 @@ header {
 
 #header_div {
 
-	width : 100%;
-	height : 48px;
-
 	margin-top: 8px;
+
+    padding: 1em;
 
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
 }
 
-#header_div h1 {
+#header_div label {
 
-	width: 90%;
+	width: 50%;
 	height : 40px;
 
     font-size: 1.5em;
@@ -28,7 +30,7 @@ header {
 
 #header_div a {
 
-	width: 10%;
+	width: 15%;
 	height: 40px;
 
 	color: white;
@@ -48,10 +50,29 @@ section {
 
 #section_div {
 
+	margin-top: 8px;
+
+    padding: 1em;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+}
+
+#patient_table_div {
+
+    width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
 }
 
 #patient_table {

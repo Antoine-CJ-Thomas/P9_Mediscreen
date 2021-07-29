@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.NoteControllerUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-29T17:53:07" hostname="PC-ANTOINE" time="0.22">
+  <properties/>
+  <testcase name="delete()" classname="unit.controller.NoteControllerUnitTest" time="0.048"/>
+  <testcase name="insert()" classname="unit.controller.NoteControllerUnitTest" time="0.153"/>
+  <testcase name="addNote()" classname="unit.controller.NoteControllerUnitTest" time="0.012"/>
+  <testcase name="update()" classname="unit.controller.NoteControllerUnitTest" time="0.003"/>
+  <testcase name="editNote()" classname="unit.controller.NoteControllerUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-07-29 19:53:07.247  INFO 2100 --- [    Test worker] NoteController                           : NoteController(Mock for NoteServiceInterface, hashCode: 1778154091)
+2021-07-29 19:53:07.293  INFO 2100 --- [    Test worker] NoteController                           : delete(1,noteId,Mock for Model, hashCode: 73181712)
+2021-07-29 19:53:07.296  INFO 2100 --- [    Test worker] NoteController                           : NoteController(Mock for NoteServiceInterface, hashCode: 697780039)
+2021-07-29 19:53:07.445  INFO 2100 --- [    Test worker] NoteController                           : insert(,Mock for Note, hashCode: 304065205,Mock for BindingResult, hashCode: 1599034879,Mock for RedirectAttributes, hashCode: 1860047108,Mock for Model, hashCode: 865071847)
+2021-07-29 19:53:07.458  INFO 2100 --- [    Test worker] NoteController                           : NoteController(Mock for NoteServiceInterface, hashCode: 18630714)
+2021-07-29 19:53:07.459  INFO 2100 --- [    Test worker] NoteController                           : addNote(1,Mock for Note, hashCode: 1257648827,Mock for Model, hashCode: 2052439347)
+2021-07-29 19:53:07.462  INFO 2100 --- [    Test worker] NoteController                           : NoteController(Mock for NoteServiceInterface, hashCode: 233347096)
+2021-07-29 19:53:07.463  INFO 2100 --- [    Test worker] NoteController                           : update(noteId,Mock for Note, hashCode: 1859542023,Mock for BindingResult, hashCode: 365877388,Mock for Model, hashCode: 1109738275)
+2021-07-29 19:53:07.465  INFO 2100 --- [    Test worker] NoteController                           : NoteController(Mock for NoteServiceInterface, hashCode: 189020967)
+2021-07-29 19:53:07.465  INFO 2100 --- [    Test worker] NoteController                           : editNote(1,noteId,Mock for Model, hashCode: 1471047724)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

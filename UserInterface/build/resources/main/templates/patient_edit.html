@@ -5,7 +5,7 @@
     <head>
 
         <meta charset="utf-8"/>
-		<title>Patient Editing</title>
+		<title>Edit Patient</title>
         <link rel="stylesheet" href="/css/patient_edit.css" />
 
     </head>
@@ -16,7 +16,8 @@
 
 		<div id="header_div">
 
-			<h1>Edit an patient</h1>
+			<label>Edit the information of the patient</label>
+			<a th:href="@{/patient/open(patientId=${patient.id})}">Back To Medical Record</a>
 
 		</div>
 
@@ -26,54 +27,57 @@
 
 			<div id="section_div">
 
-				<form method="post" th:action="@{/patient/update/(id=${patient.id})}" th:object="${patient}" id="update_form">
+				<div id="update_form_div">
 
-					<div class="update_form_div">
-						<label>First Name :</label>
-						<input type="text" th:field="*{firstName}" placeholder="First Name">
-						<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
-					</div>
+					<form method="post" th:action="@{/patient/update/(patientId=${patient.id})}" th:object="${patient}" id="update_form">
 
-					<div class="update_form_div">
-						<label>Last Name :</label>
-						<input type="text" th:field="*{lastName}" placeholder="Last Name">
-						<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
-					</div>
-
-					<div class="update_form_div">
-						<label>Birth Date :</label>
-						<input type="date" th:field="*{birthDate}">
-						<p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></p>
-					</div>
-
-					<div class="update_form_div">
-						<label>Address :</label>
-						<input type="text" th:field="*{address}" placeholder="Address">
-						<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
-					</div>
-
-					<div class="update_form_div">
-						<label>Phone Number :</label>
-						<input type="text" th:field="*{phoneNumber}" placeholder="Phone Number">
-						<p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
-					</div>
-
-					<div class="update_form_div">
-						<div class="radio_update_form_div">
-							<label>Gender :</label>
-							<input type="radio" th:field="*{gender}" th:value="M">M</label>
-							<input type="radio" th:field="*{gender}" th:value="F">F</label>
+						<div class="form_slot_div">
+							<label>First Name :</label>
+							<input type="text" th:field="*{firstName}" placeholder="First Name">
+							<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
 						</div>
-						<p class="text-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></p>
-					</div>
 
-					<div class="update_form_div">
-						<input type="hidden" th:field="*{id}">
-						<button type="submit" >Update</button>
-						<a th:href="@{/patient/open(id=${patient.id})}">Back</a>
-					</div>
+						<div class="form_slot_div">
+							<label>Last Name :</label>
+							<input type="text" th:field="*{lastName}" placeholder="Last Name">
+							<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+						</div>
 
-				</form>
+						<div class="form_slot_div">
+							<label>Birth Date :</label>
+							<input type="date" th:field="*{birthDate}">
+							<p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></p>
+						</div>
+
+						<div class="form_slot_div">
+							<label>Address :</label>
+							<input type="text" th:field="*{address}" placeholder="Address">
+							<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+						</div>
+
+						<div class="form_slot_div">
+							<label>Phone Number :</label>
+							<input type="text" th:field="*{phoneNumber}" placeholder="Phone Number">
+							<p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+						</div>
+
+						<div class="form_slot_div">
+							<div class="radio_update_form_div">
+								<label>Gender :</label>
+								<input type="radio" th:field="*{gender}" th:value="M">M</label>
+								<input type="radio" th:field="*{gender}" th:value="F">F</label>
+							</div>
+							<p class="text-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></p>
+						</div>
+
+						<div class="form_slot_div">
+							<input type="hidden" th:field="*{id}">
+							<button type="submit" >Update</button>
+						</div>
+
+					</form>
+
+				</div>
 
 			</div>
 
