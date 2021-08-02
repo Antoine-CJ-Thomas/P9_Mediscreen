@@ -8,6 +8,7 @@ import userInterface.controller.CommonController;
 import userInterface.model.Patient;
 import userInterface.service.PatientServiceInterface;
 import userInterface.service.NoteServiceInterface;
+import userInterface.service.ReportServiceInterface;
 
 public class CommonControllerIUnitTest {
 
@@ -15,11 +16,12 @@ public class CommonControllerIUnitTest {
 
     private PatientServiceInterface patientServiceInterface = Mockito.mock(PatientServiceInterface.class);
     private NoteServiceInterface noteServiceInterface = Mockito.mock(NoteServiceInterface.class);
+    private ReportServiceInterface reportServiceInterface = Mockito.mock(ReportServiceInterface.class);
 
     @BeforeEach
     public void beforeEach() {
 
-        commonController = new CommonController(patientServiceInterface, noteServiceInterface);
+        commonController = new CommonController(patientServiceInterface, noteServiceInterface, reportServiceInterface);
     }
 
     @Test

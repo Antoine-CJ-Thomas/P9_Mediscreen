@@ -115,7 +115,11 @@
 
 					<div id="general_criteria_div">
 
+						<th:block th:each="triggerTerm : ${diabetesReport.generalTriggerTermList}">
 
+							<p th:utext="${triggerTerm}"></p>
+
+						</th:block>
 
 					</div>
 
@@ -123,7 +127,11 @@
 
 					<div id="medical_criteria_div">
 
+						<th:block th:each="triggerTerm : ${diabetesReport.medicalTriggerTermList}">
 
+							<p th:utext="${triggerTerm}"></p>
+
+						</th:block>
 
 					</div>
 
@@ -131,7 +139,7 @@
 
 					<div id="risk_result_div">
 
-
+						<p th:utext="${diabetesReport.riskLevel}"></p>
 
 					</div>
 

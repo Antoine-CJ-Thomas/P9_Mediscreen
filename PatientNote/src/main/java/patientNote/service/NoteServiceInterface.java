@@ -1,10 +1,11 @@
 package patientNote.service;
 
-import org.bson.types.ObjectId;
+import org.springframework.stereotype.Component;
 import patientNote.model.Note;
 
 import java.util.List;
 
+@Component
 public interface NoteServiceInterface {
 
     void insert(Note note);

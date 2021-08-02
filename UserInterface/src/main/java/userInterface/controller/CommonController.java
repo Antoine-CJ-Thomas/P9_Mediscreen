@@ -7,9 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import userInterface.model.Note;
+import userInterface.model.Patient;
 import userInterface.service.PatientService;
 import userInterface.service.PatientServiceInterface;
 import userInterface.service.NoteServiceInterface;
+import userInterface.service.ReportServiceInterface;
+
+import java.util.List;
 
 @Controller
 public class CommonController {
@@ -22,6 +27,9 @@ public class CommonController {
     @Autowired
     private NoteServiceInterface noteServiceInterface;
 
+    @Autowired
+    private ReportServiceInterface reportServiceInterface;
+
     public CommonController() {
         logger.info("CommonController()");
 
@@ -29,11 +37,14 @@ public class CommonController {
     }
 
     public CommonController(PatientServiceInterface patientServiceInterface,
-                            NoteServiceInterface noteServiceInterface) {
+                            NoteServiceInterface noteServiceInterface,
+                            ReportServiceInterface reportServiceInterface) {
+
         logger.info("CommonController(" + patientServiceInterface + ")");
 
         this.patientServiceInterface = patientServiceInterface;
         this.noteServiceInterface = noteServiceInterface;
+        this.reportServiceInterface = reportServiceInterface;
     }
 
     @GetMapping("/patient/list")
@@ -49,8 +60,12 @@ public class CommonController {
     public String openPatient(@RequestParam int patientId, Model model) {
         logger.info("openPatient(" + patientId + "," + model + ")");
 
-        model.addAttribute("patient", patientServiceInterface.select(patientId));
-        model.addAttribute("noteList", noteServiceInterface.list(patientId));
+        Patient patient = patientServiceInterface.select(patientId);
+        List<Note> noteList = noteServiceInterface.list(patientId);
+
+        model.addAttribute("patient", patient);
+        model.addAttribute("noteList", noteList);
+        model.addAttribute("diabetesReport", reportServiceInterface.getDiabetesReport(patient, noteList));
 
         return "/patient_open.html";
     }

@@ -1,24 +1,32 @@
+userInterface/service/PatientServiceInterface.java
+ userInterface.service.PatientServiceInterface
+userInterface/model/DiabetesReport.java
+ userInterface.model.DiabetesReport
 userInterface/model/Patient.java
  userInterface.model.Patient
-userInterface/proxy/PatientProxy.java
- userInterface.proxy.PatientProxy
 userInterface/Application.java
  userInterface.Application
 userInterface/proxy/NoteProxy.java
  userInterface.proxy.NoteProxy
-userInterface/service/PatientService.java
- userInterface.service.PatientService
-userInterface/service/PatientServiceInterface.java
- userInterface.service.PatientServiceInterface
-userInterface/service/NoteServiceInterface.java
- userInterface.service.NoteServiceInterface
-userInterface/service/NoteService.java
- userInterface.service.NoteService
-userInterface/model/Note.java
- userInterface.model.Note
-userInterface/controller/PatientController.java
- userInterface.controller.PatientController
-userInterface/controller/NoteController.java
- userInterface.controller.NoteController
+userInterface/proxy/PatientProxy.java
+ userInterface.proxy.PatientProxy
 userInterface/controller/CommonController.java
  userInterface.controller.CommonController
+userInterface/controller/NoteController.java
+ userInterface.controller.NoteController
+userInterface/service/ReportService.java
+ userInterface.service.ReportService
+userInterface/service/NoteServiceInterface.java
+ userInterface.service.NoteServiceInterface
+userInterface/controller/PatientController.java
+ userInterface.controller.PatientController
+userInterface/service/NoteService.java
+ userInterface.service.NoteService
+userInterface/service/ReportServiceInterface.java
+ userInterface.service.ReportServiceInterface
+userInterface/model/Note.java
+ userInterface.model.Note
+userInterface/proxy/ReportProxy.java
+ userInterface.proxy.ReportProxy
+userInterface/service/PatientService.java
+ userInterface.service.PatientService
