@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.service.PatientServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-29T17:53:37" hostname="PC-ANTOINE" time="0.019">
+<testsuite name="unit.service.PatientServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-05T09:16:02" hostname="PC-ANTOINE" time="0.02">
   <properties/>
   <testcase name="delete()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
   <testcase name="insert()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
   <testcase name="select()" classname="unit.service.PatientServiceUnitTest" time="0.009"/>
   <testcase name="update()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
-  <testcase name="list()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
-  <system-out><![CDATA[2021-07-29 19:53:37.027  INFO 13784 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 2084645502)
-2021-07-29 19:53:37.028  INFO 13784 --- [    Test worker] PatientService                           : delete(1)
-2021-07-29 19:53:37.030  INFO 13784 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1187918086)
-2021-07-29 19:53:37.031  INFO 13784 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 813286808)
-2021-07-29 19:53:37.033  INFO 13784 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1090561695)
-2021-07-29 19:53:37.040  INFO 13784 --- [    Test worker] PatientService                           : select(1)
-2021-07-29 19:53:37.043  INFO 13784 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1368271513)
-2021-07-29 19:53:37.043  INFO 13784 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 1365138734)
-2021-07-29 19:53:37.044  INFO 13784 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 882238828)
-2021-07-29 19:53:37.045  INFO 13784 --- [    Test worker] PatientService                           : list()
+  <testcase name="list()" classname="unit.service.PatientServiceUnitTest" time="0.003"/>
+  <system-out><![CDATA[2021-08-05 11:16:02.400  INFO 11788 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 609997934)
+2021-08-05 11:16:02.401  INFO 11788 --- [    Test worker] PatientService                           : delete(1)
+2021-08-05 11:16:02.403  INFO 11788 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1102556779)
+2021-08-05 11:16:02.404  INFO 11788 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 149790594)
+2021-08-05 11:16:02.405  INFO 11788 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 32841944)
+2021-08-05 11:16:02.412  INFO 11788 --- [    Test worker] PatientService                           : select(1)
+2021-08-05 11:16:02.414  INFO 11788 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 711901113)
+2021-08-05 11:16:02.415  INFO 11788 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 2043219932)
+2021-08-05 11:16:02.417  INFO 11788 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 239381551)
+2021-08-05 11:16:02.418  INFO 11788 --- [    Test worker] PatientService                           : list()
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

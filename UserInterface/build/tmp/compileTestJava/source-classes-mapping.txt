@@ -1,20 +1,20 @@
-integration/NoteControllerIntegrationTest.java
- integration.NoteControllerIntegrationTest
-unit/controller/NoteControllerUnitTest.java
- unit.controller.NoteControllerUnitTest
-unit/model/PatientUnitTest.java
- unit.model.PatientUnitTest
-unit/controller/CommonControllerIUnitTest.java
- unit.controller.CommonControllerIUnitTest
-unit/service/PatientServiceUnitTest.java
- unit.service.PatientServiceUnitTest
 unit/controller/PatientControllerIUnitTest.java
  unit.controller.PatientControllerIUnitTest
-unit/service/NoteServiceUnitTest.java
- unit.service.NoteServiceUnitTest
 integration/CommonControllerIntegrationTest.java
  integration.CommonControllerIntegrationTest
-integration/PatientControllerIntegrationTest.java
- integration.PatientControllerIntegrationTest
 unit/model/NoteUnitTest.java
  unit.model.NoteUnitTest
+unit/model/PatientUnitTest.java
+ unit.model.PatientUnitTest
+unit/service/NoteServiceUnitTest.java
+ unit.service.NoteServiceUnitTest
+integration/NoteControllerIntegrationTest.java
+ integration.NoteControllerIntegrationTest
+unit/controller/CommonControllerIUnitTest.java
+ unit.controller.CommonControllerIUnitTest
+integration/PatientControllerIntegrationTest.java
+ integration.PatientControllerIntegrationTest
+unit/controller/NoteControllerUnitTest.java
+ unit.controller.NoteControllerUnitTest
+unit/service/PatientServiceUnitTest.java
+ unit.service.PatientServiceUnitTest

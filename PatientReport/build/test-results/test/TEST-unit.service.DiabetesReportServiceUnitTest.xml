@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.service.DiabetesReportServiceUnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-05T08:49:51" hostname="PC-ANTOINE" time="0.214">
+<testsuite name="unit.service.DiabetesReportServiceUnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-05T09:09:38" hostname="PC-ANTOINE" time="0.19">
   <properties/>
-  <testcase name="findMedicalTriggerTerm()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.116"/>
-  <testcase name="setGeneralTriggerTerm()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.006"/>
-  <testcase name="evaluateRiskLevel()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.092"/>
+  <testcase name="findMedicalTriggerTerm()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.097"/>
+  <testcase name="setGeneralTriggerTerm()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.009"/>
+  <testcase name="evaluateRiskLevel()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.083"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

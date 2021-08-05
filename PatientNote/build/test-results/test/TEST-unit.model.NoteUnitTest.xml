@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.model.NoteUnitTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-07-29T17:52:15" hostname="PC-ANTOINE" time="0.007">
+<testsuite name="unit.model.NoteUnitTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-08-05T09:24:33" hostname="PC-ANTOINE" time="0.004">
   <properties/>
-  <testcase name="setAndGetCommentary()" classname="unit.model.NoteUnitTest" time="0.0"/>
-  <testcase name="setAndGetId()" classname="unit.model.NoteUnitTest" time="0.001"/>
-  <testcase name="setAndGetDate()" classname="unit.model.NoteUnitTest" time="0.004"/>
+  <testcase name="setAndGetCommentary()" classname="unit.model.NoteUnitTest" time="0.001"/>
+  <testcase name="setAndGetId()" classname="unit.model.NoteUnitTest" time="0.0"/>
+  <testcase name="setAndGetDate()" classname="unit.model.NoteUnitTest" time="0.001"/>
   <testcase name="setAndGetPatientId()" classname="unit.model.NoteUnitTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

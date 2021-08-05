@@ -1,8 +1,8 @@
-unit/model/DiabetesReportUnitTest.java
- unit.model.DiabetesReportUnitTest
-unit/service/DiabetesReportServiceUnitTest.java
- unit.service.DiabetesReportServiceUnitTest
 unit/controller/DiabetesReportControllerUnitTest.java
  unit.controller.DiabetesReportControllerUnitTest
+unit/service/DiabetesReportServiceUnitTest.java
+ unit.service.DiabetesReportServiceUnitTest
+unit/model/DiabetesReportUnitTest.java
+ unit.model.DiabetesReportUnitTest
 integration/DiabetesReportControllerIntegrationTest.java
  integration.DiabetesReportControllerIntegrationTest

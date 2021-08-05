@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.controller.PatientControllerIUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-29T17:53:07" hostname="PC-ANTOINE" time="0.069">
+<testsuite name="unit.controller.PatientControllerIUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-05T09:09:52" hostname="PC-ANTOINE" time="0.037">
   <properties/>
   <testcase name="delete()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
-  <testcase name="insert()" classname="unit.controller.PatientControllerIUnitTest" time="0.057"/>
-  <testcase name="update()" classname="unit.controller.PatientControllerIUnitTest" time="0.003"/>
-  <testcase name="editPatient()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
-  <testcase name="addPatient()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
-  <system-out><![CDATA[2021-07-29 19:53:07.469  INFO 2100 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 885506285)
-2021-07-29 19:53:07.469  INFO 2100 --- [    Test worker] PatientController                        : delete(1,Mock for Model, hashCode: 1553182989)
-2021-07-29 19:53:07.471  INFO 2100 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1982084283)
-2021-07-29 19:53:07.526  INFO 2100 --- [    Test worker] PatientController                        : insert(,Mock for Patient, hashCode: 1969557532,Mock for BindingResult, hashCode: 2001807737,Mock for Model, hashCode: 750703021)
-2021-07-29 19:53:07.529  INFO 2100 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1892924315)
-2021-07-29 19:53:07.530  INFO 2100 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 770416749,Mock for BindingResult, hashCode: 1401900616,Mock for Model, hashCode: 157736493)
-2021-07-29 19:53:07.533  INFO 2100 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1686418425)
-2021-07-29 19:53:07.533  INFO 2100 --- [    Test worker] PatientController                        : editPatient(1,Mock for Model, hashCode: 345804748)
-2021-07-29 19:53:07.535  INFO 2100 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1036549657)
-2021-07-29 19:53:07.536  INFO 2100 --- [    Test worker] PatientController                        : addPatient(Mock for Patient, hashCode: 39864379,Mock for Model, hashCode: 1136277749)
+  <testcase name="insert()" classname="unit.controller.PatientControllerIUnitTest" time="0.03"/>
+  <testcase name="update()" classname="unit.controller.PatientControllerIUnitTest" time="0.001"/>
+  <testcase name="editPatient()" classname="unit.controller.PatientControllerIUnitTest" time="0.001"/>
+  <testcase name="addPatient()" classname="unit.controller.PatientControllerIUnitTest" time="0.001"/>
+  <system-out><![CDATA[2021-08-05 11:09:52.755  INFO 11756 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1999811586)
+2021-08-05 11:09:52.756  INFO 11756 --- [    Test worker] PatientController                        : delete(1,Mock for Model, hashCode: 571402330)
+2021-08-05 11:09:52.757  INFO 11756 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1198129758)
+2021-08-05 11:09:52.786  INFO 11756 --- [    Test worker] PatientController                        : insert(,Mock for Patient, hashCode: 1306221544,Mock for BindingResult, hashCode: 1149919728,Mock for Model, hashCode: 1824693854)
+2021-08-05 11:09:52.788  INFO 11756 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1657368540)
+2021-08-05 11:09:52.788  INFO 11756 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 1968864374,Mock for BindingResult, hashCode: 1657276108,Mock for Model, hashCode: 436225189)
+2021-08-05 11:09:52.790  INFO 11756 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 866025398)
+2021-08-05 11:09:52.790  INFO 11756 --- [    Test worker] PatientController                        : editPatient(1,Mock for Model, hashCode: 352390271)
+2021-08-05 11:09:52.791  INFO 11756 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 928880245)
+2021-08-05 11:09:52.791  INFO 11756 --- [    Test worker] PatientController                        : addPatient(Mock for Patient, hashCode: 794872151,Mock for Model, hashCode: 1875079362)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
