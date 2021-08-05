@@ -34,24 +34,24 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
 
         diabetesReport.setAge((int) java.time.temporal.ChronoUnit.YEARS.between(birthDate, today));
 
-        if (diabetesReport.getAge() >= 30) {
-
-            diabetesReport.getGeneralTriggerTermList().add("A plus de 30ans");
-        }
-
-        else {
+        if (diabetesReport.getAge() < 30) {
 
             diabetesReport.getGeneralTriggerTermList().add("A moins de 30ans");
         }
 
-        if (diabetesReport.getGender().equals("M")) {
+        else {
 
-            diabetesReport.getGeneralTriggerTermList().add("Est un homme");
+            diabetesReport.getGeneralTriggerTermList().add("A plus de 30ans");
         }
 
-        else if (diabetesReport.getGender().equals("F")) {
+        if (diabetesReport.getGender().equals("F")) {
 
             diabetesReport.getGeneralTriggerTermList().add("Est une femme");
+        }
+
+        else if (diabetesReport.getGender().equals("M")) {
+
+            diabetesReport.getGeneralTriggerTermList().add("Est un homme");
         }
     }
 
@@ -81,19 +81,6 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
 
         if (diabetesReport.getAge() < 30) {
 
-            if (diabetesReport.getGender() == "M") {
-
-                if (diabetesReport.getMedicalTriggerTermList().size() >= 3) {
-
-                    diabetesReport.setRiskLevel("En Danger");
-                }
-
-                if (diabetesReport.getMedicalTriggerTermList().size() >= 5) {
-
-                    diabetesReport.setRiskLevel("Apparition précoce");
-                }
-            }
-
             if (diabetesReport.getGender() == "F") {
 
                 if (diabetesReport.getMedicalTriggerTermList().size() >= 4) {
@@ -102,6 +89,19 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
                 }
 
                 if (diabetesReport.getMedicalTriggerTermList().size() >= 7) {
+
+                    diabetesReport.setRiskLevel("Apparition précoce");
+                }
+            }
+
+            else if (diabetesReport.getGender() == "M") {
+
+                if (diabetesReport.getMedicalTriggerTermList().size() >= 3) {
+
+                    diabetesReport.setRiskLevel("En Danger");
+                }
+
+                if (diabetesReport.getMedicalTriggerTermList().size() >= 5) {
 
                     diabetesReport.setRiskLevel("Apparition précoce");
                 }

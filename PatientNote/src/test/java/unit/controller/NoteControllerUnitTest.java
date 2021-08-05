@@ -10,14 +10,14 @@ import patientNote.service.NoteServiceInterface;
 
 public class NoteControllerUnitTest {
 
-    private NoteController patientController;
+    private NoteController noteController;
 
     private NoteServiceInterface noteServiceInterface = Mockito.mock(NoteServiceInterface.class);
 
     @BeforeEach
     public void beforeEach() {
 
-        patientController = new NoteController(noteServiceInterface);
+        noteController = new NoteController(noteServiceInterface);
     }
 
     @Test
@@ -27,7 +27,7 @@ public class NoteControllerUnitTest {
         Note note = Mockito.mock(Note.class);
 
         //WHEN
-        patientController.insert(note);
+        noteController.insert(note);
 
         //THEN
         Mockito.verify(noteServiceInterface, Mockito.times(1)).insert(note);
@@ -40,7 +40,7 @@ public class NoteControllerUnitTest {
         String noteId = "noteId";
 
         //WHEN
-        patientController.select(noteId);
+        noteController.select(noteId);
 
         //THEN
         Mockito.verify(noteServiceInterface, Mockito.times(1)).select(noteId);
@@ -53,7 +53,7 @@ public class NoteControllerUnitTest {
         int patientId = 1;
 
         //WHEN
-        patientController.list(patientId);
+        noteController.list(patientId);
 
         //THEN
         Mockito.verify(noteServiceInterface, Mockito.times(1)).list(patientId);
@@ -67,7 +67,7 @@ public class NoteControllerUnitTest {
         Note note = Mockito.mock(Note.class);
 
         //WHEN
-        patientController.update(noteId, note);
+        noteController.update(noteId, note);
 
         //THEN
         Mockito.verify(noteServiceInterface, Mockito.times(1)).update(noteId, note);
@@ -80,7 +80,7 @@ public class NoteControllerUnitTest {
         String noteId = "noteId";
 
         //WHEN
-        patientController.delete(noteId);
+        noteController.delete(noteId);
 
         //THEN
         Mockito.verify(noteServiceInterface, Mockito.times(1)).delete(noteId);

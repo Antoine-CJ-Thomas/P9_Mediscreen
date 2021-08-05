@@ -10,7 +10,7 @@ import java.util.Scanner;
 @Component
 public class FileLineReader implements FileLineReaderInterface {
 
-    private String filepath = "PatientReport/src/main/resources/triggerTerm.txt";
+    private String filepath = "build/resources/main/triggerTerm.txt";
 
     public FileLineReader() {
 

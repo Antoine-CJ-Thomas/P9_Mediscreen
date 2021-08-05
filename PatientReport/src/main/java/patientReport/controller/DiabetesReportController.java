@@ -36,16 +36,13 @@ public class DiabetesReportController {
     }
 
     @PostMapping("/assess/diabetes")
-    public String assessDiabetes(DiabetesReport diabetesReport,
-                                 @RequestParam String gender,
+    public String assessDiabetes(@RequestParam String gender,
                                  @RequestParam List<String> commentaryList,
                                  @RequestBody Date birthDate) throws JsonProcessingException {
 
-        logger.info("assessDiabetes(" + diabetesReport + "," + gender + "," + birthDate + "," + commentaryList + ")");
+        logger.info("assessDiabetes(" + gender + "," + birthDate + "," + commentaryList + ")");
 
-        diabetesReport.setGender(gender);
-        diabetesReport.setBirthDate(birthDate);
-        diabetesReport.setCommentaryList(commentaryList);
+        DiabetesReport diabetesReport = new DiabetesReport(gender, birthDate, commentaryList);
 
         diabetesReportServiceInterface.setGeneralTriggerTerm(diabetesReport);
         diabetesReportServiceInterface.findMedicalTriggerTerm(diabetesReport);
