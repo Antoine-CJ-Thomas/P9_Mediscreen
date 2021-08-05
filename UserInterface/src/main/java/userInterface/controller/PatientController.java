@@ -44,12 +44,12 @@ public class PatientController {
 
         model.addAttribute("patient", patient);
 
-        return "/patient_add.html";
+        return "patient_add.html";
     }
 
     @PostMapping("/insert")
     public String insert(@Valid Patient patient, BindingResult bindingResult, Model model) {
-        logger.info("insert(" + "," + patient + "," + bindingResult + "," + model + ")");
+        logger.info("insert(" + patient + "," + bindingResult + "," + model + ")");
 
         if (!bindingResult.hasErrors()) {
 
@@ -62,7 +62,7 @@ public class PatientController {
 
             model.addAttribute("user", patient);
 
-            return "/patient_add.html";
+            return "patient_add.html";
         }
     }
 
@@ -72,7 +72,7 @@ public class PatientController {
 
         model.addAttribute("patient", patientServiceInterface.select(patientId));
 
-        return "/patient_edit.html";
+        return "patient_edit.html";
     }
 
     @PostMapping("/update")
@@ -90,7 +90,7 @@ public class PatientController {
 
         else {
 
-            return "/patient_edit.html";
+            return "patient_edit.html";
         }
     }
 

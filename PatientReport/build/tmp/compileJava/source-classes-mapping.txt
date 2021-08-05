@@ -1,5 +1,5 @@
-patientReport/service/DiabetesReportService.java
- patientReport.service.DiabetesReportService
+patientReport/Application.java
+ patientReport.Application
 patientReport/service/DiabetesReportServiceInterface.java
  patientReport.service.DiabetesReportServiceInterface
 patientReport/util/FileLineReader.java
@@ -8,7 +8,7 @@ patientReport/model/DiabetesReport.java
  patientReport.model.DiabetesReport
 patientReport/util/FileLineReaderInterface.java
  patientReport.util.FileLineReaderInterface
-patientReport/Application.java
- patientReport.Application
+patientReport/service/DiabetesReportService.java
+ patientReport.service.DiabetesReportService
 patientReport/controller/DiabetesReportController.java
  patientReport.controller.DiabetesReportController

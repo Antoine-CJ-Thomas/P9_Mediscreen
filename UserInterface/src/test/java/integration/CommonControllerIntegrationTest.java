@@ -10,6 +10,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import userInterface.Application;
+import userInterface.model.Patient;
+import userInterface.proxy.PatientProxy;
 
 
 @SpringBootTest(classes= Application.class)
@@ -20,6 +22,9 @@ public class CommonControllerIntegrationTest {
 
     private MockMvc mockMvc;
     private MvcResult mvcResult;
+
+    @Autowired
+    private PatientProxy patientProxy;
 
     @BeforeEach
     public void beforeEach() {
@@ -43,11 +48,11 @@ public class CommonControllerIntegrationTest {
     public void open() throws Exception {
 
         // GIVEN
-        int patientId = 1;
+        Patient patient = patientProxy.list().get(0);
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/open")
-                .param("patientId", String.valueOf(patientId))).andReturn();
+                .param("patientId", String.valueOf(patient.getId()))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);

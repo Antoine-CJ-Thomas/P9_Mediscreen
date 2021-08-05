@@ -36,13 +36,8 @@ public class DiabetesReportController {
     }
 
     @PostMapping("/assess/diabetes")
-    public String assessDiabetes(@RequestParam String gender,
-                                 @RequestParam List<String> commentaryList,
-                                 @RequestBody Date birthDate) throws JsonProcessingException {
-
-        logger.info("assessDiabetes(" + gender + "," + birthDate + "," + commentaryList + ")");
-
-        DiabetesReport diabetesReport = new DiabetesReport(gender, birthDate, commentaryList);
+    public String assessDiabetes(@RequestBody DiabetesReport diabetesReport) throws JsonProcessingException {
+        logger.info("assessDiabetes(" + diabetesReport + ")");
 
         diabetesReportServiceInterface.setGeneralTriggerTerm(diabetesReport);
         diabetesReportServiceInterface.findMedicalTriggerTerm(diabetesReport);

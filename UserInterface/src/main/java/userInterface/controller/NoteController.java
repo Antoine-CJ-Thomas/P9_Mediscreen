@@ -40,18 +40,18 @@ public class NoteController {
     }
 
     @GetMapping("/add")
-    public String addNote(@RequestParam int patientId, Note note, Model model) {
-        logger.info("addNote(" + patientId + "," + note + "," + model + ")");
+    public String add(@RequestParam int patientId, Note note, Model model) {
+        logger.info("add(" + patientId + "," + note + "," + model + ")");
 
         model.addAttribute("patientId", patientId);
         model.addAttribute("note", note);
 
-        return "/note_add.html";
+        return "note_add.html";
     }
 
     @PostMapping("/insert")
     public String insert(@Valid Note note, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
-        logger.info("insert(" + "," + note + "," + bindingResult + "," + redirectAttributes + "," + model + ")");
+        logger.info("insert(" + note + "," + bindingResult + "," + redirectAttributes + "," + model + ")");
 
         if (!bindingResult.hasErrors()) {
 
@@ -68,7 +68,7 @@ public class NoteController {
 
             model.addAttribute("note", note);
 
-            return "/note_add.html";
+            return "note_add.html";
         }
     }
 
@@ -79,7 +79,7 @@ public class NoteController {
         model.addAttribute("patientId", patientId);
         model.addAttribute("note", noteServiceInterface.select(noteId));
 
-        return "/note_edit.html";
+        return "note_edit.html";
     }
 
     @PostMapping("/update")
@@ -97,7 +97,7 @@ public class NoteController {
 
         else {
 
-            return "/note_edit.html";
+            return "note_edit.html";
         }
     }
 

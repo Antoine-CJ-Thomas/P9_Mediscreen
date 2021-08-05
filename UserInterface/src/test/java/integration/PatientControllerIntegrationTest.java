@@ -22,13 +22,13 @@ import java.util.List;
 public class PatientControllerIntegrationTest {
 
     @Autowired
-    private PatientProxy patientProxy;
-
-    @Autowired
     private WebApplicationContext webApplicationContext;
 
     private MockMvc mockMvc;
     private MvcResult mvcResult;
+
+    @Autowired
+    private PatientProxy patientProxy;
 
     private static String firstName = "testFirstName";
     private static String lastName = "testLastName";
@@ -36,6 +36,7 @@ public class PatientControllerIntegrationTest {
     private static String gender = "M";
     private static String address = "testAddress";
     private static String phoneNumber = "0123456789";
+    private static String phoneNumberModified = "0123456789";
 
     @BeforeEach
     public void beforeEach() {
@@ -80,11 +81,22 @@ public class PatientControllerIntegrationTest {
     public void edit() throws Exception {
 
         // GIVEN
-        Integer patientId = 1;
+        Patient patient = null;
+
+        for (Patient p : patientProxy.list()) {
+
+            if (p.getFirstName().equals(firstName)) {
+
+                if (p.getLastName().equals(lastName)) {
+
+                    patient = p;
+                }
+            }
+        }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/edit")
-                .param("patientId", String.valueOf(patientId))).andReturn();
+                .param("patientId", String.valueOf(patient.getId()))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -95,26 +107,28 @@ public class PatientControllerIntegrationTest {
     public void update() throws Exception {
 
         // GIVEN
-        int patientId = 0;
-        List<Patient> patientList = patientProxy.list();
+        Patient patient = null;
 
-        for (Patient p : patientList) {
+        for (Patient p : patientProxy.list()) {
 
-            if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
+            if (p.getFirstName().equals(firstName)) {
 
-                patientId = p.getId();
+                if (p.getLastName().equals(lastName)) {
+
+                    patient = p;
+                }
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/patient/update")
-                .param("patientId", String.valueOf(patientId))
+                .param("patientId", String.valueOf(patient.getId()))
                 .param("firstName", firstName)
                 .param("lastName", lastName)
                 .param("birthDate", birthDate)
                 .param("gender", gender)
                 .param("address", address)
-                .param("phoneNumber", "9876543210")).andReturn();
+                .param("phoneNumber", phoneNumberModified)).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -125,20 +139,22 @@ public class PatientControllerIntegrationTest {
     public void delete() throws Exception {
 
         // GIVEN
-        int patientId = 0;
-        List<Patient> patientList = patientProxy.list();
+        Patient patient = null;
 
-        for (Patient p : patientList) {
+        for (Patient p : patientProxy.list()) {
 
-            if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
+            if (p.getFirstName().equals(firstName)) {
 
-                patientId = p.getId();
+                if (p.getLastName().equals(lastName)) {
+
+                    patient = p;
+                }
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/delete")
-                .param("patientId", String.valueOf(patientId))).andReturn();
+                .param("patientId", String.valueOf(patient.getId()))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);

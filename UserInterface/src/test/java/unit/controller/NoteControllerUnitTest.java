@@ -23,7 +23,7 @@ public class NoteControllerUnitTest {
     }
 
     @Test
-    public void addNote() {
+    public void add() {
 
         //GIVEN
         int patientNote = 1;
@@ -31,7 +31,7 @@ public class NoteControllerUnitTest {
         Model model = Mockito.mock(Model.class);
 
         //WHEN
-        noteController.addNote(patientNote, note, model);
+        noteController.add(patientNote, note, model);
 
         //THEN
         Mockito.verify(model, Mockito.times(1)).addAttribute("note", note);

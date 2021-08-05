@@ -1,5 +1,7 @@
 package patientReport.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import patientReport.model.DiabetesReport;
@@ -13,21 +15,26 @@ import java.util.Locale;
 @Service
 public class DiabetesReportService implements DiabetesReportServiceInterface {
 
+    private Logger logger = LogManager.getLogger(getClass().getSimpleName());
+
     @Autowired
     private FileLineReaderInterface fileLineReaderInterface;
 
     public DiabetesReportService() {
+        logger.info("DiabetesReportService()");
 
         fileLineReaderInterface = new FileLineReader();
     }
 
     public DiabetesReportService(FileLineReaderInterface fileLineReaderInterface) {
+        logger.info("DiabetesReportService(" + fileLineReaderInterface + ")");
 
         this.fileLineReaderInterface = fileLineReaderInterface;
     }
 
     @Override
     public void setGeneralTriggerTerm(DiabetesReport diabetesReport) {
+        logger.info("setGeneralTriggerTerm(" + diabetesReport + ")");
 
         LocalDate birthDate = diabetesReport.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate today = LocalDate.now();
@@ -57,6 +64,7 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
 
     @Override
     public void findMedicalTriggerTerm(DiabetesReport diabetesReport) {
+        logger.info("findMedicalTriggerTerm(" + diabetesReport + ")");
 
         for (String c : diabetesReport.getCommentaryList()) {
 
@@ -76,6 +84,7 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
 
     @Override
     public void evaluateRiskLevel(DiabetesReport diabetesReport) {
+        logger.info("evaluateRiskLevel(" + diabetesReport + ")");
 
         diabetesReport.setRiskLevel("Aucun risque");
 

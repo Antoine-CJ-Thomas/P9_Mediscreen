@@ -1,7 +1,5 @@
 package userInterface.model;
 
-import org.bson.types.ObjectId;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
@@ -17,7 +15,6 @@ public class Note {
     @NotNull
     private Integer patientId;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @NotBlank

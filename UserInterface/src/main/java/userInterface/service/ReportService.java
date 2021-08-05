@@ -9,10 +9,7 @@ import userInterface.model.Note;
 import userInterface.model.Patient;
 import userInterface.proxy.ReportProxy;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -49,7 +46,8 @@ public class ReportService implements ReportServiceInterface {
                 commentaryList.add(n.getCommentary());
             }
 
-            diabetesReport = reportProxy.assessDiabetes(patient.getGender(), commentaryList, patient.getBirthDate());
+            diabetesReport = reportProxy.assessDiabetes(
+                    new DiabetesReport(patient.getGender(), patient.getBirthDate(), commentaryList));
         }
 
         return diabetesReport;

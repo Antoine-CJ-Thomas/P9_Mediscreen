@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-@FeignClient(name = "report-api", url = "http://localhost:8083/assess")
+@FeignClient(name = "patientReport-api", url = "http://localhost:8083/assess")
 public interface ReportProxy {
 
     @PostMapping(value = "/diabetes", produces = "application/json")
-    DiabetesReport assessDiabetes(@RequestParam String gender, @RequestParam List<String> commentaryList, @RequestBody Date birthDate);
+    DiabetesReport assessDiabetes(@RequestBody DiabetesReport diabetesReport);
 }

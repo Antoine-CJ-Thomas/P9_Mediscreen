@@ -53,7 +53,7 @@ public class CommonController {
 
         model.addAttribute("patientList", patientServiceInterface.list());
 
-        return "/patient_list.html";
+        return "patient_list.html";
     }
 
     @GetMapping("/patient/open")
@@ -67,6 +67,6 @@ public class CommonController {
         model.addAttribute("noteList", noteList);
         model.addAttribute("diabetesReport", reportServiceInterface.getDiabetesReport(patient, noteList));
 
-        return "/patient_open.html";
+        return "patient_open.html";
     }
 }

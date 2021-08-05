@@ -8,7 +8,7 @@ import userInterface.model.Note;
 import java.util.List;
 
 @Component
-@FeignClient(name = "note-api", url = "http://localhost:8082/note")
+@FeignClient(name = "patientNote-api", url = "http://localhost:8082/note")
 public interface NoteProxy {
 
     @PostMapping(value = "/insert", produces = "application/json")

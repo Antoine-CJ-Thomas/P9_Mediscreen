@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import patientInformation.Application;
 import patientInformation.model.Patient;
+import patientInformation.repository.PatientRepository;
 
 import java.sql.Date;
 import java.util.List;
@@ -30,7 +31,9 @@ public class PatientControllerIntegrationTest {
     private MockMvc mockMvc;
     private MvcResult mvcResult;
 
-    private static Integer id;
+    @Autowired
+    private PatientRepository patientRepository;
+
     private static String firstName = "testFirstName";
     private static String lastName = "testLastName";
     private static Date birthDate = new Date(System.currentTimeMillis());
@@ -65,21 +68,11 @@ public class PatientControllerIntegrationTest {
     public void list() throws Exception {
 
         // GIVEN
-        List<Patient> patientList;
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/list")).andReturn();
 
         // THEN
-        patientList = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), new TypeReference<List<Patient>>(){});
-
-        for (Patient p : patientList) {
-
-            if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
-
-                id = p.getId();
-            }
-        }
 
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
     }
@@ -89,6 +82,18 @@ public class PatientControllerIntegrationTest {
     public void select() throws Exception {
 
         // GIVEN
+        Integer id = null;
+
+        for (Patient p : patientRepository.findAll()) {
+
+            if (p.getFirstName().equals(firstName)) {
+
+                if (p.getLastName().equals(lastName)) {
+
+                    id = p.getId();
+                }
+            }
+        }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/select")
@@ -103,7 +108,19 @@ public class PatientControllerIntegrationTest {
     public void update() throws Exception {
 
         // GIVEN
+        Integer id = null;
         Patient patient = new Patient(firstName, lastName, birthDate, gender, address, "9876543210");
+
+        for (Patient p : patientRepository.findAll()) {
+
+            if (p.getFirstName().equals(firstName)) {
+
+                if (p.getLastName().equals(lastName)) {
+
+                    id = p.getId();
+                }
+            }
+        }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.put("/patient/update")
@@ -120,6 +137,18 @@ public class PatientControllerIntegrationTest {
     public void delete() throws Exception {
 
         // GIVEN
+        Integer id = null;
+
+        for (Patient p : patientRepository.findAll()) {
+
+            if (p.getFirstName().equals(firstName)) {
+
+                if (p.getLastName().equals(lastName)) {
+
+                    id = p.getId();
+                }
+            }
+        }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.delete("/patient/delete")

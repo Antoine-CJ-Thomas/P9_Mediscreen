@@ -21,8 +21,6 @@ import java.util.Date;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class NoteControllerIntegrationTest {
 
-    private ObjectMapper objectMapper = new ObjectMapper();
-
     @Autowired
     private WebApplicationContext webApplicationContext;
 
@@ -32,11 +30,10 @@ public class NoteControllerIntegrationTest {
     @Autowired
     private NoteProxy noteProxy;
 
-    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-    private static String patientId = "1";
-    private static String dateString = simpleDateFormat.format(new Date());
+    private static Integer patientId = 999999999;
+    private static Date date = new Date();
     private static String commentary = "commentary";
+    private static String commentaryModified = "commentaryModified";
 
     @BeforeEach
     public void beforeEach() {
@@ -66,8 +63,7 @@ public class NoteControllerIntegrationTest {
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/note/insert")
-                .param("patientId", patientId)
-                .param("date", dateString)
+                .param("patientId", String.valueOf(patientId))
                 .param("commentary", commentary)).andReturn();
 
         // THEN
@@ -79,14 +75,16 @@ public class NoteControllerIntegrationTest {
     public void edit() throws Exception {
 
         // GIVEN
-        int patientId = 1;
         String noteId = "";
 
         for (Note n : noteProxy.list(patientId)) {
 
-            if (n.getPatientId() == patientId && n.getCommentary().equals(commentary)) {
+            if (n.getPatientId().equals(patientId)) {
 
-                noteId = n.getId();
+                if (n.getCommentary().equals(commentary)) {
+
+                    noteId = n.getId();
+                }
             }
         }
 
@@ -104,23 +102,24 @@ public class NoteControllerIntegrationTest {
     public void update() throws Exception {
 
         // GIVEN
-        int patientId = 1;
-        String noteId = "";
+        Note note = null;
 
         for (Note n : noteProxy.list(patientId)) {
 
-            if (n.getPatientId() == patientId && n.getCommentary().equals(commentary)) {
+            if (n.getPatientId().equals(patientId)) {
 
-                noteId = n.getId();
+                if (n.getCommentary().equals(commentary)) {
+
+                    note = n;
+                }
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/note/update")
-                .param("noteId", noteId)
-                .param("patientId", String.valueOf(patientId))
-                .param("date", dateString)
-                .param("commentary", "commentaryModified")).andReturn();
+                .param("noteId", String.valueOf(note.getId()))
+                .param("patientId", String.valueOf(note.getPatientId()))
+                .param("commentary", commentaryModified)).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -131,14 +130,16 @@ public class NoteControllerIntegrationTest {
     public void delete() throws Exception {
 
         // GIVEN
-        int patientId = 1;
         String noteId = "";
 
         for (Note n : noteProxy.list(patientId)) {
 
-            if (n.getPatientId() == patientId && n.getCommentary().equals(commentary)) {
+            if (n.getPatientId().equals(patientId)) {
 
-                noteId = n.getId();
+                if (n.getCommentary().equals(commentaryModified)) {
+
+                    noteId = n.getId();
+                }
             }
         }
 

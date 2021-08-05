@@ -1,6 +1,5 @@
 package integration;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
@@ -17,7 +16,6 @@ import patientNote.model.Note;
 import patientNote.repository.NoteRepository;
 
 import java.util.Date;
-import java.util.List;
 
 @SpringBootTest(classes= Application.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -34,9 +32,10 @@ public class NoteControllerIntegrationTest {
     @Autowired
     private NoteRepository noteRepository;
 
-    private static Integer patientId = 1;
+    private static Integer patientId = 999999999;
     private static Date date = new Date();
     private static String commentary = "commentary";
+    private static String commentaryModified = "commentaryModified";
 
     @BeforeEach
     public void beforeEach() {
@@ -46,13 +45,13 @@ public class NoteControllerIntegrationTest {
 
     @Test
     @Order(1)
-    public void addNote() throws Exception {
+    public void insert() throws Exception {
 
         // GIVEN
         Note note = new Note(patientId, date, commentary);
 
         // WHEN
-        mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/note/add")
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/note/insert")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(note))).andReturn();
 
@@ -67,7 +66,8 @@ public class NoteControllerIntegrationTest {
         // GIVEN
 
         // WHEN
-        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/note/list")).andReturn();
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/note/list")
+                .param("patientId", String.valueOf(patientId))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -78,20 +78,25 @@ public class NoteControllerIntegrationTest {
     public void select() throws Exception {
 
         // GIVEN
-        int patientId = 1;
-        String noteId = "";
+        Note note = null;
 
         for (Note n : noteRepository.findByPatientId(patientId)) {
 
-            if (n.getPatientId() == patientId && n.getDate().equals(date) && n.getCommentary().equals(commentary)) {
+            if (n.getPatientId().equals(patientId)) {
 
-                noteId = n.getId();
+                if (n.getDate().equals(date)) {
+
+                    if (n.getCommentary().equals(commentary)) {
+
+                        note = n;
+                    }
+                }
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/note/select")
-                .param("id", noteId)).andReturn();
+                .param("id", note.getId())).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -102,23 +107,27 @@ public class NoteControllerIntegrationTest {
     public void update() throws Exception {
 
         // GIVEN
-        int patientId = 1;
-        String noteId = "";
-        Note note = new Note(patientId, date, "commentaryModified");
+        Note note = null;
 
         for (Note n : noteRepository.findByPatientId(patientId)) {
 
-            if (n.getPatientId() == patientId && n.getDate() == date && n.getCommentary().equals(commentary)) {
+            if (n.getPatientId().equals(patientId)) {
 
-                noteId = n.getId();
+                if (n.getDate().equals(date)) {
+
+                    if (n.getCommentary().equals(commentary)) {
+
+                        note = n;
+                    }
+                }
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.put("/note/update")
-                .param("id", String.valueOf(noteId))
+                .param("id", note.getId())
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(note))).andReturn();
+                .content(objectMapper.writeValueAsString(new Note(patientId, date, commentaryModified)))).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
@@ -129,20 +138,25 @@ public class NoteControllerIntegrationTest {
     public void delete() throws Exception {
 
         // GIVEN
-        int patientId = 1;
-        String noteId = "";
+        Note note = null;
 
         for (Note n : noteRepository.findByPatientId(patientId)) {
 
-            if (n.getPatientId() == patientId && n.getDate() == date && n.getCommentary().equals(commentary)) {
+            if (n.getPatientId().equals(patientId)) {
 
-                noteId = n.getId();
+                if (n.getDate().equals(date)) {
+
+                    if (n.getCommentary().equals(commentaryModified)) {
+
+                        note = n;
+                    }
+                }
             }
         }
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.delete("/note/delete")
-                .param("id", String.valueOf(noteId))).andReturn();
+                .param("id", note.getId())).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
