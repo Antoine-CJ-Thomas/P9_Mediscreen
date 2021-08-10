@@ -33,7 +33,29 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
     }
 
     @Override
-    public void setGeneralTriggerTerm(DiabetesReport diabetesReport) {
+    public String assessDiabetes(DiabetesReport diabetesReport) {
+        logger.info("assessDiabetes(" + diabetesReport + ")");
+
+        String message;
+
+        setGeneralTriggerTerm(diabetesReport);
+        findMedicalTriggerTerm(diabetesReport);
+        evaluateRiskLevel(diabetesReport);
+
+        if (diabetesReport.getRiskLevel() != null) {
+
+            message = "OK";
+        }
+
+        else {
+
+            message = "Invalid informations";
+        }
+
+        return message;
+    }
+
+    private void setGeneralTriggerTerm(DiabetesReport diabetesReport) {
         logger.info("setGeneralTriggerTerm(" + diabetesReport + ")");
 
         LocalDate birthDate = diabetesReport.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -62,8 +84,7 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
         }
     }
 
-    @Override
-    public void findMedicalTriggerTerm(DiabetesReport diabetesReport) {
+    private void findMedicalTriggerTerm(DiabetesReport diabetesReport) {
         logger.info("findMedicalTriggerTerm(" + diabetesReport + ")");
 
         for (String c : diabetesReport.getCommentaryList()) {
@@ -82,15 +103,14 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
         }
     }
 
-    @Override
-    public void evaluateRiskLevel(DiabetesReport diabetesReport) {
+    private void evaluateRiskLevel(DiabetesReport diabetesReport) {
         logger.info("evaluateRiskLevel(" + diabetesReport + ")");
 
         diabetesReport.setRiskLevel("Aucun risque");
 
         if (diabetesReport.getAge() < 30) {
 
-            if (diabetesReport.getGender() == "F") {
+            if (diabetesReport.getGender().equals("F")) {
 
                 if (diabetesReport.getMedicalTriggerTermList().size() >= 4) {
 
@@ -103,7 +123,7 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
                 }
             }
 
-            else if (diabetesReport.getGender() == "M") {
+            else if (diabetesReport.getGender().equals("M")) {
 
                 if (diabetesReport.getMedicalTriggerTermList().size() >= 3) {
 

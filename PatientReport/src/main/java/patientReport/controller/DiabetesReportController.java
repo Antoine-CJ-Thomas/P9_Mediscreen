@@ -1,6 +1,5 @@
 package patientReport.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,8 +9,8 @@ import patientReport.model.DiabetesReport;
 import patientReport.service.DiabetesReportService;
 import patientReport.service.DiabetesReportServiceInterface;
 
-import java.util.Date;
-import java.util.List;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @RestController
 public class DiabetesReportController {
@@ -26,22 +25,32 @@ public class DiabetesReportController {
     public DiabetesReportController() {
         logger.info("DiabetesReportController()");
 
+        objectMapper = new ObjectMapper();
         diabetesReportServiceInterface = new DiabetesReportService();
     }
 
-    public DiabetesReportController(DiabetesReportServiceInterface diabetesReportServiceInterface) {
-        logger.info("DiabetesReportController(" + diabetesReportServiceInterface + ")");
+    public DiabetesReportController(ObjectMapper objectMapper, DiabetesReportServiceInterface diabetesReportServiceInterface) {
+        logger.info("DiabetesReportController(" + objectMapper + "," + diabetesReportServiceInterface + ")");
 
+        this.objectMapper = objectMapper;
         this.diabetesReportServiceInterface = diabetesReportServiceInterface;
     }
 
     @PostMapping("/assess/diabetes")
-    public String assessDiabetes(@RequestBody DiabetesReport diabetesReport) throws JsonProcessingException {
+    public String assessDiabetes(@RequestBody DiabetesReport diabetesReport, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("assessDiabetes(" + diabetesReport + ")");
 
-        diabetesReportServiceInterface.setGeneralTriggerTerm(diabetesReport);
-        diabetesReportServiceInterface.findMedicalTriggerTerm(diabetesReport);
-        diabetesReportServiceInterface.evaluateRiskLevel(diabetesReport);
+        String message = diabetesReportServiceInterface.assessDiabetes(diabetesReport);
+
+        if (message.equals("OK")) {
+
+            httpServletResponse.setStatus(200);
+        }
+
+        else {
+
+            httpServletResponse.sendError(400, "Diabetes assessment could not be done");
+        }
 
         return objectMapper.writeValueAsString(diabetesReport);
     }

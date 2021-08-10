@@ -8,13 +8,13 @@ import java.util.List;
 @Component
 public interface NoteServiceInterface {
 
-    void insert(Note note);
+    String insert(Note note);
 
     Note select(String id);
 
     List<Note> list(int patientId);
 
-    void update(String id, Note note);
+    String update(String id, Note note);
 
-    void delete(String id);
+    String delete(String id);
 }

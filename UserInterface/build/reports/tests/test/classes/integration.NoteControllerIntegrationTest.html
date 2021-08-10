@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.954s</div>
+<div class="counter">0.282s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">add()</td>
-<td class="success">0.052s</td>
+<td class="success">0.042s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">delete()</td>
-<td class="success">0.064s</td>
+<td class="success">0.026s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">edit()</td>
-<td class="success">0.106s</td>
+<td class="success">0.046s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">insert()</td>
-<td class="success">0.677s</td>
+<td class="success">0.134s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">update()</td>
-<td class="success">0.055s</td>
+<td class="success">0.034s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -107,34 +107,34 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2021-08-05 17:02:52.768  INFO 12380 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.NoteControllerIntegrationTest], using SpringBootContextLoader
-2021-08-05 17:02:52.770  INFO 12380 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.NoteControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2021-08-05 17:02:52.778  INFO 12380 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2021-08-05 17:02:52.781  INFO 12380 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b6944b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@11cd10b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6d28ca3b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2e268630, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f0b4bc8, org.springframework.test.context.event.EventPublishingTestExecutionListener@28785fab, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32a218d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@192720de, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@c676d39, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6688fe19, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@347c8d0c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@14fd7a8d]
-2021-08-05 17:02:52.791  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:52.792  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:52.796  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
-2021-08-05 17:02:52.807  INFO 12380 --- [    Test worker] NoteController                           : add(999999999,userInterface.model.Note@17a912bf,{note=userInterface.model.Note@17a912bf, org.springframework.validation.BindingResult.note=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
-2021-08-05 17:02:52.846  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:52.847  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:52.851  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
-2021-08-05 17:02:52.968  INFO 12380 --- [    Test worker] NoteController                           : insert(userInterface.model.Note@2fbb4a91,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{},{note=userInterface.model.Note@2fbb4a91, org.springframework.validation.BindingResult.note=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
-2021-08-05 17:02:52.969  INFO 12380 --- [    Test worker] NoteService                              : insert(userInterface.model.Note@2fbb4a91)
-2021-08-05 17:02:53.524  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:53.524  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:53.527  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
-2021-08-05 17:02:53.554  INFO 12380 --- [    Test worker] NoteController                           : editNote(999999999,610bfd9b67a58b13768a9b83,{})
-2021-08-05 17:02:53.554  INFO 12380 --- [    Test worker] NoteService                              : select(610bfd9b67a58b13768a9b83)
-2021-08-05 17:02:53.631  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:53.631  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:53.633  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2021-08-05 17:02:53.652  INFO 12380 --- [    Test worker] NoteController                           : update(610bfd9b67a58b13768a9b83,userInterface.model.Note@69f29169,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{note=userInterface.model.Note@69f29169, org.springframework.validation.BindingResult.note=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
-2021-08-05 17:02:53.652  INFO 12380 --- [    Test worker] NoteService                              : update(610bfd9b67a58b13768a9b83,userInterface.model.Note@69f29169)
-2021-08-05 17:02:53.688  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:53.689  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:53.693  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
-2021-08-05 17:02:53.715  INFO 12380 --- [    Test worker] NoteController                           : delete(999999999,610bfd9b67a58b13768a9b83,{})
-2021-08-05 17:02:53.715  INFO 12380 --- [    Test worker] NoteService                              : delete(610bfd9b67a58b13768a9b83)
+<pre>2021-08-10 12:34:12.168  INFO 3088 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.NoteControllerIntegrationTest], using SpringBootContextLoader
+2021-08-10 12:34:12.169  INFO 3088 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.NoteControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-08-10 12:34:12.175  INFO 3088 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-08-10 12:34:12.177  INFO 3088 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@59d359d5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2db1895c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@69c396d8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47b27ef2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46c9a20, org.springframework.test.context.event.EventPublishingTestExecutionListener@25361898, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@50b63fb0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4278eba, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@647aa984, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@711d9f4b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@10376567, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@285d6b85]
+2021-08-10 12:34:12.183  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:12.184  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:12.187  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-10 12:34:12.193  INFO 3088 --- [    Test worker] NoteController                           : add(999999999,userInterface.model.Note@243ffe09,{note=userInterface.model.Note@243ffe09, org.springframework.validation.BindingResult.note=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-10 12:34:12.227  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:12.228  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:12.230  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-10 12:34:12.329  INFO 3088 --- [    Test worker] NoteController                           : insert(userInterface.model.Note@62c8d873,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{},{note=userInterface.model.Note@62c8d873, org.springframework.validation.BindingResult.note=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-10 12:34:12.330  INFO 3088 --- [    Test worker] NoteService                              : insert(userInterface.model.Note@62c8d873)
+2021-08-10 12:34:12.363  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:12.364  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:12.367  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-10 12:34:12.376  INFO 3088 --- [    Test worker] NoteController                           : editNote(999999999,6112562455657755d1207f06,{})
+2021-08-10 12:34:12.377  INFO 3088 --- [    Test worker] NoteService                              : select(6112562455657755d1207f06)
+2021-08-10 12:34:12.412  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:12.412  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:12.417  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-08-10 12:34:12.427  INFO 3088 --- [    Test worker] NoteController                           : update(6112562455657755d1207f06,userInterface.model.Note@15c4d1df,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{note=userInterface.model.Note@15c4d1df, org.springframework.validation.BindingResult.note=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-10 12:34:12.427  INFO 3088 --- [    Test worker] NoteService                              : update(6112562455657755d1207f06,userInterface.model.Note@15c4d1df)
+2021-08-10 12:34:12.448  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:12.448  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:12.451  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-10 12:34:12.461  INFO 3088 --- [    Test worker] NoteController                           : delete(999999999,6112562455657755d1207f06,{})
+2021-08-10 12:34:12.461  INFO 3088 --- [    Test worker] NoteService                              : delete(6112562455657755d1207f06)
 </pre>
 </span>
 </div>
@@ -146,7 +146,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at 5 août 2021 à 17:02:56</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at 10 août 2021 à 12:34:14</p>
 </div>
 </div>
 </body>

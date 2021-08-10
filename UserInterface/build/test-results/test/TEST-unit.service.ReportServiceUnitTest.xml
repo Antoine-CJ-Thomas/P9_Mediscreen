@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.service.ReportServiceUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-05T15:02:55" hostname="PC-ANTOINE" time="0.008">
+<testsuite name="unit.service.ReportServiceUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:34:13" hostname="PC-ANTOINE" time="0.004">
   <properties/>
-  <testcase name="getDiabetesReport()" classname="unit.service.ReportServiceUnitTest" time="0.008"/>
-  <system-out><![CDATA[2021-08-05 17:02:55.651  INFO 12380 --- [    Test worker] ReportService                            : ReportService(Mock for ReportProxy, hashCode: 837593868)
-2021-08-05 17:02:55.651  INFO 12380 --- [    Test worker] ReportService                            : getDiabetesReport(Mock for Patient, hashCode: 746695013,[])
+  <testcase name="getDiabetesReport()" classname="unit.service.ReportServiceUnitTest" time="0.004"/>
+  <system-out><![CDATA[2021-08-10 12:34:13.454  INFO 3088 --- [    Test worker] ReportService                            : ReportService(Mock for ReportProxy, hashCode: 989567711)
+2021-08-10 12:34:13.455  INFO 3088 --- [    Test worker] ReportService                            : getDiabetesReport(Mock for Patient, hashCode: 740008683,[Mock for Note, hashCode: 56682689])
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -11,7 +11,6 @@ import patientReport.util.FileLineReaderInterface;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 public class DiabetesReportServiceUnitTest {
 
@@ -26,65 +25,68 @@ public class DiabetesReportServiceUnitTest {
     }
 
     @Test
-    public void setGeneralTriggerTerm() {
-
+    public void assessDiabetes_success() {
         //GIVEN
         DiabetesReport diabetesReport = Mockito.mock(DiabetesReport.class);
-        Date birthDate = new Date();
-        String gender = "M";
+
+
         int age = 30;
-
-        //WHEN
-        Mockito.when(diabetesReport.getBirthDate()).thenReturn(birthDate);
-        Mockito.when(diabetesReport.getAge()).thenReturn(age);
-        Mockito.when(diabetesReport.getGender()).thenReturn(gender);
-
-        diabetesReportService.setGeneralTriggerTerm(diabetesReport);
-
-        //THEN
-        Mockito.verify(diabetesReport, Mockito.times(2)).getGeneralTriggerTermList();
-    }
-
-    @Test
-    public void findMedicalTriggerTerm() {
-
-        //GIVEN
-        String testTriggerTerm = "testTriggerTerm";
-        DiabetesReport diabetesReport = Mockito.mock(DiabetesReport.class);
-
+        String gender = "M";
+        Date birthDate = new Date();
         List<String> commentaryList = new ArrayList();
-        List<String> medicalTriggerTermList = new ArrayList();
+        List<String> medicalTriggerTermList = Mockito.mock(List.class);
+
+        String testTriggerTerm = "testTriggerTerm";
         List<String> triggerTermList = new ArrayList();
 
         //WHEN
+        Mockito.when(diabetesReport.getAge()).thenReturn(age);
+        Mockito.when(diabetesReport.getGender()).thenReturn(gender);
+        Mockito.when(diabetesReport.getBirthDate()).thenReturn(birthDate);
         Mockito.when(diabetesReport.getCommentaryList()).thenReturn(commentaryList);
         Mockito.when(diabetesReport.getMedicalTriggerTermList()).thenReturn(medicalTriggerTermList);
-        Mockito.when(fileLineReaderInterface.getTriggerTermList()).thenReturn(triggerTermList);
-
+        Mockito.when(medicalTriggerTermList.size()).thenReturn(8);
         commentaryList.add(testTriggerTerm);
+
+        Mockito.when(fileLineReaderInterface.getTriggerTermList()).thenReturn(triggerTermList);
         triggerTermList.add(testTriggerTerm);
 
-        diabetesReportService.findMedicalTriggerTerm(diabetesReport);
+        Mockito.when(diabetesReport.getRiskLevel()).thenReturn("riskLevel");
 
         //THEN
-        Mockito.verify(diabetesReport, Mockito.times(2)).getMedicalTriggerTermList();
+        Assertions.assertThat(diabetesReportService.assessDiabetes(diabetesReport) == "OK");
     }
 
     @Test
-    public void evaluateRiskLevel() {
+    public void assessDiabetes_failure() {
 
         //GIVEN
         DiabetesReport diabetesReport = Mockito.mock(DiabetesReport.class);
+
+        int age = 20;
+        String gender = "F";
+        Date birthDate = new Date();
+        List<String> commentaryList = new ArrayList();
         List<String> medicalTriggerTermList = Mockito.mock(List.class);
 
+        String testTriggerTerm = "testTriggerTerm";
+        List<String> triggerTermList = new ArrayList();
+
         //WHEN
-        Mockito.when(diabetesReport.getAge()).thenReturn(30);
+        Mockito.when(diabetesReport.getAge()).thenReturn(age);
+        Mockito.when(diabetesReport.getGender()).thenReturn(gender);
+        Mockito.when(diabetesReport.getBirthDate()).thenReturn(birthDate);
+        Mockito.when(diabetesReport.getCommentaryList()).thenReturn(commentaryList);
         Mockito.when(diabetesReport.getMedicalTriggerTermList()).thenReturn(medicalTriggerTermList);
         Mockito.when(medicalTriggerTermList.size()).thenReturn(8);
+        commentaryList.add(testTriggerTerm);
 
-        diabetesReportService.evaluateRiskLevel(diabetesReport);
+        Mockito.when(fileLineReaderInterface.getTriggerTermList()).thenReturn(triggerTermList);
+        triggerTermList.add(testTriggerTerm);
+
+        Mockito.when(diabetesReport.getRiskLevel()).thenReturn(null);
 
         //THEN
-        Mockito.verify(diabetesReport, Mockito.times(1)).setRiskLevel("Apparition précoce");
+        Assertions.assertThat(diabetesReportService.assessDiabetes(diabetesReport) == "Invalid informations");
     }
 }

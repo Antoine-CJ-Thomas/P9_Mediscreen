@@ -1,7 +1,7 @@
 integration/PatientControllerIntegrationTest.java
  integration.PatientControllerIntegrationTest
-unit/controller/CommonControllerIUnitTest.java
- unit.controller.CommonControllerIUnitTest
+unit/model/DiabetesReportUnitTest.java
+ unit.model.DiabetesReportUnitTest
 integration/NoteControllerIntegrationTest.java
  integration.NoteControllerIntegrationTest
 unit/model/PatientUnitTest.java
@@ -18,7 +18,7 @@ unit/controller/PatientControllerIUnitTest.java
  unit.controller.PatientControllerIUnitTest
 integration/CommonControllerIntegrationTest.java
  integration.CommonControllerIntegrationTest
-unit/model/DiabetesReportUnitTest.java
- unit.model.DiabetesReportUnitTest
+unit/controller/CommonControllerIUnitTest.java
+ unit.controller.CommonControllerIUnitTest
 unit/service/ReportServiceUnitTest.java
  unit.service.ReportServiceUnitTest

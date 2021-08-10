@@ -29,41 +29,81 @@ public class NoteService implements NoteServiceInterface {
     }
 
     @Override
-    public void insert(Note note) {
+    public String insert(Note note) {
         logger.info("insert(" + note + ")");
 
-        noteRepository.save(note);
+        String message = "Invalid informations";
+
+        if (note.getPatientId() != null) {
+
+            if (note.getDate() != null) {
+
+                if (note.getCommentary() != null) {
+
+                    noteRepository.save(note);
+
+                    message = "OK";
+                }
+            }
+        }
+
+        return message;
     }
 
     @Override
     public Note select(String id) {
         logger.info("select(" + id + ")");
 
-        Optional<Note> patientOptional = noteRepository.findById(id);
+        Note note = null;
 
-        return patientOptional.get();
+        if (noteRepository.existsById(id)) {
+
+            note = noteRepository.findById(id).get();
+        }
+
+        return note;
     }
 
     @Override
     public List<Note> list(int patientId) {
         logger.info("list(" + patientId + ")");
 
-        return noteRepository.findByPatientId(patientId);
+        List<Note> noteList = noteRepository.findByPatientId(patientId);
+
+        return noteList;
     }
 
     @Override
-    public void update(String id, Note note) {
+    public String update(String id, Note note) {
         logger.info("update(" + id + "," + note + ")");
 
-        note.setId(id);
+        String message = "Invalid id";
 
-        noteRepository.save(note);
+        if (noteRepository.existsById(id)) {
+
+            note.setId(id);
+
+            noteRepository.save(note);
+
+            message = "OK";
+        }
+
+        return message;
     }
 
     @Override
-    public void delete(String id) {
+    public String delete(String id) {
         logger.info("delete(" + id + ")");
 
-        noteRepository.deleteById(id);
+        String message = "Invalid id";
+
+        if (noteRepository.existsById(id)) {
+
+            noteRepository.deleteById(id);
+
+            message = "OK";
+        }
+
+        return message;
     }
 }

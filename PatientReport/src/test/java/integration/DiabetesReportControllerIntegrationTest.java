@@ -41,6 +41,7 @@ public class DiabetesReportControllerIntegrationTest {
     public void assessDiabetes() throws Exception {
 
         // GIVEN
+        String gender = "M";
         List<String> commentaryList = new ArrayList();
 
         commentaryList.add("Taille");
@@ -49,7 +50,7 @@ public class DiabetesReportControllerIntegrationTest {
         commentaryList.add("Cholestérol");
         commentaryList.add("Vertige");
 
-        DiabetesReport diabetesReport = new DiabetesReport("M", new Date(), commentaryList);
+        DiabetesReport diabetesReport = new DiabetesReport(gender, new Date(), commentaryList);
 
         // WHEN
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/assess/diabetes")

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">14.425s</div>
+<div class="counter">2.545s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">list()</td>
-<td class="success">6.633s</td>
+<td class="success">1.959s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">open()</td>
-<td class="success">7.792s</td>
+<td class="success">0.586s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,21 +92,21 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>17:02:25.028 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-17:02:25.074 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-17:02:25.153 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [integration.CommonControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-17:02:25.191 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.CommonControllerIntegrationTest], using SpringBootContextLoader
-17:02:25.198 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.CommonControllerIntegrationTest]: class path resource [integration/CommonControllerIntegrationTest-context.xml] does not exist
-17:02:25.199 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.CommonControllerIntegrationTest]: class path resource [integration/CommonControllerIntegrationTestContext.groovy] does not exist
-17:02:25.199 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [integration.CommonControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-17:02:25.289 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [integration.CommonControllerIntegrationTest]
-17:02:25.571 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [integration.CommonControllerIntegrationTest]: using defaults.
-17:02:25.572 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-17:02:25.603 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
-17:02:25.604 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
-17:02:25.605 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@654ae373, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2c2beafe, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@bd37cbf, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@27d7a94, org.springframework.test.context.support.DirtiesContextTestExecutionListener@309e50d3, org.springframework.test.context.event.EventPublishingTestExecutionListener@43912024, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@53378a6d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3a77f345, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@782d3410, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@32f7bb31, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5d7c2be0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@589416d1]
-17:02:25.612 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@64079ff0 testClass = CommonControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@644df27b testClass = CommonControllerIntegrationTest, locations = '{}', classes = '{class userInterface.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@48fc354d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@420a6c5f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6b6fc16d, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3bbe4cae, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@79252693], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-17:02:25.705 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+<pre>12:34:00.996 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:34:01.058 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:34:01.211 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [integration.CommonControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+12:34:01.252 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.CommonControllerIntegrationTest], using SpringBootContextLoader
+12:34:01.263 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.CommonControllerIntegrationTest]: class path resource [integration/CommonControllerIntegrationTest-context.xml] does not exist
+12:34:01.264 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.CommonControllerIntegrationTest]: class path resource [integration/CommonControllerIntegrationTestContext.groovy] does not exist
+12:34:01.264 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [integration.CommonControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:34:01.347 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [integration.CommonControllerIntegrationTest]
+12:34:01.598 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [integration.CommonControllerIntegrationTest]: using defaults.
+12:34:01.599 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12:34:01.625 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+12:34:01.627 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+12:34:01.627 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@311a06ce, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2319c9cd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@58e036ad, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@793e455, org.springframework.test.context.support.DirtiesContextTestExecutionListener@66debe1f, org.springframework.test.context.event.EventPublishingTestExecutionListener@b6444a8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@52685e37, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4a41b963, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@59fcd872, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@701486e1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@601df732, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27d0c0f3]
+12:34:01.636 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@2f8397c testClass = CommonControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@f55649a testClass = CommonControllerIntegrationTest, locations = '{}', classes = '{class userInterface.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4b250054, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@20582489, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@497b4223, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7b911f74, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@40b8b7b3], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+12:34:01.706 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -116,39 +116,39 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.9.RELEASE)
 
-2021-08-05 17:02:29.016  INFO 12380 --- [    Test worker] i.CommonControllerIntegrationTest        : No active profile set, falling back to default profiles: default
-2021-08-05 17:02:32.035  INFO 12380 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=19fe32c3-f8bb-33c7-a406-e705eddea437
-2021-08-05 17:02:32.164  INFO 12380 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'userInterface.proxy.NoteProxy' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-08-05 17:02:32.167  INFO 12380 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'userInterface.proxy.PatientProxy' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-08-05 17:02:32.170  INFO 12380 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'userInterface.proxy.ReportProxy' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-08-05 17:02:32.494  INFO 12380 --- [    Test worker] CommonController                         : CommonController()
-2021-08-05 17:02:32.496  INFO 12380 --- [    Test worker] PatientService                           : PatientInformationService()
-2021-08-05 17:02:32.508  INFO 12380 --- [    Test worker] PatientService                           : PatientInformationService()
-2021-08-05 17:02:33.985  INFO 12380 --- [    Test worker] NoteService                              : PatientNoteService()
-2021-08-05 17:02:34.079  INFO 12380 --- [    Test worker] ReportService                            : ReportService()
-2021-08-05 17:02:34.166  INFO 12380 --- [    Test worker] NoteController                           : NoteController()
-2021-08-05 17:02:34.166  INFO 12380 --- [    Test worker] NoteService                              : PatientNoteService()
-2021-08-05 17:02:34.201  INFO 12380 --- [    Test worker] PatientController                        : PatientController()
-2021-08-05 17:02:34.203  INFO 12380 --- [    Test worker] PatientService                           : PatientInformationService()
-2021-08-05 17:02:34.730  WARN 12380 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2021-08-05 17:02:34.730  INFO 12380 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2021-08-05 17:02:34.759  WARN 12380 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2021-08-05 17:02:34.759  INFO 12380 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2021-08-05 17:02:35.582  INFO 12380 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-08-05 17:02:38.024  INFO 12380 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-08-05 17:02:38.172  INFO 12380 --- [    Test worker] i.CommonControllerIntegrationTest        : Started CommonControllerIntegrationTest in 12.432 seconds (JVM running for 15.247)
-2021-08-05 17:02:39.259  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:39.259  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:39.284  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
-2021-08-05 17:02:39.405  INFO 12380 --- [    Test worker] CommonController                         : listPatient({})
-2021-08-05 17:02:39.405  INFO 12380 --- [    Test worker] PatientService                           : list()
-2021-08-05 17:02:44.971  INFO 12380 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:02:44.971  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:02:44.975  INFO 12380 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
-2021-08-05 17:02:45.179  INFO 12380 --- [    Test worker] CommonController                         : openPatient(37,{})
-2021-08-05 17:02:45.179  INFO 12380 --- [    Test worker] PatientService                           : select(37)
-2021-08-05 17:02:45.325  INFO 12380 --- [    Test worker] NoteService                              : list(37)
-2021-08-05 17:02:49.135  INFO 12380 --- [    Test worker] ReportService                            : getDiabetesReport(userInterface.model.Patient@52beb093,[userInterface.model.Note@1172c0cd, userInterface.model.Note@2a55bc95, userInterface.model.Note@4e109c80])
+2021-08-10 12:34:04.216  INFO 3088 --- [    Test worker] i.CommonControllerIntegrationTest        : No active profile set, falling back to default profiles: default
+2021-08-10 12:34:05.885  INFO 3088 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=19fe32c3-f8bb-33c7-a406-e705eddea437
+2021-08-10 12:34:05.982  INFO 3088 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'userInterface.proxy.NoteProxy' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-10 12:34:05.984  INFO 3088 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'userInterface.proxy.PatientProxy' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-10 12:34:05.987  INFO 3088 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'userInterface.proxy.ReportProxy' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-10 12:34:06.154  INFO 3088 --- [    Test worker] CommonController                         : CommonController()
+2021-08-10 12:34:06.155  INFO 3088 --- [    Test worker] PatientService                           : PatientInformationService()
+2021-08-10 12:34:06.162  INFO 3088 --- [    Test worker] PatientService                           : PatientInformationService()
+2021-08-10 12:34:06.829  INFO 3088 --- [    Test worker] NoteService                              : PatientNoteService()
+2021-08-10 12:34:06.884  INFO 3088 --- [    Test worker] ReportService                            : ReportService()
+2021-08-10 12:34:06.936  INFO 3088 --- [    Test worker] NoteController                           : NoteController()
+2021-08-10 12:34:06.937  INFO 3088 --- [    Test worker] NoteService                              : PatientNoteService()
+2021-08-10 12:34:06.941  INFO 3088 --- [    Test worker] PatientController                        : PatientController()
+2021-08-10 12:34:06.942  INFO 3088 --- [    Test worker] PatientService                           : PatientInformationService()
+2021-08-10 12:34:07.218  WARN 3088 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-08-10 12:34:07.219  INFO 3088 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-08-10 12:34:07.239  WARN 3088 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2021-08-10 12:34:07.239  INFO 3088 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-08-10 12:34:07.664  INFO 3088 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-10 12:34:09.365  INFO 3088 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-08-10 12:34:09.479  INFO 3088 --- [    Test worker] i.CommonControllerIntegrationTest        : Started CommonControllerIntegrationTest in 7.731 seconds (JVM running for 10.23)
+2021-08-10 12:34:10.433  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:10.434  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:10.453  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 19 ms
+2021-08-10 12:34:10.550  INFO 3088 --- [    Test worker] CommonController                         : listPatient({})
+2021-08-10 12:34:10.550  INFO 3088 --- [    Test worker] PatientService                           : list()
+2021-08-10 12:34:11.581  INFO 3088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:34:11.581  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:34:11.587  INFO 3088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
+2021-08-10 12:34:11.611  INFO 3088 --- [    Test worker] CommonController                         : openPatient(79,{})
+2021-08-10 12:34:11.611  INFO 3088 --- [    Test worker] PatientService                           : select(79)
+2021-08-10 12:34:11.626  INFO 3088 --- [    Test worker] NoteService                              : list(79)
+2021-08-10 12:34:11.637  INFO 3088 --- [    Test worker] ReportService                            : getDiabetesReport(userInterface.model.Patient@6df78edc,[])
 </pre>
 </span>
 </div>
@@ -160,7 +160,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at 5 août 2021 à 17:02:56</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at 10 août 2021 à 12:34:14</p>
 </div>
 </div>
 </body>

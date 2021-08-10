@@ -50,5 +50,6 @@ public class CommonControllerIUnitTest {
         //THEN
         Mockito.verify(patientServiceInterface, Mockito.times(1)).select(patientId);
         Mockito.verify(noteServiceInterface, Mockito.times(1)).list(patientId);
+        Mockito.verify(reportServiceInterface, Mockito.times(1)).getDiabetesReport(Mockito.any(), Mockito.any());
     }
 }

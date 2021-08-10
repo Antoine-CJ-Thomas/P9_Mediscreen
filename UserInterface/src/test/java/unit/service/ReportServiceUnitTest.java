@@ -33,9 +33,14 @@ public class ReportServiceUnitTest {
 
         //GIVEN
         Patient patient = Mockito.mock(Patient.class);
+        Note note = Mockito.mock(Note.class);
         List<Note> noteList = new ArrayList();
 
         //WHEN
+        Mockito.when(note.getCommentary()).thenReturn("commentary");
+
+        noteList.add(note);
+
         reportService.getDiabetesReport(patient, noteList);
 
         //THEN

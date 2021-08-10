@@ -8,6 +8,8 @@ import patientNote.model.Note;
 import patientNote.repository.NoteRepository;
 import patientNote.service.NoteService;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -25,26 +27,48 @@ public class NoteServiceUnitTest {
     }
 
     @Test
-    public void insert() {
+    public void insert_success() {
 
         //GIVEN
         Note note = Mockito.mock(Note.class);
 
+        Integer patientId = 1;
+        Date date = new Date(System.currentTimeMillis());
+        String commentary = "commentary";
+
         //WHEN
-        noteService.insert(note);
+        Mockito.when(note.getPatientId()).thenReturn(patientId);
+        Mockito.when(note.getDate()).thenReturn(date);
+        Mockito.when(note.getCommentary()).thenReturn(commentary);
 
         //THEN
-        Mockito.verify(mockedNoteRepository, Mockito.times(1)).save(note);
+        Assertions.assertThat(noteService.insert(note) == "OK");
     }
 
     @Test
-    public void select() {
+    public void insert_failure() {
+
+        //GIVEN
+        Note note = Mockito.mock(Note.class);
+
+        Integer patientId = null;
+
+        //WHEN
+        Mockito.when(note.getPatientId()).thenReturn(patientId);
+
+        //THEN
+        Assertions.assertThat(noteService.insert(note) == "Invalid informations");
+    }
+
+    @Test
+    public void select_success() {
 
         //GIVEN
         String noteId = "noteId";
         Note note = Mockito.mock(Note.class);
 
         //WHEN
+        Mockito.when(mockedNoteRepository.existsById(noteId)).thenReturn(true);
         Mockito.when(mockedNoteRepository.findById(noteId)).thenReturn(Optional.of(note));
 
         //THEN
@@ -52,12 +76,24 @@ public class NoteServiceUnitTest {
     }
 
     @Test
-    public void list() {
+    public void select_failure() {
+
+        //GIVEN
+        String noteId = "noteId";
+
+        //WHEN
+        Mockito.when(mockedNoteRepository.existsById(noteId)).thenReturn(false);
+
+        //THEN
+        Assertions.assertThat(noteService.select(noteId) == null);
+    }
+
+    @Test
+    public void list_success() {
 
         //GIVEN
         int patientId = 1;
-        Note note = Mockito.mock(Note.class);
-        List<Note> noteList = Arrays.asList(note);
+        List<Note> noteList = new ArrayList<>();
 
         //WHEN
         Mockito.when(mockedNoteRepository.findByPatientId(patientId)).thenReturn(noteList);
@@ -67,29 +103,69 @@ public class NoteServiceUnitTest {
     }
 
     @Test
-    public void update() {
+    public void list_failure() {
+
+        //GIVEN
+        int patientId = 1;
+
+        //WHEN
+        Mockito.when(mockedNoteRepository.findByPatientId(patientId)).thenReturn(null);
+
+        //THEN
+        Assertions.assertThat(noteService.list(patientId) == null);
+    }
+
+    @Test
+    public void update_success() {
 
         //GIVEN
         String noteId = "noteId";
         Note note = Mockito.mock(Note.class);
 
         //WHEN
-        noteService.update(noteId, note);
+        Mockito.when(mockedNoteRepository.existsById(noteId)).thenReturn(true);
 
         //THEN
-        Mockito.verify(mockedNoteRepository, Mockito.times(1)).save(note);
+        Assertions.assertThat(noteService.update(noteId, note) == "OK");
     }
 
     @Test
-    public void delete() {
+    public void update_failure() {
+
+        //GIVEN
+        String noteId = "noteId";
+        Note note = Mockito.mock(Note.class);
+
+        //WHEN
+        Mockito.when(mockedNoteRepository.existsById(noteId)).thenReturn(false);
+
+        //THEN
+        Assertions.assertThat(noteService.update(noteId, note) == "Invalid id");
+    }
+
+    @Test
+    public void delete_success() {
 
         //GIVEN
         String noteId = "noteId";
 
         //WHEN
-        noteService.delete(noteId);
+        Mockito.when(mockedNoteRepository.existsById(noteId)).thenReturn(true);
 
         //THEN
-        Mockito.verify(mockedNoteRepository, Mockito.times(1)).deleteById(noteId);
+        Assertions.assertThat(noteService.delete(noteId) == "OK");
+    }
+
+    @Test
+    public void delete_failure() {
+
+        //GIVEN
+        String noteId = "noteId";
+
+        //WHEN
+        Mockito.when(mockedNoteRepository.existsById(noteId)).thenReturn(false);
+
+        //THEN
+        Assertions.assertThat(noteService.delete(noteId) == "Invalid id");
     }
 }

@@ -6,9 +6,5 @@ import patientReport.model.DiabetesReport;
 @Component
 public interface DiabetesReportServiceInterface {
 
-    void setGeneralTriggerTerm(DiabetesReport diabetesReport);
-
-    void findMedicalTriggerTerm(DiabetesReport diabetesReport);
-
-    void evaluateRiskLevel(DiabetesReport diabetesReport);
+    String assessDiabetes(DiabetesReport diabetesReport);
 }

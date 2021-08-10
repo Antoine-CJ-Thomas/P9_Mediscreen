@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3.178s</div>
+<div class="counter">1.579s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">delete()</td>
-<td class="success">0.030s</td>
+<td class="success">0.027s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">insert()</td>
-<td class="success">2.961s</td>
+<td class="success">1.327s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">list()</td>
-<td class="success">0.118s</td>
+<td class="success">0.142s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">select()</td>
-<td class="success">0.030s</td>
+<td class="success">0.048s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">update()</td>
-<td class="success">0.039s</td>
+<td class="success">0.035s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -107,19 +107,19 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>17:01:34.183 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-17:01:34.275 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-17:01:34.428 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [integration.NoteControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-17:01:34.663 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.NoteControllerIntegrationTest], using SpringBootContextLoader
-17:01:34.678 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.NoteControllerIntegrationTest]: class path resource [integration/NoteControllerIntegrationTest-context.xml] does not exist
-17:01:34.679 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.NoteControllerIntegrationTest]: class path resource [integration/NoteControllerIntegrationTestContext.groovy] does not exist
-17:01:34.680 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [integration.NoteControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-17:01:34.819 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [integration.NoteControllerIntegrationTest]
-17:01:35.154 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [integration.NoteControllerIntegrationTest]: using defaults.
-17:01:35.155 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-17:01:35.195 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@765c59ef, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b65579f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@52144432, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5343f01a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47c448bc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@36ec3674, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4629c14f, org.springframework.test.context.event.EventPublishingTestExecutionListener@aa62ab0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6f4202f0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@38cac6fa, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@30e14b15, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@b290413, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7403c204, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1a103768]
-17:01:35.204 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@ca3083b testClass = NoteControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@dc64e72 testClass = NoteControllerIntegrationTest, locations = '{}', classes = '{class patientNote.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@99fac3e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7f880f41, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@59a0d0cd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@75d4fcbd, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2e005276], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-17:01:35.828 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+<pre>12:24:57.078 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:24:57.119 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:24:57.187 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [integration.NoteControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+12:24:57.227 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.NoteControllerIntegrationTest], using SpringBootContextLoader
+12:24:57.235 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.NoteControllerIntegrationTest]: class path resource [integration/NoteControllerIntegrationTest-context.xml] does not exist
+12:24:57.235 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.NoteControllerIntegrationTest]: class path resource [integration/NoteControllerIntegrationTestContext.groovy] does not exist
+12:24:57.236 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [integration.NoteControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:24:57.313 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [integration.NoteControllerIntegrationTest]
+12:24:57.565 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [integration.NoteControllerIntegrationTest]: using defaults.
+12:24:57.566 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12:24:57.601 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1711edd2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@f038bac, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@31a5cf55, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@72a9c3b3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6acedf49, org.springframework.test.context.transaction.TransactionalTestExecutionListener@79837757, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66c3d055, org.springframework.test.context.event.EventPublishingTestExecutionListener@5acb3365, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@46638be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@24b875b6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5c81580c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f5208e2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@534a471, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@624674a4]
+12:24:57.607 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@59f045a3 testClass = NoteControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6d7be9a6 testClass = NoteControllerIntegrationTest, locations = '{}', classes = '{class patientNote.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@466a5b7d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@52295958, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1c2b9ca0, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1c9b4683, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@31050a1c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+12:24:58.141 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -129,45 +129,45 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.9.RELEASE)
 
-2021-08-05 17:01:36.502  INFO 17004 --- [    Test worker] i.NoteControllerIntegrationTest          : Starting NoteControllerIntegrationTest on PC-ANTOINE with PID 17004 (started by Antoine in C:\Users\krawo\IdeaProjects\P9_Mediscreen\PatientNote)
-2021-08-05 17:01:36.504  INFO 17004 --- [    Test worker] i.NoteControllerIntegrationTest          : No active profile set, falling back to default profiles: default
-2021-08-05 17:01:38.913  INFO 17004 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-08-05 17:01:39.054  INFO 17004 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128ms. Found 1 MongoDB repository interfaces.
-2021-08-05 17:01:39.796  INFO 17004 --- [    Test worker] NoteController                           : PatientNoteController()
-2021-08-05 17:01:39.798  INFO 17004 --- [    Test worker] NoteService                              : PatientService()
-2021-08-05 17:01:39.820  INFO 17004 --- [    Test worker] NoteService                              : PatientService()
-2021-08-05 17:01:40.434  INFO 17004 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-08-05 17:01:40.669  INFO 17004 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:152}] to localhost:27017
-2021-08-05 17:01:40.685  INFO 17004 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9204000}
-2021-08-05 17:01:43.070  INFO 17004 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-08-05 17:01:44.465  INFO 17004 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-08-05 17:01:44.558  INFO 17004 --- [    Test worker] i.NoteControllerIntegrationTest          : Started NoteControllerIntegrationTest in 8.687 seconds (JVM running for 12.685)
-2021-08-05 17:01:47.084  INFO 17004 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:01:47.084  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:01:47.114  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 29 ms
-2021-08-05 17:01:47.414  INFO 17004 --- [    Test worker] NoteController                           : insert(patientNote.model.Note@584bf5e2)
-2021-08-05 17:01:47.414  INFO 17004 --- [    Test worker] NoteService                              : insert(patientNote.model.Note@584bf5e2)
-2021-08-05 17:01:47.516  INFO 17004 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:153}] to localhost:27017
-2021-08-05 17:01:47.696  INFO 17004 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:01:47.696  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:01:47.700  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
-2021-08-05 17:01:47.708  INFO 17004 --- [    Test worker] NoteController                           : list(999999999)
-2021-08-05 17:01:47.709  INFO 17004 --- [    Test worker] NoteService                              : list(999999999)
-2021-08-05 17:01:47.814  INFO 17004 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:01:47.814  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:01:47.817  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
-2021-08-05 17:01:47.830  INFO 17004 --- [    Test worker] NoteController                           : select(610bfd5b9b7895595eeb3f19)
-2021-08-05 17:01:47.831  INFO 17004 --- [    Test worker] NoteService                              : select(610bfd5b9b7895595eeb3f19)
-2021-08-05 17:01:47.847  INFO 17004 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:01:47.848  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:01:47.852  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
-2021-08-05 17:01:47.863  INFO 17004 --- [    Test worker] NoteController                           : update(610bfd5b9b7895595eeb3f19,patientNote.model.Note@13ea69d1)
-2021-08-05 17:01:47.863  INFO 17004 --- [    Test worker] NoteService                              : update(610bfd5b9b7895595eeb3f19,patientNote.model.Note@13ea69d1)
-2021-08-05 17:01:47.890  INFO 17004 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-08-05 17:01:47.890  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-08-05 17:01:47.894  INFO 17004 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
-2021-08-05 17:01:47.900  INFO 17004 --- [    Test worker] NoteController                           : delete(610bfd5b9b7895595eeb3f19)
-2021-08-05 17:01:47.900  INFO 17004 --- [    Test worker] NoteService                              : delete(610bfd5b9b7895595eeb3f19)
+2021-08-10 12:24:58.715  INFO 9876 --- [    Test worker] i.NoteControllerIntegrationTest          : Starting NoteControllerIntegrationTest on PC-ANTOINE with PID 9876 (started by Antoine in C:\Users\krawo\IdeaProjects\P9_Mediscreen\PatientNote)
+2021-08-10 12:24:58.717  INFO 9876 --- [    Test worker] i.NoteControllerIntegrationTest          : No active profile set, falling back to default profiles: default
+2021-08-10 12:25:00.380  INFO 9876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-08-10 12:25:00.507  INFO 9876 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117ms. Found 1 MongoDB repository interfaces.
+2021-08-10 12:25:00.954  INFO 9876 --- [    Test worker] NoteController                           : PatientNoteController()
+2021-08-10 12:25:00.955  INFO 9876 --- [    Test worker] NoteService                              : PatientService()
+2021-08-10 12:25:00.965  INFO 9876 --- [    Test worker] NoteService                              : PatientService()
+2021-08-10 12:25:01.241  INFO 9876 --- [    Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-08-10 12:25:01.390  INFO 9876 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:182}] to localhost:27017
+2021-08-10 12:25:01.400  INFO 9876 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6268400}
+2021-08-10 12:25:02.948  INFO 9876 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-10 12:25:03.811  INFO 9876 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-08-10 12:25:03.910  INFO 9876 --- [    Test worker] i.NoteControllerIntegrationTest          : Started NoteControllerIntegrationTest in 5.741 seconds (JVM running for 8.493)
+2021-08-10 12:25:04.767  INFO 9876 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:25:04.767  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:25:04.792  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2021-08-10 12:25:05.037  INFO 9876 --- [    Test worker] NoteController                           : insert(patientNote.model.Note@3a423a78)
+2021-08-10 12:25:05.038  INFO 9876 --- [    Test worker] NoteService                              : insert(patientNote.model.Note@3a423a78)
+2021-08-10 12:25:05.152  INFO 9876 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:183}] to localhost:27017
+2021-08-10 12:25:05.327  INFO 9876 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:25:05.327  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:25:05.331  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-08-10 12:25:05.340  INFO 9876 --- [    Test worker] NoteController                           : list(999999999)
+2021-08-10 12:25:05.341  INFO 9876 --- [    Test worker] NoteService                              : list(999999999)
+2021-08-10 12:25:05.471  INFO 9876 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:25:05.472  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:25:05.476  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-08-10 12:25:05.488  INFO 9876 --- [    Test worker] NoteController                           : select(611254017a14af31ddd22728)
+2021-08-10 12:25:05.489  INFO 9876 --- [    Test worker] NoteService                              : select(611254017a14af31ddd22728)
+2021-08-10 12:25:05.520  INFO 9876 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:25:05.520  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:25:05.523  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-10 12:25:05.531  INFO 9876 --- [    Test worker] NoteController                           : update(611254017a14af31ddd22728,patientNote.model.Note@7aa383da)
+2021-08-10 12:25:05.531  INFO 9876 --- [    Test worker] NoteService                              : update(611254017a14af31ddd22728,patientNote.model.Note@7aa383da)
+2021-08-10 12:25:05.557  INFO 9876 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 12:25:05.557  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 12:25:05.559  INFO 9876 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-10 12:25:05.565  INFO 9876 --- [    Test worker] NoteController                           : delete(611254017a14af31ddd22728)
+2021-08-10 12:25:05.566  INFO 9876 --- [    Test worker] NoteService                              : delete(611254017a14af31ddd22728)
 </pre>
 </span>
 </div>
@@ -179,7 +179,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at 5 août 2021 à 17:01:49</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at 10 août 2021 à 12:25:07</p>
 </div>
 </div>
 </body>

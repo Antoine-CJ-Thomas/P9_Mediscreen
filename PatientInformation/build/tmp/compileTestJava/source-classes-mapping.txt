@@ -1,8 +1,8 @@
 unit/model/PatientUnitTest.java
  unit.model.PatientUnitTest
-unit/controller/PatientControllerUnitTest.java
- unit.controller.PatientControllerUnitTest
-unit/service/PatientServiceUnitTest.java
- unit.service.PatientServiceUnitTest
 integration/PatientControllerIntegrationTest.java
  integration.PatientControllerIntegrationTest
+unit/service/PatientServiceUnitTest.java
+ unit.service.PatientServiceUnitTest
+unit/controller/PatientControllerUnitTest.java
+ unit.controller.PatientControllerUnitTest

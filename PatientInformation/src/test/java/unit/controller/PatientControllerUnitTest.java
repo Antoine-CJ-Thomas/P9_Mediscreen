@@ -1,6 +1,6 @@
 package unit.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -8,80 +8,177 @@ import patientInformation.controller.PatientController;
 import patientInformation.model.Patient;
 import patientInformation.service.PatientServiceInterface;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PatientControllerUnitTest {
 
     private PatientController patientController;
 
+    private ObjectMapper objectMapper = Mockito.mock(ObjectMapper.class);
     private PatientServiceInterface patientServiceInterface = Mockito.mock(PatientServiceInterface.class);
+    private HttpServletResponse httpServletResponse = Mockito.mock(HttpServletResponse.class);
 
     @BeforeEach
     public void beforeEach() {
 
-        patientController = new PatientController(patientServiceInterface);
+        patientController = new PatientController(objectMapper, patientServiceInterface);
     }
 
     @Test
-    public void insert() {
+    public void insert_status_200() throws IOException {
 
         //GIVEN
         Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        patientController.insert(patient);
+        Mockito.when(patientServiceInterface.insert(patient)).thenReturn("OK");
+
+        patientController.insert(patient, httpServletResponse);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).insert(patient);
+        Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
     }
 
     @Test
-    public void select() throws JsonProcessingException {
+    public void insert_status_400() throws IOException {
 
         //GIVEN
-        int id = 1;
+        Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        patientController.select(id);
+        Mockito.when(patientServiceInterface.insert(patient)).thenReturn("Patient could not be inserted");
+
+        patientController.insert(patient, httpServletResponse);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(id);
+        Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(400, "Patient could not be inserted");
     }
 
     @Test
-    public void list() throws JsonProcessingException {
-
-        //GIVEN
-
-        //WHEN
-        patientController.list();
-
-        //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).list();
-    }
-
-    @Test
-    public void update() {
+    public void select_status_200() throws IOException {
 
         //GIVEN
         int id = 1;
         Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        patientController.update(id, patient);
+        Mockito.when(patientServiceInterface.select(id)).thenReturn(patient);
+        Mockito.when(objectMapper.writeValueAsString(patient)).thenReturn("patient");
+
+        patientController.select(id, httpServletResponse);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).update(id, patient);
+        Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
     }
 
     @Test
-    public void delete() {
+    public void select_status_404() throws IOException {
 
         //GIVEN
         int id = 1;
 
         //WHEN
-        patientController.delete(id);
+        Mockito.when(patientServiceInterface.select(id)).thenReturn(null);
+
+        patientController.select(id, httpServletResponse);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).delete(id);
+        Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(404, "Patient with (id = " + id + ") could not be found");
+    }
+
+    @Test
+    public void list_status_200() throws IOException {
+
+        //GIVEN
+        List<Patient> patientList = new ArrayList();
+
+        //WHEN
+        Mockito.when(patientServiceInterface.list()).thenReturn(patientList);
+
+        patientController.list(httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
+    }
+
+    @Test
+    public void list_status_404() throws IOException {
+
+        //GIVEN
+        List<Patient> patientList = new ArrayList();
+
+        //WHEN
+        Mockito.when(patientServiceInterface.list()).thenReturn(null);
+        Mockito.when(objectMapper.writeValueAsString(patientList)).thenReturn("patientList");
+
+        patientController.list(httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(404, "No patient could be found");
+    }
+
+    @Test
+    public void update_status_200() throws IOException {
+
+        //GIVEN
+        int id = 1;
+        Patient patient = Mockito.mock(Patient.class);
+
+        //WHEN
+        Mockito.when(patientServiceInterface.update(id, patient)).thenReturn("OK");
+
+        patientController.update(id, patient, httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
+    }
+
+    @Test
+    public void update_status_404() throws IOException {
+
+        //GIVEN
+        int id = 1;
+        Patient patient = Mockito.mock(Patient.class);
+
+        //WHEN
+        Mockito.when(patientServiceInterface.update(id, patient)).thenReturn("Invalid id");
+
+        patientController.update(id, patient, httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(400, "Invalid id");
+    }
+
+    @Test
+    public void delete_status_200() throws IOException {
+
+        //GIVEN
+        int id = 1;
+
+        //WHEN
+        Mockito.when(patientServiceInterface.delete(id)).thenReturn("OK");
+
+        patientController.delete(id, httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
+    }
+
+    @Test
+    public void delete_status_404() throws IOException {
+
+        //GIVEN
+        int id = 1;
+
+        //WHEN
+        Mockito.when(patientServiceInterface.delete(id)).thenReturn("Invalid id");
+
+        patientController.delete(id, httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(400, "Invalid id");
     }
 }

@@ -8,7 +8,6 @@ import patientInformation.model.Patient;
 import patientInformation.repository.PatientRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PatientService implements PatientServiceInterface {
@@ -29,41 +28,90 @@ public class PatientService implements PatientServiceInterface {
     }
 
     @Override
-    public void insert(Patient patient) {
+    public String insert(Patient patient) {
         logger.info("insert(" + patient + ")");
 
-        patientRepository.save(patient);
+        String message = "Invalid informations";
+
+        if (patient.getFirstName().length() > 1 && patient.getFirstName().length() < 32) {
+
+            if (patient.getLastName().length() > 1 && patient.getLastName().length() < 32) {
+
+                if (patient.getBirthDate() != null) {
+
+                    if (patient.getGender().length() == 1) {
+
+                        if (patient.getAddress().length() > 1 && patient.getAddress().length() < 64) {
+
+                            if (patient.getPhoneNumber().length() > 1 && patient.getPhoneNumber().length() < 15) {
+
+                                patientRepository.save(patient);
+
+                                message = "OK";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return message;
     }
 
     @Override
     public Patient select(int id) {
         logger.info("select(" + id + ")");
 
-        Optional<Patient> patientOptional = patientRepository.findById(id);
+        Patient patient = null;
 
-        return patientOptional.get();
+        if (patientRepository.existsById(id)) {
+
+            patient = patientRepository.findById(id).get();
+        }
+
+        return patient;
     }
 
     @Override
     public List<Patient> list() {
         logger.info("list()");
 
-        return (List<Patient>) patientRepository.findAll();
+        List<Patient> patientList = (List<Patient>) patientRepository.findAll();
+
+        return patientList;
     }
 
     @Override
-    public void update(int id, Patient patient) {
+    public String update(int id, Patient patient) {
         logger.info("update(" + id + "," + patient + ")");
 
-        patient.setId(id);
+        String message = "Invalid id";
 
-        patientRepository.save(patient);
+        if (patientRepository.existsById(id)) {
+
+            patient.setId(id);
+
+            patientRepository.save(patient);
+
+            message = "OK";
+        }
+
+        return message;
     }
 
     @Override
-    public void delete(int id) {
+    public String delete(int id) {
         logger.info("delete(" + id + ")");
 
-        patientRepository.deleteById(id);
+        String message = "Invalid id";
+
+        if (patientRepository.existsById(id)) {
+
+            patientRepository.deleteById(id);
+
+            message = "OK";
+        }
+
+        return message;
     }
 }
