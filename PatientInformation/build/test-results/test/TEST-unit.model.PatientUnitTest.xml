@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.model.PatientUnitTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:25:29" hostname="PC-ANTOINE" time="0.005">
+<testsuite name="unit.model.PatientUnitTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-08-10T13:29:35" hostname="PC-ANTOINE" time="0.008">
   <properties/>
-  <testcase name="setAndGetAddress()" classname="unit.model.PatientUnitTest" time="0.0"/>
+  <testcase name="setAndGetAddress()" classname="unit.model.PatientUnitTest" time="0.001"/>
   <testcase name="setAndGetPhoneNumber()" classname="unit.model.PatientUnitTest" time="0.001"/>
   <testcase name="setAndGetBirthDate()" classname="unit.model.PatientUnitTest" time="0.001"/>
-  <testcase name="setAndGetId()" classname="unit.model.PatientUnitTest" time="0.001"/>
-  <testcase name="setAndGetLastName()" classname="unit.model.PatientUnitTest" time="0.0"/>
-  <testcase name="setAndGetFirstName()" classname="unit.model.PatientUnitTest" time="0.0"/>
+  <testcase name="setAndGetId()" classname="unit.model.PatientUnitTest" time="0.0"/>
+  <testcase name="setAndGetLastName()" classname="unit.model.PatientUnitTest" time="0.001"/>
+  <testcase name="setAndGetFirstName()" classname="unit.model.PatientUnitTest" time="0.001"/>
   <testcase name="setAndGetGender()" classname="unit.model.PatientUnitTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

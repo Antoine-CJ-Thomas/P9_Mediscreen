@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.controller.DiabetesReportControllerUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:24:34" hostname="PC-ANTOINE" time="0.102">
+<testsuite name="unit.controller.DiabetesReportControllerUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-10T13:32:47" hostname="PC-ANTOINE" time="0.098">
   <properties/>
-  <testcase name="assessDiabetes_success()" classname="unit.controller.DiabetesReportControllerUnitTest" time="0.095"/>
-  <testcase name="assessDiabetes_failure()" classname="unit.controller.DiabetesReportControllerUnitTest" time="0.006"/>
-  <system-out><![CDATA[2021-08-10 12:24:34.076  INFO 8456 --- [    Test worker] DiabetesReportController                 : DiabetesReportController(Mock for ObjectMapper, hashCode: 1237029108,Mock for DiabetesReportServiceInterface, hashCode: 1726799118)
-2021-08-10 12:24:34.137  INFO 8456 --- [    Test worker] DiabetesReportController                 : assessDiabetes(Mock for DiabetesReport, hashCode: 312552625)
-2021-08-10 12:24:34.155  INFO 8456 --- [    Test worker] DiabetesReportController                 : DiabetesReportController(Mock for ObjectMapper, hashCode: 1513663591,Mock for DiabetesReportServiceInterface, hashCode: 177227808)
-2021-08-10 12:24:34.157  INFO 8456 --- [    Test worker] DiabetesReportController                 : assessDiabetes(Mock for DiabetesReport, hashCode: 1212383381)
+  <testcase name="assessDiabetes_success()" classname="unit.controller.DiabetesReportControllerUnitTest" time="0.094"/>
+  <testcase name="assessDiabetes_failure()" classname="unit.controller.DiabetesReportControllerUnitTest" time="0.003"/>
+  <system-out><![CDATA[2021-08-10 15:32:47.413  INFO 3412 --- [    Test worker] DiabetesReportController                 : DiabetesReportController(Mock for ObjectMapper, hashCode: 301857166,Mock for DiabetesReportServiceInterface, hashCode: 843157476)
+2021-08-10 15:32:47.476  INFO 3412 --- [    Test worker] DiabetesReportController                 : assessDiabetes(Mock for DiabetesReport, hashCode: 1642373675)
+2021-08-10 15:32:47.492  INFO 3412 --- [    Test worker] DiabetesReportController                 : DiabetesReportController(Mock for ObjectMapper, hashCode: 287267563,Mock for DiabetesReportServiceInterface, hashCode: 1533994597)
+2021-08-10 15:32:47.493  INFO 3412 --- [    Test worker] DiabetesReportController                 : assessDiabetes(Mock for DiabetesReport, hashCode: 1391181605)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

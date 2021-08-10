@@ -8,25 +8,25 @@ userInterface/Application.java
  userInterface.Application
 userInterface/service/ReportServiceInterface.java
  userInterface.service.ReportServiceInterface
-userInterface/proxy/PatientProxy.java
- userInterface.proxy.PatientProxy
-userInterface/proxy/ReportProxy.java
- userInterface.proxy.ReportProxy
+userInterface/controller/NoteController.java
+ userInterface.controller.NoteController
+userInterface/controller/CommonController.java
+ userInterface.controller.CommonController
 userInterface/controller/PatientController.java
  userInterface.controller.PatientController
-userInterface/service/PatientService.java
- userInterface.service.PatientService
+userInterface/model/Note.java
+ userInterface.model.Note
 userInterface/service/NoteServiceInterface.java
  userInterface.service.NoteServiceInterface
 userInterface/service/NoteService.java
  userInterface.service.NoteService
-userInterface/model/Note.java
- userInterface.model.Note
 userInterface/proxy/NoteProxy.java
  userInterface.proxy.NoteProxy
-userInterface/controller/CommonController.java
- userInterface.controller.CommonController
-userInterface/controller/NoteController.java
- userInterface.controller.NoteController
+userInterface/proxy/ReportProxy.java
+ userInterface.proxy.ReportProxy
+userInterface/proxy/PatientProxy.java
+ userInterface.proxy.PatientProxy
+userInterface/service/PatientService.java
+ userInterface.service.PatientService
 userInterface/service/ReportService.java
  userInterface.service.ReportService

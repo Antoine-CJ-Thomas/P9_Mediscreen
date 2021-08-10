@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.controller.CommonControllerIUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:34:12" hostname="PC-ANTOINE" time="0.064">
+<testsuite name="unit.controller.CommonControllerIUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-10T13:33:30" hostname="PC-ANTOINE" time="0.069">
   <properties/>
-  <testcase name="openPatient()" classname="unit.controller.CommonControllerIUnitTest" time="0.06"/>
+  <testcase name="openPatient()" classname="unit.controller.CommonControllerIUnitTest" time="0.065"/>
   <testcase name="listPatient()" classname="unit.controller.CommonControllerIUnitTest" time="0.003"/>
-  <system-out><![CDATA[2021-08-10 12:34:13.000  INFO 3088 --- [    Test worker] CommonController                         : CommonController(Mock for PatientServiceInterface, hashCode: 2105697325)
-2021-08-10 12:34:13.027  INFO 3088 --- [    Test worker] CommonController                         : openPatient(1,Mock for Model, hashCode: 657734145)
-2021-08-10 12:34:13.047  INFO 3088 --- [    Test worker] CommonController                         : CommonController(Mock for PatientServiceInterface, hashCode: 1708497634)
-2021-08-10 12:34:13.048  INFO 3088 --- [    Test worker] CommonController                         : listPatient(Mock for Model, hashCode: 434290752)
+  <system-out><![CDATA[2021-08-10 15:33:30.016  INFO 13476 --- [    Test worker] CommonController                         : CommonController(Mock for PatientServiceInterface, hashCode: 1423487811)
+2021-08-10 15:33:30.046  INFO 13476 --- [    Test worker] CommonController                         : openPatient(1,Mock for Model, hashCode: 1957222696)
+2021-08-10 15:33:30.068  INFO 13476 --- [    Test worker] CommonController                         : CommonController(Mock for PatientServiceInterface, hashCode: 900557776)
+2021-08-10 15:33:30.068  INFO 13476 --- [    Test worker] CommonController                         : listPatient(Mock for Model, hashCode: 374439400)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

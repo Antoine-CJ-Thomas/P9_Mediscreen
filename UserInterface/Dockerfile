@@ -4,6 +4,6 @@ ARG JAR_FILE=./build/libs/UserInterface.jar
 
 WORKDIR /app/mediscreen
 
-COPY ${JAR_FILE} app.jar
+COPY ${JAR_FILE} UserInterface.jar
 
-ENTRYPOINT ["java","-jar", "app.jar"]
+ENTRYPOINT ["java","-jar", "UserInterface.jar"]

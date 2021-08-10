@@ -15,7 +15,7 @@ import java.io.IOException;
 @RestController
 public class DiabetesReportController {
 
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper;
 
     private Logger logger = LogManager.getLogger(getClass().getSimpleName());
 

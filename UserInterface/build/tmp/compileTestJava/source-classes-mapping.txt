@@ -2,23 +2,23 @@ integration/PatientControllerIntegrationTest.java
  integration.PatientControllerIntegrationTest
 unit/model/DiabetesReportUnitTest.java
  unit.model.DiabetesReportUnitTest
-integration/NoteControllerIntegrationTest.java
- integration.NoteControllerIntegrationTest
+unit/controller/PatientControllerIUnitTest.java
+ unit.controller.PatientControllerIUnitTest
 unit/model/PatientUnitTest.java
  unit.model.PatientUnitTest
 unit/service/PatientServiceUnitTest.java
  unit.service.PatientServiceUnitTest
-unit/model/NoteUnitTest.java
- unit.model.NoteUnitTest
-unit/service/NoteServiceUnitTest.java
- unit.service.NoteServiceUnitTest
-unit/controller/NoteControllerUnitTest.java
- unit.controller.NoteControllerUnitTest
-unit/controller/PatientControllerIUnitTest.java
- unit.controller.PatientControllerIUnitTest
 integration/CommonControllerIntegrationTest.java
  integration.CommonControllerIntegrationTest
-unit/controller/CommonControllerIUnitTest.java
- unit.controller.CommonControllerIUnitTest
+unit/model/NoteUnitTest.java
+ unit.model.NoteUnitTest
 unit/service/ReportServiceUnitTest.java
  unit.service.ReportServiceUnitTest
+unit/service/NoteServiceUnitTest.java
+ unit.service.NoteServiceUnitTest
+integration/NoteControllerIntegrationTest.java
+ integration.NoteControllerIntegrationTest
+unit/controller/CommonControllerIUnitTest.java
+ unit.controller.CommonControllerIUnitTest
+unit/controller/NoteControllerUnitTest.java
+ unit.controller.NoteControllerUnitTest

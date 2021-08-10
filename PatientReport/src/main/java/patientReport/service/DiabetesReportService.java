@@ -10,6 +10,7 @@ import patientReport.util.FileLineReaderInterface;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.List;
 import java.util.Locale;
 
 @Service
@@ -87,11 +88,13 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
     private void findMedicalTriggerTerm(DiabetesReport diabetesReport) {
         logger.info("findMedicalTriggerTerm(" + diabetesReport + ")");
 
+        List<String> triggerTermList = fileLineReaderInterface.getTriggerTermList();
+
         for (String c : diabetesReport.getCommentaryList()) {
 
             String lowerCommentary = c.toLowerCase(Locale.ROOT);
 
-            for (String t : fileLineReaderInterface.getTriggerTermList()) {
+            for (String t : triggerTermList) {
 
                 String lowerTriggerTerm = t.toLowerCase(Locale.ROOT);
 

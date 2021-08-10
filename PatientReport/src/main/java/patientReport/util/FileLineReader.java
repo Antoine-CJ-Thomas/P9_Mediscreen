@@ -1,5 +1,7 @@
 package patientReport.util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -10,16 +12,21 @@ import java.util.Scanner;
 @Component
 public class FileLineReader implements FileLineReaderInterface {
 
+    private Logger logger = LogManager.getLogger(getClass().getSimpleName());
+
+//    private String filepath = "triggerTerm.txt";
     private String filepath = "build/resources/main/triggerTerm.txt";
 
     public FileLineReader() {
+        logger.info("FileLineReader()");
 
     }
 
     @Override
     public List<String> getTriggerTermList() {
+        logger.info("getTriggerTermList()");
 
-        Scanner scanner = null;
+        Scanner scanner;
 
         Reader reader = null;
         List<String> result = new ArrayList<>();
@@ -39,6 +46,8 @@ public class FileLineReader implements FileLineReaderInterface {
 
             } catch (IOException e) {
 
+                logger.info(e);
+
                 e.printStackTrace();
 
             } finally {
@@ -50,6 +59,8 @@ public class FileLineReader implements FileLineReaderInterface {
                         reader.close();
 
                     } catch (IOException e) {
+
+                        logger.info(e);
 
                         e.printStackTrace();
 
