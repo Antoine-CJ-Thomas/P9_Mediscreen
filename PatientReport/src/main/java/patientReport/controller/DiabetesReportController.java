@@ -12,6 +12,9 @@ import patientReport.service.DiabetesReportServiceInterface;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This class is used to intercept requests related to diabetes report
+ */
 @RestController
 public class DiabetesReportController {
 
@@ -22,6 +25,9 @@ public class DiabetesReportController {
     @Autowired
     private DiabetesReportServiceInterface diabetesReportServiceInterface;
 
+    /**
+     * Creates a new DiabetesReportController
+     */
     public DiabetesReportController() {
         logger.info("DiabetesReportController()");
 
@@ -29,6 +35,11 @@ public class DiabetesReportController {
         diabetesReportServiceInterface = new DiabetesReportService();
     }
 
+    /**
+     * Creates a new DiabetesReportController with the specified ObjectMapper and DiabetesReportServiceInterface
+     * @param objectMapper : mapper that this controller will use
+     * @param diabetesReportServiceInterface : service that this controller will use
+     */
     public DiabetesReportController(ObjectMapper objectMapper, DiabetesReportServiceInterface diabetesReportServiceInterface) {
         logger.info("DiabetesReportController(" + objectMapper + "," + diabetesReportServiceInterface + ")");
 
@@ -36,6 +47,13 @@ public class DiabetesReportController {
         this.diabetesReportServiceInterface = diabetesReportServiceInterface;
     }
 
+    /**
+     * Complete a diabetes report by evaluating the risk level of contracting it
+     * @param diabetesReport : diabetes report that contains needed patient informations
+     * @param httpServletResponse : http response
+     * @return The diabetes report completed (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
     @PostMapping("/assess/diabetes")
     public String assessDiabetes(@RequestBody DiabetesReport diabetesReport, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("assessDiabetes(" + diabetesReport + ")");

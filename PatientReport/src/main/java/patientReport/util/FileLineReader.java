@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * This class is used to extract medical trigger term from a text file
+ */
 @Component
 public class FileLineReader implements FileLineReaderInterface {
 
@@ -17,6 +20,9 @@ public class FileLineReader implements FileLineReaderInterface {
 //    private String filepath = "triggerTerm.txt";
     private String filepath = "build/resources/main/triggerTerm.txt";
 
+    /**
+     * Creates a new FileLineReader
+     */
     public FileLineReader() {
         logger.info("FileLineReader()");
 

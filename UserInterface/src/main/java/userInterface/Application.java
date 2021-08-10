@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * This class allows to start the application
+ * This class is used to start the application
  */
 @SpringBootApplication
 @EnableFeignClients

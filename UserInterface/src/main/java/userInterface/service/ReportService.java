@@ -12,6 +12,9 @@ import userInterface.proxy.ReportProxy;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used to process requests related to patient report
+ */
 @Service
 public class ReportService implements ReportServiceInterface {
 
@@ -20,11 +23,18 @@ public class ReportService implements ReportServiceInterface {
     @Autowired
     private ReportProxy reportProxy;
 
+    /**
+     * Creates a new ReportService
+     */
     public ReportService() {
         logger.info("ReportService()");
 
     }
 
+    /**
+     * Creates a new ReportService with the specified ReportProxy
+     * @param reportProxy : proxy that this service will use
+     */
     public ReportService(ReportProxy reportProxy) {
         logger.info("ReportService(" + reportProxy + ")");
 
@@ -39,7 +49,7 @@ public class ReportService implements ReportServiceInterface {
 
         if (patient != null && noteList != null) {
 
-            List<String> commentaryList = new ArrayList();
+            List<String> commentaryList = new ArrayList<>();
 
             for (Note n : noteList) {
 

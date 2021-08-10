@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * This class is used to intercept requests related to patient note
+ */
 @RestController
 @RequestMapping("/note")
 public class NoteController {
@@ -24,6 +27,9 @@ public class NoteController {
     @Autowired
     private NoteServiceInterface noteServiceInterface;
 
+    /**
+     * Creates a new NoteController
+     */
     public NoteController() {
         logger.info("PatientNoteController()");
 
@@ -31,6 +37,11 @@ public class NoteController {
         noteServiceInterface = new NoteService();
     }
 
+    /**
+     * Creates a new NoteController with the specified ObjectMapper and NoteServiceInterface
+     * @param objectMapper : mapper that this controller will use
+     * @param noteServiceInterface : service that this controller will use
+     */
     public NoteController(ObjectMapper objectMapper, NoteServiceInterface noteServiceInterface) {
         logger.info("PatientNoteController(" + noteServiceInterface + "," + objectMapper + ")");
 
@@ -38,6 +49,12 @@ public class NoteController {
         this.noteServiceInterface = noteServiceInterface;
     }
 
+    /**
+     * Insert a new Note in the database
+     * @param note : note to add in the database
+     * @param httpServletResponse : http response
+     * @throws IOException : if httpServletResponse is null
+     */
     @PostMapping("/insert")
     public void insert(@RequestBody Note note, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("insert(" + note + ")");
@@ -55,6 +72,13 @@ public class NoteController {
         }
     }
 
+    /**
+     * Select a Note in the database
+     * @param id : id of the note to select
+     * @param httpServletResponse : http response
+     * @return The selected note (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
     @GetMapping("/select")
     public String select(@RequestParam String id, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("select(" + id + ")");
@@ -74,6 +98,12 @@ public class NoteController {
         return objectMapper.writeValueAsString(note);
     }
 
+    /**
+     * Select the Note list in the database
+     * @param httpServletResponse : http response
+     * @return The selected note list (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
     @GetMapping("/list")
     public String list(@RequestParam int patientId, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("list(" + patientId + ")");
@@ -93,6 +123,13 @@ public class NoteController {
         return objectMapper.writeValueAsString(noteList);
     }
 
+    /**
+     * Update the Note in the database
+     * @param id : id of the note to update
+     * @param note : data of the note to update
+     * @param httpServletResponse : http response
+     * @throws IOException : if httpServletResponse is null
+     */
     @PutMapping("/update")
     public void update(@RequestParam String id, @RequestBody Note note, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("update(" + id + "," + note + ")");
@@ -110,6 +147,12 @@ public class NoteController {
         }
     }
 
+    /**
+     * Delete the Note in the database
+     * @param id : id of the note to delete
+     * @param httpServletResponse : http response
+     * @throws IOException : if httpServletResponse is null
+     */
     @DeleteMapping("/delete")
     public void delete(@RequestParam String id, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("delete(" + id + ")");

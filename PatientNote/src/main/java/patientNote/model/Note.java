@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
 
+/**
+ * This class is used to stores the data of a note
+ */
 @Document(collection = "patient_note")
 public class Note {
 

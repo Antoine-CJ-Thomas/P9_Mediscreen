@@ -9,6 +9,9 @@ import patientInformation.repository.PatientRepository;
 
 import java.util.List;
 
+/**
+ * This class is used to process requests related to patient information
+ */
 @Service
 public class PatientService implements PatientServiceInterface {
 
@@ -17,10 +20,17 @@ public class PatientService implements PatientServiceInterface {
     @Autowired
     private PatientRepository patientRepository;
 
+    /**
+     * Creates a new PatientService
+     */
     public PatientService() {
         logger.info("PatientService()");
     }
 
+    /**
+     * Creates a new PatientService with the specified PatientRepository
+     * @param patientRepository : repository that this service will use
+     */
     public PatientService(PatientRepository patientRepository) {
         logger.info("PatientService(" + patientRepository + ")");
 

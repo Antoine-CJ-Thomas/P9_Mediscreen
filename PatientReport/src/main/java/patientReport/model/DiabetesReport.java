@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class is used to stores the data of a diabetes report
+ */
 @Component
 public class DiabetesReport {
 
@@ -13,9 +16,9 @@ public class DiabetesReport {
     private String gender;
     private Date birthDate;
     private String riskLevel;
-    private List<String> commentaryList = new ArrayList();
-    private List<String> medicalTriggerTermList = new ArrayList();
-    private List<String> generalTriggerTermList = new ArrayList();
+    private List<String> commentaryList = new ArrayList<>();
+    private List<String> medicalTriggerTermList = new ArrayList<>();
+    private List<String> generalTriggerTermList = new ArrayList<>();
 
     public DiabetesReport() {
 

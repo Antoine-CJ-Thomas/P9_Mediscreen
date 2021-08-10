@@ -9,6 +9,9 @@ import userInterface.proxy.NoteProxy;
 
 import java.util.List;
 
+/**
+ * This class is used to process requests related to patient note
+ */
 @Service
 public class NoteService implements NoteServiceInterface {
 
@@ -17,11 +20,18 @@ public class NoteService implements NoteServiceInterface {
     @Autowired
     private NoteProxy noteProxy;
 
+    /**
+     * Creates a new NoteService
+     */
     public NoteService() {
         logger.info("PatientNoteService()");
 
     }
 
+    /**
+     * Creates a new NoteService with the specified NoteProxy
+     * @param noteProxy : proxy that this service will use
+     */
     public NoteService(NoteProxy noteProxy) {
         logger.info("PatientNoteService(" + noteProxy + ")");
 

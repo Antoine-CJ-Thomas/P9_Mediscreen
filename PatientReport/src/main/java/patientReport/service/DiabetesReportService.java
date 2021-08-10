@@ -13,6 +13,9 @@ import java.time.ZoneId;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * This class is used to process requests related to patient report
+ */
 @Service
 public class DiabetesReportService implements DiabetesReportServiceInterface {
 
@@ -21,12 +24,19 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
     @Autowired
     private FileLineReaderInterface fileLineReaderInterface;
 
+    /**
+     * Creates a new DiabetesReportService
+     */
     public DiabetesReportService() {
         logger.info("DiabetesReportService()");
 
         fileLineReaderInterface = new FileLineReader();
     }
 
+    /**
+     * Creates a new DiabetesReportService with the specified FileLineReaderInterface
+     * @param fileLineReaderInterface : file reader that this service will use
+     */
     public DiabetesReportService(FileLineReaderInterface fileLineReaderInterface) {
         logger.info("DiabetesReportService(" + fileLineReaderInterface + ")");
 
@@ -56,6 +66,10 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
         return message;
     }
 
+    /**
+     * Write the general trigger term in the diabetes report
+     * @param diabetesReport : diabetes report that will be completed
+     */
     private void setGeneralTriggerTerm(DiabetesReport diabetesReport) {
         logger.info("setGeneralTriggerTerm(" + diabetesReport + ")");
 
@@ -85,6 +99,10 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
         }
     }
 
+    /**
+     * Write the medical trigger term in the diabetes report
+     * @param diabetesReport : diabetes report that will be completed
+     */
     private void findMedicalTriggerTerm(DiabetesReport diabetesReport) {
         logger.info("findMedicalTriggerTerm(" + diabetesReport + ")");
 
@@ -106,6 +124,10 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
         }
     }
 
+    /**
+     * Assess the risk level of contracting a diabetes
+     * @param diabetesReport : diabetes report that will be completed
+     */
     private void evaluateRiskLevel(DiabetesReport diabetesReport) {
         logger.info("evaluateRiskLevel(" + diabetesReport + ")");
 

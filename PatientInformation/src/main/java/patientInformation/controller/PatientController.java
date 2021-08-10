@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * This class is used to intercept requests related to patient information
+ */
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
@@ -24,6 +27,9 @@ public class PatientController {
     @Autowired
     private PatientServiceInterface patientServiceInterface;
 
+    /**
+     * Creates a new PatientController
+     */
     public PatientController() {
         logger.info("PatientController()");
 
@@ -31,6 +37,11 @@ public class PatientController {
         patientServiceInterface = new PatientService();
     }
 
+    /**
+     * Creates a new PatientController with the specified ObjectMapper and PatientServiceInterface
+     * @param objectMapper : mapper that this controller will use
+     * @param patientServiceInterface : service that this controller will use
+     */
     public PatientController(ObjectMapper objectMapper, PatientServiceInterface patientServiceInterface) {
         logger.info("PatientController(" + patientServiceInterface + "," + objectMapper + ")");
 
@@ -38,6 +49,12 @@ public class PatientController {
         this.patientServiceInterface = patientServiceInterface;
     }
 
+    /**
+     * Insert a new Patient in the database
+     * @param patient : patient to insert
+     * @param httpServletResponse : http response
+     * @throws IOException : if httpServletResponse is null
+     */
     @PostMapping("/insert")
     public void insert(@RequestBody Patient patient, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("insert(" + patient + ")");
@@ -55,6 +72,13 @@ public class PatientController {
         }
     }
 
+    /**
+     * Select a Patient in the database
+     * @param id : id of the patient to select
+     * @param httpServletResponse : http response
+     * @return The selected patient (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
     @GetMapping("/select")
     public String select(@RequestParam int id, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("select(" + id + ")");
@@ -74,6 +98,12 @@ public class PatientController {
         return objectMapper.writeValueAsString(patient);
     }
 
+    /**
+     * Select the Patient list in the database
+     * @param httpServletResponse : http response
+     * @return The selected patient list (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
     @GetMapping("/list")
     public String list(HttpServletResponse httpServletResponse) throws IOException {
         logger.info("list()");
@@ -93,6 +123,13 @@ public class PatientController {
         return objectMapper.writeValueAsString(patientList);
     }
 
+    /**
+     * Update the Patient in the database
+     * @param id : id of the patient to update
+     * @param patient : data of the patient to update
+     * @param httpServletResponse : http response
+     * @throws IOException : if httpServletResponse is null
+     */
     @PutMapping("/update")
     public void update(@RequestParam int id, @RequestBody Patient patient, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("update(" + id + "," + patient + ")");
@@ -110,6 +147,12 @@ public class PatientController {
         }
     }
 
+    /**
+     * Delete the Patient in the database
+     * @param id : id of the patient to delete
+     * @param httpServletResponse : http response
+     * @throws IOException : if httpServletResponse is null
+     */
     @DeleteMapping("/delete")
     public void delete(@RequestParam int id, HttpServletResponse httpServletResponse) throws IOException {
         logger.info("delete(" + id + ")");

@@ -8,6 +8,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+/**
+ * This class is used to stores the data of a patient
+ */
 @Component
 public class Patient {
 

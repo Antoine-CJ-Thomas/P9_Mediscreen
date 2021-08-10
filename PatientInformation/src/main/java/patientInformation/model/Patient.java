@@ -5,6 +5,9 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 import java.sql.Date;
 
+/**
+ * This class is used to stores the data of a patient
+ */
 @Entity
 @DynamicUpdate
 @Table(name = "patient_information", schema = "mediscreen")

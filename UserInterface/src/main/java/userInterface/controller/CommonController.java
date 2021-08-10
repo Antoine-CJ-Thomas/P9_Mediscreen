@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import userInterface.model.Note;
 import userInterface.model.Patient;
-import userInterface.service.PatientService;
-import userInterface.service.PatientServiceInterface;
-import userInterface.service.NoteServiceInterface;
-import userInterface.service.ReportServiceInterface;
+import userInterface.service.*;
 
 import java.util.List;
 
+/**
+ * This class is used to intercept common requests
+ */
 @Controller
 public class CommonController {
 
@@ -30,23 +30,39 @@ public class CommonController {
     @Autowired
     private ReportServiceInterface reportServiceInterface;
 
+    /**
+     * Creates a new CommonController
+     */
     public CommonController() {
         logger.info("CommonController()");
 
         patientServiceInterface = new PatientService();
+        noteServiceInterface = new NoteService();
+        reportServiceInterface = new ReportService();
     }
 
+    /**
+     * Creates a new CommonController with the specified PatientServiceInterface
+     * @param patientServiceInterface : patient service that this controller will use
+     * @param noteServiceInterface : note service that this controller will use
+     * @param reportServiceInterface : report service that this controller will use
+     */
     public CommonController(PatientServiceInterface patientServiceInterface,
                             NoteServiceInterface noteServiceInterface,
                             ReportServiceInterface reportServiceInterface) {
 
-        logger.info("CommonController(" + patientServiceInterface + ")");
+        logger.info("CommonController(" + patientServiceInterface + "," +  noteServiceInterface + "," + reportServiceInterface + ")");
 
         this.patientServiceInterface = patientServiceInterface;
         this.noteServiceInterface = noteServiceInterface;
         this.reportServiceInterface = reportServiceInterface;
     }
 
+    /**
+     * Get the html page that allow to consult the patient list
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the patient list
+     */
     @GetMapping("/patient/list")
     public String listPatient(Model model) {
         logger.info("listPatient(" + model + ")");
@@ -56,6 +72,12 @@ public class CommonController {
         return "patient_list.html";
     }
 
+    /**
+     * Get the html page that allow to consult the medical record of a patient
+     * @param patientId : id of the patient
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the medical record of the patient
+     */
     @GetMapping("/patient/open")
     public String openPatient(@RequestParam int patientId, Model model) {
         logger.info("openPatient(" + patientId + "," + model + ")");

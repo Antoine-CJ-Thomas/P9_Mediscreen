@@ -8,8 +8,10 @@ import patientNote.model.Note;
 import patientNote.repository.NoteRepository;
 
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * This class is used to process requests related to patient note
+ */
 @Service
 public class NoteService implements NoteServiceInterface {
 
@@ -18,10 +20,17 @@ public class NoteService implements NoteServiceInterface {
     @Autowired
     private NoteRepository noteRepository;
 
+    /**
+     * Creates a new NoteService
+     */
     public NoteService() {
         logger.info("PatientService()");
     }
 
+    /**
+     * Creates a new NoteService with the specified NoteRepository
+     * @param noteRepository : repository that this service will use
+     */
     public NoteService(NoteRepository noteRepository) {
         logger.info("PatientService(" + noteRepository + ")");
 
