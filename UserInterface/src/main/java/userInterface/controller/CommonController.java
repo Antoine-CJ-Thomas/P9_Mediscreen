@@ -82,7 +82,7 @@ public class CommonController {
     public String openPatient(@RequestParam int patientId, Model model) {
         logger.info("openPatient(" + patientId + "," + model + ")");
 
-        Patient patient = patientServiceInterface.select(patientId);
+        Patient patient = patientServiceInterface.selectById(patientId);
         List<Note> noteList = noteServiceInterface.list(patientId);
 
         model.addAttribute("patient", patient);

@@ -12,7 +12,7 @@ import java.util.List;
  * This interface is used to interact with the patient report API
  */
 @Component
-@FeignClient(name = "patientReport-api", url = "http://localhost:8083/assess")
+@FeignClient(name = "patientReport-api", url = "http://patientReport-api:8083/assess")
 public interface ReportProxy {
 
     /**

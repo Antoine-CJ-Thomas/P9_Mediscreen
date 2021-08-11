@@ -9,4 +9,11 @@ import patientInformation.model.Patient;
  */
 @Repository
 public interface PatientRepository extends CrudRepository<Patient, Integer> {
+
+    /**
+     * Find a Patient in the database by his last name
+     * @param lastName : last name of the patient to find
+     * @return The patient found
+     */
+    Patient findByLastName(String lastName);
 }

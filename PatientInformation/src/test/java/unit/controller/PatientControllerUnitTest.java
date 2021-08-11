@@ -65,10 +65,10 @@ public class PatientControllerUnitTest {
         Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        Mockito.when(patientServiceInterface.select(id)).thenReturn(patient);
+        Mockito.when(patientServiceInterface.selectById(id)).thenReturn(patient);
         Mockito.when(objectMapper.writeValueAsString(patient)).thenReturn("patient");
 
-        patientController.select(id, httpServletResponse);
+        patientController.selectById(id, httpServletResponse);
 
         //THEN
         Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
@@ -81,9 +81,9 @@ public class PatientControllerUnitTest {
         int id = 1;
 
         //WHEN
-        Mockito.when(patientServiceInterface.select(id)).thenReturn(null);
+        Mockito.when(patientServiceInterface.selectById(id)).thenReturn(null);
 
-        patientController.select(id, httpServletResponse);
+        patientController.selectById(id, httpServletResponse);
 
         //THEN
         Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(404, "Patient with (id = " + id + ") could not be found");

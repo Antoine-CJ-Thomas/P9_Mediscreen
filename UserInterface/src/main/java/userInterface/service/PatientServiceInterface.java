@@ -18,11 +18,11 @@ public interface PatientServiceInterface {
     void insert(Patient patient);
 
     /**
-     * Select a Patient
+     * Select a Patient by his id
      * @param id : id of the patient to select
      * @return The selected patient
      */
-    Patient select(int id);
+    Patient selectById(int id);
 
     /**
      * Select the Patient List

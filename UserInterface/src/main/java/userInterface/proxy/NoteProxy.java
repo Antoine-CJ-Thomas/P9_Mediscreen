@@ -11,7 +11,7 @@ import java.util.List;
  * This interface is used to interact with the patient note API
  */
 @Component
-@FeignClient(name = "patientNote-api", url = "http://localhost:8082/note")
+@FeignClient(name = "patientNote-api", url = "http://patientNote-api:8082/note")
 public interface NoteProxy {
 
     /**

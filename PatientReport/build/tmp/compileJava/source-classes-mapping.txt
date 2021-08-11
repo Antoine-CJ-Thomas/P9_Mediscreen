@@ -1,14 +1,30 @@
-patientReport/service/DiabetesReportService.java
- patientReport.service.DiabetesReportService
-patientReport/service/DiabetesReportServiceInterface.java
- patientReport.service.DiabetesReportServiceInterface
+patientReport/service/PatientServiceInterface.java
+ patientReport.service.PatientServiceInterface
+patientReport/model/Note.java
+ patientReport.model.Note
+patientReport/model/Patient.java
+ patientReport.model.Patient
+patientReport/service/NoteService.java
+ patientReport.service.NoteService
+patientReport/proxy/NoteProxy.java
+ patientReport.proxy.NoteProxy
+patientReport/service/PatientService.java
+ patientReport.service.PatientService
+patientReport/Application.java
+ patientReport.Application
 patientReport/util/FileLineReader.java
  patientReport.util.FileLineReader
+patientReport/service/DiabetesReportServiceInterface.java
+ patientReport.service.DiabetesReportServiceInterface
+patientReport/proxy/PatientProxy.java
+ patientReport.proxy.PatientProxy
 patientReport/model/DiabetesReport.java
  patientReport.model.DiabetesReport
 patientReport/util/FileLineReaderInterface.java
  patientReport.util.FileLineReaderInterface
-patientReport/Application.java
- patientReport.Application
+patientReport/service/NoteServiceInterface.java
+ patientReport.service.NoteServiceInterface
+patientReport/service/DiabetesReportService.java
+ patientReport.service.DiabetesReportService
 patientReport/controller/DiabetesReportController.java
  patientReport.controller.DiabetesReportController

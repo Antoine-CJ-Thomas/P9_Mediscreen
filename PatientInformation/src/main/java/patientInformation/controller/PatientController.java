@@ -73,17 +73,17 @@ public class PatientController {
     }
 
     /**
-     * Select a Patient in the database
+     * Select a Patient in the database by his id
      * @param id : id of the patient to select
      * @param httpServletResponse : http response
      * @return The selected patient (JSon)
      * @throws IOException : if httpServletResponse is null
      */
-    @GetMapping("/select")
-    public String select(@RequestParam int id, HttpServletResponse httpServletResponse) throws IOException {
-        logger.info("select(" + id + ")");
+    @GetMapping("/selectById")
+    public String selectById(@RequestParam int id, HttpServletResponse httpServletResponse) throws IOException {
+        logger.info("selectById(" + id + ")");
 
-        Patient patient = patientServiceInterface.select(id);
+        Patient patient = patientServiceInterface.selectById(id);
 
         if (patient != null) {
 
@@ -93,6 +93,32 @@ public class PatientController {
         else {
 
             httpServletResponse.sendError(404, "Patient with (id = " + id + ") could not be found");
+        }
+
+        return objectMapper.writeValueAsString(patient);
+    }
+
+    /**
+     * Select a Patient in the database by his last name
+     * @param lastName : last name of the patient to select
+     * @param httpServletResponse : http response
+     * @return The selected patient (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
+    @GetMapping("/selectByLastName")
+    public String selectByLastName(@RequestParam String lastName, HttpServletResponse httpServletResponse) throws IOException {
+        logger.info("selectByLastName(" + lastName + ")");
+
+        Patient patient = patientServiceInterface.selectByLastName(lastName);
+
+        if (patient != null) {
+
+            httpServletResponse.setStatus(200);
+        }
+
+        else {
+
+            httpServletResponse.sendError(404, "Patient with (lastName = " + lastName + ") could not be found");
         }
 
         return objectMapper.writeValueAsString(patient);

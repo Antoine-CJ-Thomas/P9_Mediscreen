@@ -46,10 +46,10 @@ public class PatientService implements PatientServiceInterface {
     }
 
     @Override
-    public Patient select(int id) {
-        logger.info("select(" + id + ")");
+    public Patient selectById(int id) {
+        logger.info("selectById(" + id + ")");
 
-        return patientProxy.select(id);
+        return patientProxy.selectById(id);
     }
 
     @Override

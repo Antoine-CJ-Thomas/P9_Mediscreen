@@ -19,11 +19,18 @@ public interface PatientServiceInterface {
     String insert(Patient patient);
 
     /**
-     * Select a Patient in the database
+     * Select a Patient in the database by his id
      * @param id : id of the patient to select
      * @return The selected patient
      */
-    Patient select(int id);
+    Patient selectById(int id);
+
+    /**
+     * Select a Patient in the database by his last name
+     * @param lastName : last name of the patient to select
+     * @return The selected patient
+     */
+    Patient selectByLastName(String lastName);
 
     /**
      * Select the Patient List in the database

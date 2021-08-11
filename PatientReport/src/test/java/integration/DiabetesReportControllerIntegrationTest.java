@@ -42,7 +42,7 @@ public class DiabetesReportControllerIntegrationTest {
 
         // GIVEN
         String gender = "M";
-        List<String> commentaryList = new ArrayList();
+        List<String> commentaryList = new ArrayList<>();
 
         commentaryList.add("Taille");
         commentaryList.add("Poids");
@@ -56,6 +56,36 @@ public class DiabetesReportControllerIntegrationTest {
         mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/assess/diabetes")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(diabetesReport))).andReturn();
+
+        // THEN
+        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
+    }
+
+    @Test
+    public void assessDiabetesById() throws Exception {
+
+        // GIVEN
+        int patientId = 1;
+
+        // WHEN
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/assess/diabetesById")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(patientId))).andReturn();
+
+        // THEN
+        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
+    }
+
+    @Test
+    public void assessDiabetesByLastName() throws Exception {
+
+        // GIVEN
+        String lastName = "Ferguson";
+
+        // WHEN
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/assess/diabetesByLastName")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(lastName)).andReturn();
 
         // THEN
         Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);

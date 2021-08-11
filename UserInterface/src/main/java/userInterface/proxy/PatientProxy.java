@@ -11,7 +11,7 @@ import java.util.List;
  * This interface is used to interact with the patient information API
  */
 @Component
-@FeignClient(name = "patientInformation-api", url = "http://localhost:8081/patient")
+@FeignClient(name = "patientInformation-api", url = "http://patientInformation-api:8081/patient")
 public interface PatientProxy {
 
     /**
@@ -26,8 +26,8 @@ public interface PatientProxy {
      * @param id : id of the patient to select
      * @return The selected patient
      */
-    @GetMapping(value = "/select", produces = "application/json")
-    Patient select(@RequestParam int id);
+    @GetMapping(value = "/selectById", produces = "application/json")
+    Patient selectById(@RequestParam int id);
 
     /**
      * Select the Patient list in the database

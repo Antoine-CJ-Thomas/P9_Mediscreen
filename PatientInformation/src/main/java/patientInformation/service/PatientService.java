@@ -69,8 +69,8 @@ public class PatientService implements PatientServiceInterface {
     }
 
     @Override
-    public Patient select(int id) {
-        logger.info("select(" + id + ")");
+    public Patient selectById(int id) {
+        logger.info("selectById(" + id + ")");
 
         Patient patient = null;
 
@@ -78,6 +78,15 @@ public class PatientService implements PatientServiceInterface {
 
             patient = patientRepository.findById(id).get();
         }
+
+        return patient;
+    }
+
+    @Override
+    public Patient selectByLastName(String lastName) {
+        logger.info("selectByLastName(" + lastName + ")");
+
+        Patient patient = patientRepository.findByLastName(lastName);
 
         return patient;
     }

@@ -1,5 +1,6 @@
 patientReport
 patientReport.controller
 patientReport.model
+patientReport.proxy
 patientReport.service
 patientReport.util

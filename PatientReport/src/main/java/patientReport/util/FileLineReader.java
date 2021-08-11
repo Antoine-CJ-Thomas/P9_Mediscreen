@@ -17,8 +17,8 @@ public class FileLineReader implements FileLineReaderInterface {
 
     private Logger logger = LogManager.getLogger(getClass().getSimpleName());
 
-//    private String filepath = "triggerTerm.txt";
-    private String filepath = "build/resources/main/triggerTerm.txt";
+    private String filepath = "triggerTerm.txt";
+//    private String filepath = "build/resources/main/triggerTerm.txt";
 
     /**
      * Creates a new FileLineReader

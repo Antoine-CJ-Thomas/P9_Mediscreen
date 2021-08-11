@@ -100,7 +100,7 @@ public class PatientController {
     public String editPatient(@RequestParam int patientId, Model model) {
         logger.info("editPatient(" + patientId + "," + model + ")");
 
-        model.addAttribute("patient", patientServiceInterface.select(patientId));
+        model.addAttribute("patient", patientServiceInterface.selectById(patientId));
 
         return "patient_edit.html";
     }

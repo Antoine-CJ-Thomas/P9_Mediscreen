@@ -77,7 +77,7 @@ public class PatientServiceUnitTest {
         Mockito.when(mockedPatientRepository.findById(id)).thenReturn(Optional.of(patient));
 
         //THEN
-        Assertions.assertThat(patientService.select(id) == patient);
+        Assertions.assertThat(patientService.selectById(id) == patient);
     }
 
     @Test
@@ -90,7 +90,7 @@ public class PatientServiceUnitTest {
         Mockito.when(mockedPatientRepository.existsById(id)).thenReturn(false);
 
         //THEN
-        Assertions.assertThat(patientService.select(id) == null);
+        Assertions.assertThat(patientService.selectById(id) == null);
     }
 
     @Test

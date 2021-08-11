@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.service.ReportServiceUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-11T09:33:52" hostname="PC-ANTOINE" time="0.007">
-  <properties/>
-  <testcase name="getDiabetesReport()" classname="unit.service.ReportServiceUnitTest" time="0.007"/>
-  <system-out><![CDATA[2021-08-11 11:33:52.270  INFO 14396 --- [    Test worker] ReportService                            : ReportService(Mock for ReportProxy, hashCode: 513564027)
-2021-08-11 11:33:52.271  INFO 14396 --- [    Test worker] ReportService                            : getDiabetesReport(Mock for Patient, hashCode: 929874614,[Mock for Note, hashCode: 1809948626])
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

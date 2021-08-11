@@ -8,6 +8,7 @@ import patientReport.model.DiabetesReport;
 import patientReport.util.FileLineReader;
 import patientReport.util.FileLineReaderInterface;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
@@ -73,7 +74,7 @@ public class DiabetesReportService implements DiabetesReportServiceInterface {
     private void setGeneralTriggerTerm(DiabetesReport diabetesReport) {
         logger.info("setGeneralTriggerTerm(" + diabetesReport + ")");
 
-        LocalDate birthDate = diabetesReport.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate birthDate =  Instant.ofEpochMilli(diabetesReport.getBirthDate().getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate today = LocalDate.now();
 
         diabetesReport.setAge((int) java.time.temporal.ChronoUnit.YEARS.between(birthDate, today));
