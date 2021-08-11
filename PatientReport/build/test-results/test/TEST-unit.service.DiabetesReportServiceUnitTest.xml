@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.DiabetesReportServiceUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-11T09:31:27" hostname="PC-ANTOINE" time="0.061">
+  <properties/>
+  <testcase name="assessDiabetes_success()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.047"/>
+  <testcase name="assessDiabetes_failure()" classname="unit.service.DiabetesReportServiceUnitTest" time="0.013"/>
+  <system-out><![CDATA[2021-08-11 11:31:27.286  INFO 14776 --- [    Test worker] DiabetesReportService                    : DiabetesReportService(Mock for FileLineReaderInterface, hashCode: 894788254)
+2021-08-11 11:31:27.326  INFO 14776 --- [    Test worker] DiabetesReportService                    : assessDiabetes(Mock for DiabetesReport, hashCode: 1726442372)
+2021-08-11 11:31:27.326  INFO 14776 --- [    Test worker] DiabetesReportService                    : setGeneralTriggerTerm(Mock for DiabetesReport, hashCode: 1726442372)
+2021-08-11 11:31:27.328  INFO 14776 --- [    Test worker] DiabetesReportService                    : findMedicalTriggerTerm(Mock for DiabetesReport, hashCode: 1726442372)
+2021-08-11 11:31:27.329  INFO 14776 --- [    Test worker] DiabetesReportService                    : evaluateRiskLevel(Mock for DiabetesReport, hashCode: 1726442372)
+2021-08-11 11:31:27.335  INFO 14776 --- [    Test worker] DiabetesReportService                    : DiabetesReportService(Mock for FileLineReaderInterface, hashCode: 1793984193)
+2021-08-11 11:31:27.340  INFO 14776 --- [    Test worker] DiabetesReportService                    : assessDiabetes(Mock for DiabetesReport, hashCode: 1310201355)
+2021-08-11 11:31:27.341  INFO 14776 --- [    Test worker] DiabetesReportService                    : setGeneralTriggerTerm(Mock for DiabetesReport, hashCode: 1310201355)
+2021-08-11 11:31:27.342  INFO 14776 --- [    Test worker] DiabetesReportService                    : findMedicalTriggerTerm(Mock for DiabetesReport, hashCode: 1310201355)
+2021-08-11 11:31:27.344  INFO 14776 --- [    Test worker] DiabetesReportService                    : evaluateRiskLevel(Mock for DiabetesReport, hashCode: 1310201355)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

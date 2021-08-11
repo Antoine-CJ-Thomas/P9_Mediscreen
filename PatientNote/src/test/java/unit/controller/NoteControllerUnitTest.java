@@ -96,7 +96,7 @@ public class NoteControllerUnitTest {
 
         //GIVEN
         int patientId = 1;
-        List<Note> noteList = new ArrayList();
+        List<Note> noteList = new ArrayList<>();
 
         //WHEN
         Mockito.when(noteServiceInterface.list(patientId)).thenReturn(noteList);
@@ -113,7 +113,6 @@ public class NoteControllerUnitTest {
 
         //GIVEN
         int patientId = 1;
-        List<Note> noteList = new ArrayList();
 
         //WHEN
         Mockito.when(noteServiceInterface.list(patientId)).thenReturn(null);

@@ -31,6 +31,7 @@ public interface NoteProxy {
 
     /**
      * Select the Note list in the database
+     * @param patientId : id of the patient to find
      * @return The selected note list
      */
     @GetMapping(value = "/list", produces = "application/json")

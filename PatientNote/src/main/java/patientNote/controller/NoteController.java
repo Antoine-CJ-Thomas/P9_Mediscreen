@@ -101,6 +101,7 @@ public class NoteController {
     /**
      * Select the Note list in the database
      * @param httpServletResponse : http response
+     * @param patientId : id of the patient to find
      * @return The selected note list (JSon)
      * @throws IOException : if httpServletResponse is null
      */

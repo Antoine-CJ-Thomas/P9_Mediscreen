@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.PatientServiceUnitTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-11T09:31:03" hostname="PC-ANTOINE" time="0.026">
+  <properties/>
+  <testcase name="select_failure()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="list_failure()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="insert_failure()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="delete_success()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="delete_failure()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="update_success()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="select_success()" classname="unit.service.PatientServiceUnitTest" time="0.003"/>
+  <testcase name="list_success()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="insert_success()" classname="unit.service.PatientServiceUnitTest" time="0.004"/>
+  <testcase name="update_failure()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-08-11 11:31:03.199  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 21027889)
+2021-08-11 11:31:03.200  INFO 15208 --- [    Test worker] PatientService                           : select(1)
+2021-08-11 11:31:03.202  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1061656792)
+2021-08-11 11:31:03.202  INFO 15208 --- [    Test worker] PatientService                           : list()
+2021-08-11 11:31:03.204  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 2142871815)
+2021-08-11 11:31:03.204  INFO 15208 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 2116463928)
+2021-08-11 11:31:03.206  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 2099538812)
+2021-08-11 11:31:03.206  INFO 15208 --- [    Test worker] PatientService                           : delete(1)
+2021-08-11 11:31:03.208  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1327975494)
+2021-08-11 11:31:03.208  INFO 15208 --- [    Test worker] PatientService                           : delete(1)
+2021-08-11 11:31:03.210  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 887574880)
+2021-08-11 11:31:03.210  INFO 15208 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 2137220521)
+2021-08-11 11:31:03.212  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1425187744)
+2021-08-11 11:31:03.214  INFO 15208 --- [    Test worker] PatientService                           : select(1)
+2021-08-11 11:31:03.216  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1693066480)
+2021-08-11 11:31:03.217  INFO 15208 --- [    Test worker] PatientService                           : list()
+2021-08-11 11:31:03.218  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1781118174)
+2021-08-11 11:31:03.220  INFO 15208 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 778938617)
+2021-08-11 11:31:03.223  INFO 15208 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 250391686)
+2021-08-11 11:31:03.224  INFO 15208 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 1339411321)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

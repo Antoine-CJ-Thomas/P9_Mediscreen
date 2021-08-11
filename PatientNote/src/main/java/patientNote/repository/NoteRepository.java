@@ -23,7 +23,8 @@ public interface NoteRepository extends MongoRepository<Note, String> {
     Optional<Note> findById(String id);
 
     /**
-     * Find the Note list by their id in the database
+     * Find the Note list by their patient id in the database
+     * @param patientId : id of the patient to find
      * @return The found note list
      */
     List<Note> findByPatientId(Integer patientId);

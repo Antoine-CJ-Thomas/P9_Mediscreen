@@ -93,7 +93,7 @@ public class PatientControllerUnitTest {
     public void list_status_200() throws IOException {
 
         //GIVEN
-        List<Patient> patientList = new ArrayList();
+        List<Patient> patientList = new ArrayList<>();
 
         //WHEN
         Mockito.when(patientServiceInterface.list()).thenReturn(patientList);
@@ -108,7 +108,7 @@ public class PatientControllerUnitTest {
     public void list_status_404() throws IOException {
 
         //GIVEN
-        List<Patient> patientList = new ArrayList();
+        List<Patient> patientList = new ArrayList<>();
 
         //WHEN
         Mockito.when(patientServiceInterface.list()).thenReturn(null);

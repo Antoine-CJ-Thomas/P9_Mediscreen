@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FileLineReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PatientReport</a> &gt; <a href="index.source.html" class="el_package">patientReport.util</a> &gt; <span class="el_source">FileLineReader.java</span></div><h1>FileLineReader.java</h1><pre class="source lang-java linenums">package patientReport.util;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * This class is used to extract medical trigger term from a text file
+ */
+@Component
+public class FileLineReader implements FileLineReaderInterface {
+
+<span class="fc" id="L18">    private Logger logger = LogManager.getLogger(getClass().getSimpleName());</span>
+
+//    private String filepath = &quot;triggerTerm.txt&quot;;
+<span class="fc" id="L21">    private String filepath = &quot;build/resources/main/triggerTerm.txt&quot;;</span>
+
+    /**
+     * Creates a new FileLineReader
+     */
+<span class="fc" id="L26">    public FileLineReader() {</span>
+<span class="fc" id="L27">        logger.info(&quot;FileLineReader()&quot;);</span>
+
+<span class="fc" id="L29">    }</span>
+
+    @Override
+    public List&lt;String&gt; getTriggerTermList() {
+<span class="fc" id="L33">        logger.info(&quot;getTriggerTermList()&quot;);</span>
+
+        Scanner scanner;
+
+<span class="fc" id="L37">        Reader reader = null;</span>
+<span class="fc" id="L38">        List&lt;String&gt; result = new ArrayList&lt;&gt;();</span>
+
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if (filepath != null) {</span>
+
+            try {
+
+<span class="fc" id="L44">                scanner = new Scanner(new FileInputStream(filepath),&quot;UTF-8&quot;);</span>
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                while (scanner.hasNextLine()) {</span>
+
+<span class="fc" id="L48">                    result.add(scanner.nextLine());</span>
+                }
+
+<span class="fc" id="L51">                scanner.close();</span>
+
+<span class="nc" id="L53">            } catch (IOException e) {</span>
+
+<span class="nc" id="L55">                logger.info(e);</span>
+
+<span class="nc" id="L57">                e.printStackTrace();</span>
+
+            } finally {
+
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">                if (reader != null) {</span>
+
+                    try {
+
+<span class="nc" id="L65">                        reader.close();</span>
+
+<span class="nc" id="L67">                    } catch (IOException e) {</span>
+
+<span class="nc" id="L69">                        logger.info(e);</span>
+
+<span class="nc" id="L71">                        e.printStackTrace();</span>
+
+<span class="nc" id="L73">                    }</span>
+                }
+            }
+        }
+
+<span class="fc" id="L78">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

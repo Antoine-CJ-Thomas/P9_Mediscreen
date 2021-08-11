@@ -27,6 +27,7 @@ public interface NoteServiceInterface {
 
     /**
      * Select the Note list in the database
+     * @param patientId : id of the patient to find
      * @return The selected note list
      */
     List<Note> list(int patientId);
