@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.NoteServiceUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:40" hostname="PC-ANTOINE" time="0.002">
+  <properties/>
+  <testcase name="list()" classname="unit.service.NoteServiceUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-08-14 17:14:40.007  INFO 9372 --- [    Test worker] NoteService                              : PatientNoteService(Mock for NoteProxy, hashCode: 20881123)
+2021-08-14 17:14:40.008  INFO 9372 --- [    Test worker] NoteService                              : list(1)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

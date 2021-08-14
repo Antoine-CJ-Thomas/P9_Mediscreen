@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommonController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UserInterface</a> &gt; <a href="index.source.html" class="el_package">userInterface.controller</a> &gt; <span class="el_source">CommonController.java</span></div><h1>CommonController.java</h1><pre class="source lang-java linenums">package userInterface.controller;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import userInterface.model.Note;
+import userInterface.model.Patient;
+import userInterface.service.*;
+
+import java.util.List;
+
+/**
+ * This class is used to intercept common requests
+ */
+@Controller
+public class CommonController {
+
+<span class="fc" id="L22">    private Logger logger = LogManager.getLogger(getClass().getSimpleName());</span>
+
+    @Autowired
+    private PatientServiceInterface patientServiceInterface;
+
+    @Autowired
+    private NoteServiceInterface noteServiceInterface;
+
+    @Autowired
+    private ReportServiceInterface reportServiceInterface;
+
+    /**
+     * Creates a new CommonController
+     */
+<span class="fc" id="L36">    public CommonController() {</span>
+<span class="fc" id="L37">        logger.info(&quot;CommonController()&quot;);</span>
+
+<span class="fc" id="L39">        patientServiceInterface = new PatientService();</span>
+<span class="fc" id="L40">        noteServiceInterface = new NoteService();</span>
+<span class="fc" id="L41">        reportServiceInterface = new ReportService();</span>
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * Creates a new CommonController with the specified PatientServiceInterface
+     * @param patientServiceInterface : patient service that this controller will use
+     * @param noteServiceInterface : note service that this controller will use
+     * @param reportServiceInterface : report service that this controller will use
+     */
+    public CommonController(PatientServiceInterface patientServiceInterface,
+                            NoteServiceInterface noteServiceInterface,
+<span class="fc" id="L52">                            ReportServiceInterface reportServiceInterface) {</span>
+
+<span class="fc" id="L54">        logger.info(&quot;CommonController(&quot; + patientServiceInterface + &quot;,&quot; +  noteServiceInterface + &quot;,&quot; + reportServiceInterface + &quot;)&quot;);</span>
+
+<span class="fc" id="L56">        this.patientServiceInterface = patientServiceInterface;</span>
+<span class="fc" id="L57">        this.noteServiceInterface = noteServiceInterface;</span>
+<span class="fc" id="L58">        this.reportServiceInterface = reportServiceInterface;</span>
+<span class="fc" id="L59">    }</span>
+
+    /**
+     * Get the html page that allow to consult the patient list
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the patient list
+     */
+    @GetMapping(&quot;/patient/list&quot;)
+    public String listPatient(Model model) {
+<span class="fc" id="L68">        logger.info(&quot;listPatient(&quot; + model + &quot;)&quot;);</span>
+
+<span class="fc" id="L70">        model.addAttribute(&quot;patientList&quot;, patientServiceInterface.list());</span>
+
+<span class="fc" id="L72">        return &quot;patient_list.html&quot;;</span>
+    }
+
+    /**
+     * Get the html page that allow to consult the medical record of a patient
+     * @param patientId : id of the patient
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the medical record of the patient
+     */
+    @GetMapping(&quot;/patient/open&quot;)
+    public String openPatient(@RequestParam int patientId, Model model) {
+<span class="fc" id="L83">        logger.info(&quot;openPatient(&quot; + patientId + &quot;,&quot; + model + &quot;)&quot;);</span>
+
+<span class="fc" id="L85">        Patient patient = patientServiceInterface.selectById(patientId);</span>
+<span class="fc" id="L86">        List&lt;Note&gt; noteList = noteServiceInterface.list(patientId);</span>
+
+<span class="fc" id="L88">        model.addAttribute(&quot;patient&quot;, patient);</span>
+<span class="fc" id="L89">        model.addAttribute(&quot;noteList&quot;, noteList);</span>
+<span class="fc" id="L90">        model.addAttribute(&quot;diabetesReport&quot;, reportServiceInterface.getDiabetesReport(patient, noteList));</span>
+
+<span class="fc" id="L92">        return &quot;patient_open.html&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

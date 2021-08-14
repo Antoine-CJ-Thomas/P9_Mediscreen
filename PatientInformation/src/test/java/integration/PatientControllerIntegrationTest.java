@@ -79,7 +79,7 @@ public class PatientControllerIntegrationTest {
 
     @Test
     @Order(3)
-    public void select() throws Exception {
+    public void selectById() throws Exception {
 
         // GIVEN
         Integer id = null;
@@ -96,7 +96,7 @@ public class PatientControllerIntegrationTest {
         }
 
         // WHEN
-        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/select")
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/selectById")
                 .param("id", String.valueOf(id))).andReturn();
 
         // THEN
@@ -105,6 +105,20 @@ public class PatientControllerIntegrationTest {
 
     @Test
     @Order(4)
+    public void selectByLastName() throws Exception {
+
+        // GIVEN
+
+        // WHEN
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/patient/selectByLastName")
+                .param("lastName", lastName)).andReturn();
+
+        // THEN
+        Assertions.assertThat(mvcResult.getResponse().getStatus() == 200);
+    }
+
+    @Test
+    @Order(5)
     public void update() throws Exception {
 
         // GIVEN
@@ -133,7 +147,7 @@ public class PatientControllerIntegrationTest {
     }
 
     @Test
-    @Order(5)
+    @Order(6)
     public void delete() throws Exception {
 
         // GIVEN

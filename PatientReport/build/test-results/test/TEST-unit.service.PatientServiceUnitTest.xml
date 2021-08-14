@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.PatientServiceUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:40" hostname="PC-ANTOINE" time="0.027">
+  <properties/>
+  <testcase name="selectById()" classname="unit.service.PatientServiceUnitTest" time="0.025"/>
+  <testcase name="selectByLastName()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <system-out><![CDATA[2021-08-14 17:14:40.019  INFO 9372 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1350219350)
+2021-08-14 17:14:40.043  INFO 9372 --- [    Test worker] PatientService                           : selectById(1)
+2021-08-14 17:14:40.045  INFO 9372 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1134417577)
+2021-08-14 17:14:40.045  INFO 9372 --- [    Test worker] PatientService                           : selectByLastName(lastName)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

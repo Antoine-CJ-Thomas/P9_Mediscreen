@@ -48,7 +48,7 @@ public class CommonControllerIUnitTest {
         commonController.openPatient(patientId, model);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(patientId);
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).selectById(patientId);
         Mockito.verify(noteServiceInterface, Mockito.times(1)).list(patientId);
         Mockito.verify(reportServiceInterface, Mockito.times(1)).getDiabetesReport(Mockito.any(), Mockito.any());
     }

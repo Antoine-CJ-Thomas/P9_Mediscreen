@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.PatientServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:57" hostname="PC-ANTOINE" time="0.011">
+  <properties/>
+  <testcase name="delete()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="insert()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="select()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="update()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="list()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-08-14 17:14:57.905  INFO 16032 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 702954396)
+2021-08-14 17:14:57.905  INFO 16032 --- [    Test worker] PatientService                           : delete(1)
+2021-08-14 17:14:57.907  INFO 16032 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1005344695)
+2021-08-14 17:14:57.907  INFO 16032 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 608659207)
+2021-08-14 17:14:57.909  INFO 16032 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1322462870)
+2021-08-14 17:14:57.910  INFO 16032 --- [    Test worker] PatientService                           : selectById(1)
+2021-08-14 17:14:57.911  INFO 16032 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 1450296843)
+2021-08-14 17:14:57.912  INFO 16032 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 259613341)
+2021-08-14 17:14:57.914  INFO 16032 --- [    Test worker] PatientService                           : PatientInformationService(Mock for PatientProxy, hashCode: 270095146)
+2021-08-14 17:14:57.914  INFO 16032 --- [    Test worker] PatientService                           : list()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

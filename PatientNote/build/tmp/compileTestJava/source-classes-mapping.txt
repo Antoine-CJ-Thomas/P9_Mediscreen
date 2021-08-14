@@ -1,0 +1,8 @@
+unit/model/NoteUnitTest.java
+ unit.model.NoteUnitTest
+unit/service/NoteServiceUnitTest.java
+ unit.service.NoteServiceUnitTest
+integration/NoteControllerIntegrationTest.java
+ integration.NoteControllerIntegrationTest
+unit/controller/NoteControllerUnitTest.java
+ unit.controller.NoteControllerUnitTest

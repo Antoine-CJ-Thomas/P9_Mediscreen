@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.model.NoteUnitTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:22" hostname="PC-ANTOINE" time="0.002">
+  <properties/>
+  <testcase name="setAndGetCommentary()" classname="unit.model.NoteUnitTest" time="0.0"/>
+  <testcase name="setAndGetId()" classname="unit.model.NoteUnitTest" time="0.0"/>
+  <testcase name="setAndGetDate()" classname="unit.model.NoteUnitTest" time="0.001"/>
+  <testcase name="setAndGetPatientId()" classname="unit.model.NoteUnitTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

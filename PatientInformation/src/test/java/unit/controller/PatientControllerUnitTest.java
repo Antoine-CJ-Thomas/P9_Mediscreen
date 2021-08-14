@@ -58,7 +58,7 @@ public class PatientControllerUnitTest {
     }
 
     @Test
-    public void select_status_200() throws IOException {
+    public void selectById_status_200() throws IOException {
 
         //GIVEN
         int id = 1;
@@ -75,7 +75,7 @@ public class PatientControllerUnitTest {
     }
 
     @Test
-    public void select_status_404() throws IOException {
+    public void selectById_status_404() throws IOException {
 
         //GIVEN
         int id = 1;
@@ -87,6 +87,38 @@ public class PatientControllerUnitTest {
 
         //THEN
         Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(404, "Patient with (id = " + id + ") could not be found");
+    }
+
+    @Test
+    public void selectByLastName_status_200() throws IOException {
+
+        //GIVEN
+        String lastName = "lastName";
+        Patient patient = Mockito.mock(Patient.class);
+
+        //WHEN
+        Mockito.when(patientServiceInterface.selectByLastName(lastName)).thenReturn(patient);
+        Mockito.when(objectMapper.writeValueAsString(patient)).thenReturn("patient");
+
+        patientController.selectByLastName(lastName, httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).setStatus(200);
+    }
+
+    @Test
+    public void selectByLastName_status_404() throws IOException {
+
+        //GIVEN
+        String lastName = "lastName";
+
+        //WHEN
+        Mockito.when(patientServiceInterface.selectByLastName(lastName)).thenReturn(null);
+
+        patientController.selectByLastName(lastName, httpServletResponse);
+
+        //THEN
+        Mockito.verify(httpServletResponse, Mockito.times(1)).sendError(404, "Patient with (lastName = " + lastName + ") could not be found");
     }
 
     @Test

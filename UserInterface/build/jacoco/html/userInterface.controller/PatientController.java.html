@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UserInterface</a> &gt; <a href="index.source.html" class="el_package">userInterface.controller</a> &gt; <span class="el_source">PatientController.java</span></div><h1>PatientController.java</h1><pre class="source lang-java linenums">package userInterface.controller;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import userInterface.model.Patient;
+import userInterface.service.PatientService;
+import userInterface.service.PatientServiceInterface;
+
+import javax.validation.Valid;
+
+/**
+ * This class is used to intercept requests related to patient information
+ */
+@Controller
+@RequestMapping(&quot;/patient&quot;)
+public class PatientController {
+
+<span class="fc" id="L27">    private Logger logger = LogManager.getLogger(getClass().getSimpleName());</span>
+
+    @Autowired
+    private PatientServiceInterface patientServiceInterface;
+
+    /**
+     * Creates a new PatientController
+     */
+<span class="fc" id="L35">    public PatientController() {</span>
+<span class="fc" id="L36">        logger.info(&quot;PatientController()&quot;);</span>
+
+<span class="fc" id="L38">        patientServiceInterface = new PatientService();</span>
+<span class="fc" id="L39">    }</span>
+
+    /**
+     * Creates a new PatientController with the specified PatientServiceInterface
+     * @param patientServiceInterface : service that this controller will use
+     */
+<span class="fc" id="L45">    public PatientController(PatientServiceInterface patientServiceInterface) {</span>
+<span class="fc" id="L46">        logger.info(&quot;PatientController(&quot; + patientServiceInterface + &quot;)&quot;);</span>
+
+<span class="fc" id="L48">        this.patientServiceInterface = patientServiceInterface;</span>
+<span class="fc" id="L49">    }</span>
+
+    /**
+     * Get the html page that allow to add a patient
+     * @param patient : patient default data
+     * @param model : holder for model attribute
+     * @return The html page that allow add a patient
+     */
+    @GetMapping(&quot;/add&quot;)
+    public String addPatient(Patient patient, Model model) {
+<span class="fc" id="L59">        logger.info(&quot;addPatient(&quot; + patient + &quot;,&quot; + model + &quot;)&quot;);</span>
+
+<span class="fc" id="L61">        model.addAttribute(&quot;patient&quot;, patient);</span>
+
+<span class="fc" id="L63">        return &quot;patient_add.html&quot;;</span>
+    }
+
+    /**
+     * Perform a insert of a patient
+     * @param patient : patient to add
+     * @param bindingResult : holder for dataBinder result
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the patient list or the html page that allow add
+     * a patient in case of binding error
+     */
+    @PostMapping(&quot;/insert&quot;)
+    public String insert(@Valid Patient patient, BindingResult bindingResult, Model model) {
+<span class="fc" id="L76">        logger.info(&quot;insert(&quot; + patient + &quot;,&quot; + bindingResult + &quot;,&quot; + model + &quot;)&quot;);</span>
+
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">        if (!bindingResult.hasErrors()) {</span>
+
+<span class="fc" id="L80">            patientServiceInterface.insert(patient);</span>
+
+<span class="fc" id="L82">            return (&quot;redirect:/patient/list&quot;);</span>
+        }
+
+        else {
+
+<span class="nc" id="L87">            model.addAttribute(&quot;user&quot;, patient);</span>
+
+<span class="nc" id="L89">            return &quot;patient_add.html&quot;;</span>
+        }
+    }
+
+    /**
+     * Get the html page that allow to edit a patient
+     * @param patientId : id of the patient to edit
+     * @param model : holder for model attribute
+     * @return The html page that allow edit a patient
+     */
+    @GetMapping(&quot;/edit&quot;)
+    public String editPatient(@RequestParam int patientId, Model model) {
+<span class="fc" id="L101">        logger.info(&quot;editPatient(&quot; + patientId + &quot;,&quot; + model + &quot;)&quot;);</span>
+
+<span class="fc" id="L103">        model.addAttribute(&quot;patient&quot;, patientServiceInterface.selectById(patientId));</span>
+
+<span class="fc" id="L105">        return &quot;patient_edit.html&quot;;</span>
+    }
+
+    /**
+     * Perform a update of a note to a patient
+     * @param patientId : id of the patient to update
+     * @param patient : data to update to the patient
+     * @param bindingResult : holder for dataBinder result
+     * @param redirectAttributes : holder for redirect attribute
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the patient list or the html page that allow edit
+     * a patient in case of binding error
+     */
+    @PostMapping(&quot;/update&quot;)
+    public String update(@RequestParam int patientId, @Valid Patient patient, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+<span class="fc" id="L120">        logger.info(&quot;update(&quot; + patientId + &quot;,&quot; + patient + &quot;,&quot; + bindingResult + &quot;,&quot; + model + &quot;)&quot;);</span>
+
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        if (!bindingResult.hasErrors()) {</span>
+
+<span class="fc" id="L124">            patientServiceInterface.update(patientId, patient);</span>
+
+<span class="fc" id="L126">            redirectAttributes.addAttribute(&quot;patientId&quot;, patientId);</span>
+
+<span class="fc" id="L128">            return (&quot;redirect:/patient/open&quot;);</span>
+        }
+
+        else {
+
+<span class="nc" id="L133">            return &quot;patient_edit.html&quot;;</span>
+        }
+    }
+
+    /**
+     * Perform a delete of a patient
+     * @param patientId : id of the patient to delete
+     * @param model : holder for model attribute
+     * @return The html page that allow to consult the patient list
+     */
+    @GetMapping(&quot;/delete&quot;)
+    public String delete(@RequestParam int patientId, Model model) {
+<span class="fc" id="L145">        logger.info(&quot;delete(&quot; + patientId + &quot;,&quot; + model + &quot;)&quot;);</span>
+
+<span class="fc" id="L147">        patientServiceInterface.delete(patientId);</span>
+
+<span class="fc" id="L149">        return (&quot;redirect:/patient/list&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

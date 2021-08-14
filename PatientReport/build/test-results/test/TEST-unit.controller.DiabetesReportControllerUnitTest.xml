@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.DiabetesReportControllerUnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:39" hostname="PC-ANTOINE" time="0.07">
+  <properties/>
+  <testcase name="assessDiabetes_success()" classname="unit.controller.DiabetesReportControllerUnitTest" time="0.065"/>
+  <testcase name="assessDiabetes_failure()" classname="unit.controller.DiabetesReportControllerUnitTest" time="0.004"/>
+  <system-out><![CDATA[2021-08-14 17:14:39.841  INFO 9372 --- [    Test worker] DiabetesReportController                 : DiabetesReportController(Mock for ObjectMapper, hashCode: 2104129915,Mock for PatientServiceInterface, hashCode: 1434052580,Mock for NoteServiceInterface, hashCode: 2011514917,Mock for DiabetesReportServiceInterface, hashCode: 1079622369)
+2021-08-14 17:14:39.870  INFO 9372 --- [    Test worker] DiabetesReportController                 : assessDiabetes(Mock for DiabetesReport, hashCode: 591587116,Mock for HttpServletResponse, hashCode: 1965930543)
+2021-08-14 17:14:39.888  INFO 9372 --- [    Test worker] DiabetesReportController                 : DiabetesReportController(Mock for ObjectMapper, hashCode: 448882942,Mock for PatientServiceInterface, hashCode: 1397136507,Mock for NoteServiceInterface, hashCode: 520884552,Mock for DiabetesReportServiceInterface, hashCode: 329152360)
+2021-08-14 17:14:39.890  INFO 9372 --- [    Test worker] DiabetesReportController                 : assessDiabetes(Mock for DiabetesReport, hashCode: 34175869,Mock for HttpServletResponse, hashCode: 1699449347)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

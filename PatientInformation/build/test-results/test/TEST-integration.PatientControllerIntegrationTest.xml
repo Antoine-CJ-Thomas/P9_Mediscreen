@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="integration.PatientControllerIntegrationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:13:59" hostname="PC-ANTOINE" time="1.184">
+  <properties/>
+  <testcase name="insert()" classname="integration.PatientControllerIntegrationTest" time="0.708"/>
+  <testcase name="list()" classname="integration.PatientControllerIntegrationTest" time="0.242"/>
+  <testcase name="selectById()" classname="integration.PatientControllerIntegrationTest" time="0.076"/>
+  <testcase name="selectByLastName()" classname="integration.PatientControllerIntegrationTest" time="0.054"/>
+  <testcase name="update()" classname="integration.PatientControllerIntegrationTest" time="0.055"/>
+  <testcase name="delete()" classname="integration.PatientControllerIntegrationTest" time="0.042"/>
+  <system-out><![CDATA[17:13:50.205 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+17:13:50.244 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+17:13:50.331 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [integration.PatientControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+17:13:50.367 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PatientControllerIntegrationTest], using SpringBootContextLoader
+17:13:50.374 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.PatientControllerIntegrationTest]: class path resource [integration/PatientControllerIntegrationTest-context.xml] does not exist
+17:13:50.375 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [integration.PatientControllerIntegrationTest]: class path resource [integration/PatientControllerIntegrationTestContext.groovy] does not exist
+17:13:50.376 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [integration.PatientControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:13:50.462 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [integration.PatientControllerIntegrationTest]
+17:13:50.766 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [integration.PatientControllerIntegrationTest]: using defaults.
+17:13:50.768 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+17:13:50.812 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2eec4f7e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@a790686, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@82f6ab1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@78ecd8ff, org.springframework.test.context.support.DirtiesContextTestExecutionListener@34b7ff23, org.springframework.test.context.transaction.TransactionalTestExecutionListener@76389205, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5b10491, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b841ff8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@10c1a54c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@22dba5eb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2f43b8ad, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@14831962, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@9f5257b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@76fe2d53]
+17:13:50.820 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@38443186 testClass = PatientControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@391b10cf testClass = PatientControllerIntegrationTest, locations = '{}', classes = '{class patientInformation.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@438d6032, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7f70b1bc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2ced997, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6bfb64ac, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3359f01], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+17:13:51.277 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.9.RELEASE)
+
+2021-08-14 17:13:51.917  INFO 8760 --- [    Test worker] i.PatientControllerIntegrationTest       : Starting PatientControllerIntegrationTest on PC-ANTOINE with PID 8760 (started by Antoine in C:\Users\krawo\IdeaProjects\P9_Mediscreen\PatientInformation)
+2021-08-14 17:13:51.920  INFO 8760 --- [    Test worker] i.PatientControllerIntegrationTest       : No active profile set, falling back to default profiles: default
+2021-08-14 17:13:53.568  INFO 8760 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-14 17:13:53.680  INFO 8760 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96ms. Found 1 JPA repository interfaces.
+2021-08-14 17:13:54.651  INFO 8760 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-14 17:13:55.337  INFO 8760 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-14 17:13:55.491  INFO 8760 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-14 17:13:55.661  INFO 8760 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-08-14 17:13:56.057  INFO 8760 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-14 17:13:56.341  INFO 8760 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-08-14 17:13:57.434  INFO 8760 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-14 17:13:57.451  INFO 8760 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-14 17:13:57.464  INFO 8760 --- [    Test worker] PatientController                        : PatientController()
+2021-08-14 17:13:57.465  INFO 8760 --- [    Test worker] PatientService                           : PatientService()
+2021-08-14 17:13:57.469  INFO 8760 --- [    Test worker] PatientService                           : PatientService()
+2021-08-14 17:13:58.299  WARN 8760 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-14 17:13:58.864  INFO 8760 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-14 17:13:59.717  INFO 8760 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-08-14 17:13:59.793  INFO 8760 --- [    Test worker] i.PatientControllerIntegrationTest       : Started PatientControllerIntegrationTest in 8.489 seconds (JVM running for 11.461)
+2021-08-14 17:14:00.127  INFO 8760 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:00.127  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:00.147  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 20 ms
+2021-08-14 17:14:00.377  INFO 8760 --- [    Test worker] PatientController                        : insert(patientInformation.model.Patient@d548bea)
+2021-08-14 17:14:00.377  INFO 8760 --- [    Test worker] PatientService                           : insert(patientInformation.model.Patient@d548bea)
+2021-08-14 17:14:00.579  INFO 8760 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:00.579  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:00.584  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2021-08-14 17:14:00.587  INFO 8760 --- [    Test worker] PatientController                        : list()
+2021-08-14 17:14:00.587  INFO 8760 --- [    Test worker] PatientService                           : list()
+2021-08-14 17:14:00.823  INFO 8760 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:00.823  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:00.826  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-14 17:14:00.841  INFO 8760 --- [    Test worker] PatientController                        : selectById(24)
+2021-08-14 17:14:00.842  INFO 8760 --- [    Test worker] PatientService                           : selectById(24)
+2021-08-14 17:14:00.900  INFO 8760 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:00.901  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:00.922  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-14 17:14:00.932  INFO 8760 --- [    Test worker] PatientController                        : selectByLastName(testLastName)
+2021-08-14 17:14:00.932  INFO 8760 --- [    Test worker] PatientService                           : selectByLastName(testLastName)
+2021-08-14 17:14:00.955  INFO 8760 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:00.955  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:00.957  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:00.970  INFO 8760 --- [    Test worker] PatientController                        : update(24,patientInformation.model.Patient@1a3e971e)
+2021-08-14 17:14:00.970  INFO 8760 --- [    Test worker] PatientService                           : update(24,patientInformation.model.Patient@1a3e971e)
+2021-08-14 17:14:01.011  INFO 8760 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:01.011  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:01.013  INFO 8760 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-08-14 17:14:01.022  INFO 8760 --- [    Test worker] PatientController                        : delete(24)
+2021-08-14 17:14:01.023  INFO 8760 --- [    Test worker] PatientService                           : delete(24)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

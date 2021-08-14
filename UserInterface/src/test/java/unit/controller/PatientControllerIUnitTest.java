@@ -64,7 +64,7 @@ public class PatientControllerIUnitTest {
         patientController.editPatient(patientId, model);
 
         //THEN
-        Mockito.verify(patientServiceInterface, Mockito.times(1)).select(patientId);
+        Mockito.verify(patientServiceInterface, Mockito.times(1)).selectById(patientId);
     }
 
     @Test

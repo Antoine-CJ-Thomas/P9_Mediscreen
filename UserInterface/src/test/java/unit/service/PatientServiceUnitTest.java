@@ -43,10 +43,10 @@ public class PatientServiceUnitTest {
         Patient patient = Mockito.mock(Patient.class);
 
         //WHEN
-        Mockito.when(mockedPatientProxy.select(patientId)).thenReturn(patient);
+        Mockito.when(mockedPatientProxy.selectById(patientId)).thenReturn(patient);
 
         //THEN
-        Assertions.assertThat(patientService.select(patientId) == patient);
+        Assertions.assertThat(patientService.selectById(patientId) == patient);
     }
 
     @Test

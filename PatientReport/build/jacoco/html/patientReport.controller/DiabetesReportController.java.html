@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DiabetesReportController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PatientReport</a> &gt; <a href="index.source.html" class="el_package">patientReport.controller</a> &gt; <span class="el_source">DiabetesReportController.java</span></div><h1>DiabetesReportController.java</h1><pre class="source lang-java linenums">package patientReport.controller;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import patientReport.model.DiabetesReport;
+import patientReport.model.Note;
+import patientReport.model.Patient;
+import patientReport.service.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * This class is used to intercept requests related to diabetes report
+ */
+@RestController
+public class DiabetesReportController {
+
+    private ObjectMapper objectMapper;
+
+<span class="fc" id="L26">    private Logger logger = LogManager.getLogger(getClass().getSimpleName());</span>
+
+    @Autowired
+    private PatientServiceInterface patientServiceInterface;
+
+    @Autowired
+    private NoteServiceInterface noteServiceInterface;
+
+    @Autowired
+    private DiabetesReportServiceInterface diabetesReportServiceInterface;
+
+    /**
+     * Creates a new DiabetesReportController
+     */
+<span class="fc" id="L40">    public DiabetesReportController() {</span>
+<span class="fc" id="L41">        logger.info(&quot;DiabetesReportController()&quot;);</span>
+
+<span class="fc" id="L43">        objectMapper = new ObjectMapper();</span>
+
+<span class="fc" id="L45">        patientServiceInterface = new PatientService();</span>
+<span class="fc" id="L46">        noteServiceInterface = new NoteService();</span>
+<span class="fc" id="L47">        diabetesReportServiceInterface = new DiabetesReportService();</span>
+<span class="fc" id="L48">    }</span>
+
+    /**
+     * Creates a new DiabetesReportController with the specified ObjectMapper and DiabetesReportServiceInterface
+     * @param objectMapper : mapper that this controller will use
+     * @param patientServiceInterface : patient service that this controller will use
+     * @param noteServiceInterface : note service that this controller will use
+     * @param diabetesReportServiceInterface : report service that this controller will use
+     */
+    public DiabetesReportController(ObjectMapper objectMapper,
+                                    PatientServiceInterface patientServiceInterface,
+                                    NoteServiceInterface noteServiceInterface,
+<span class="fc" id="L60">                                    DiabetesReportServiceInterface diabetesReportServiceInterface) {</span>
+
+<span class="fc" id="L62">        logger.info(&quot;DiabetesReportController(&quot; + objectMapper + &quot;,&quot; + patientServiceInterface +  &quot;,&quot;</span>
+                + noteServiceInterface +  &quot;,&quot; + diabetesReportServiceInterface + &quot;)&quot;);
+
+<span class="fc" id="L65">        this.objectMapper = objectMapper;</span>
+
+<span class="fc" id="L67">        this.patientServiceInterface = patientServiceInterface;</span>
+<span class="fc" id="L68">        this.noteServiceInterface = noteServiceInterface;</span>
+<span class="fc" id="L69">        this.diabetesReportServiceInterface = diabetesReportServiceInterface;</span>
+<span class="fc" id="L70">    }</span>
+
+    /**
+     * Complete a diabetes report by evaluating the risk level of contracting it
+     * @param diabetesReport : diabetes report that contains needed patient informations
+     * @param httpServletResponse : http response
+     * @return The diabetes report completed (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
+    @PostMapping(&quot;/assess/diabetes&quot;)
+    public String assessDiabetes(@RequestBody DiabetesReport diabetesReport, HttpServletResponse httpServletResponse) throws IOException {
+<span class="fc" id="L81">        logger.info(&quot;assessDiabetes(&quot; + diabetesReport + &quot;,&quot; + httpServletResponse + &quot;)&quot;);</span>
+
+<span class="fc" id="L83">        String message = diabetesReportServiceInterface.assessDiabetes(diabetesReport);</span>
+
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (message.equals(&quot;OK&quot;)) {</span>
+
+<span class="fc" id="L87">            httpServletResponse.setStatus(200);</span>
+        }
+
+        else {
+
+<span class="fc" id="L92">            httpServletResponse.sendError(400, &quot;Diabetes assessment could not be done&quot;);</span>
+        }
+
+<span class="fc" id="L95">        return objectMapper.writeValueAsString(diabetesReport);</span>
+    }
+
+    /**
+     * Create a diabetes report by evaluating the risk level of contracting it
+     * @param patientId : if of the patient for diabetes risk assessment
+     * @param httpServletResponse : http response
+     * @return The diabetes report completed (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
+    @PostMapping(&quot;/assess/diabetesById&quot;)
+    public String assessDiabetesById(@RequestParam int patientId, HttpServletResponse httpServletResponse) throws IOException {
+<span class="nc" id="L107">        logger.info(&quot;assessDiabetesById(&quot; + patientId + &quot;,&quot; + httpServletResponse + &quot;)&quot;);</span>
+
+<span class="nc" id="L109">        Patient patient = patientServiceInterface.selectById(patientId);</span>
+<span class="nc" id="L110">        List&lt;Note&gt; noteList = noteServiceInterface.list(patientId);</span>
+
+<span class="nc" id="L112">        List&lt;String&gt; commentaryList = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L114" title="All 2 branches missed.">        for (Note n : noteList) {</span>
+
+<span class="nc" id="L116">            commentaryList.add(n.getCommentary());</span>
+<span class="nc" id="L117">        }</span>
+
+<span class="nc" id="L119">        DiabetesReport diabetesReport = new DiabetesReport(patient.getGender(), patient.getBirthDate(), commentaryList);</span>
+
+<span class="nc" id="L121">        String message = diabetesReportServiceInterface.assessDiabetes(diabetesReport);</span>
+
+<span class="nc bnc" id="L123" title="All 2 branches missed.">        if (message.equals(&quot;OK&quot;)) {</span>
+
+<span class="nc" id="L125">            httpServletResponse.setStatus(200);</span>
+        }
+
+        else {
+
+<span class="nc" id="L130">            httpServletResponse.sendError(400, &quot;Diabetes assessment could not be done&quot;);</span>
+        }
+
+<span class="nc" id="L133">        return objectMapper.writeValueAsString(diabetesReport);</span>
+    }
+
+    /**
+     * Create a diabetes report by evaluating the risk level of contracting it
+     * @param lastName : last name of the patient for diabetes risk assessment
+     * @param httpServletResponse : http response
+     * @return The diabetes report completed (JSon)
+     * @throws IOException : if httpServletResponse is null
+     */
+    @PostMapping(&quot;/assess/diabetesByLastName&quot;)
+    public String assessDiabetesByLastName(@RequestParam String lastName, HttpServletResponse httpServletResponse) throws IOException {
+<span class="nc" id="L145">        logger.info(&quot;assessDiabetesByLastName(&quot; + lastName + &quot;,&quot; + httpServletResponse + &quot;)&quot;);</span>
+
+<span class="nc" id="L147">        Patient patient = patientServiceInterface.selectByLastName(lastName);</span>
+<span class="nc" id="L148">        List&lt;Note&gt; noteList = noteServiceInterface.list(patient.getId());</span>
+
+<span class="nc" id="L150">        List&lt;String&gt; commentaryList = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L152" title="All 2 branches missed.">        for (Note n : noteList) {</span>
+
+<span class="nc" id="L154">            commentaryList.add(n.getCommentary());</span>
+<span class="nc" id="L155">        }</span>
+
+<span class="nc" id="L157">        DiabetesReport diabetesReport = new DiabetesReport(patient.getGender(), patient.getBirthDate(), commentaryList);</span>
+
+<span class="nc" id="L159">        String message = diabetesReportServiceInterface.assessDiabetes(diabetesReport);</span>
+
+<span class="nc bnc" id="L161" title="All 2 branches missed.">        if (message.equals(&quot;OK&quot;)) {</span>
+
+<span class="nc" id="L163">            httpServletResponse.setStatus(200);</span>
+        }
+
+        else {
+
+<span class="nc" id="L168">            httpServletResponse.sendError(400, &quot;Diabetes assessment could not be done&quot;);</span>
+        }
+
+<span class="nc" id="L171">        return objectMapper.writeValueAsString(diabetesReport);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
