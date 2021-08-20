@@ -1,0 +1,354 @@
+header {
+
+    font-family: Arial;
+}
+
+#header_div {
+
+	margin-top: 8px;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
+}
+
+#header_div label {
+
+	width: 50%;
+	height : 40px;
+
+    font-size: 1.5em;
+    line-height: 40px;
+ 	font-weight: bold;
+}
+
+#header_div a {
+
+	width: 15%;
+	height: 40px;
+
+	color: white;
+    font-size: 1em;
+	font-weight: bold;
+    line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(97,174,243);
+	border-radius: 8px;
+}
+
+section {
+
+    font-family: Arial;
+}
+
+#section_div {
+
+	margin-top: 8px;
+
+    padding: 1em;
+
+    gap: 2%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#information_div {
+
+    width: 25%;
+    height: 800px;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
+}
+
+#information_title_div {
+
+	width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+#information_title_div label {
+
+	width: 90%;
+	height : 40px;
+
+    font-size: 1.5em;
+    line-height: 40px;
+ 	font-weight: bold;
+ 	text-align:center;
+}
+
+.information_slot_div {
+
+	width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+.information_slot_div label {
+
+	width: 45%;
+	height : 40px;
+
+    font-size: 1em;
+    line-height: 40px;
+}
+
+#information_edit_div {
+
+	width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+#information_edit_div a {
+
+	width: 100%;
+	height: 40px;
+
+	color: white;
+    font-size: 1em;
+	font-weight: bold;
+    line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(97,174,243);
+	border-radius: 8px;
+}
+
+#note_div {
+
+    width: 25%;
+	height: 800px;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
+}
+
+#note_title_div {
+
+	width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+#note_title_div label {
+
+	width: 90%;
+	height : 40px;
+
+    font-size: 1.5em;
+    line-height: 40px;
+ 	font-weight: bold;
+ 	text-align:center;
+}
+
+#note_list_div {
+
+	width: 90%;
+    height: 560px;
+
+    padding: 1em;
+
+    overflow: auto;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+.note_slot_div {
+
+	margin-top: 8px;
+
+    padding: 1em;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+#note_list_div p {
+
+	width: 90%;
+
+}
+
+#note_list_div label {
+
+	width: 90%;
+	height : 40px;
+
+    font-size: 1em;
+    line-height: 40px;
+ 	text-align:left;
+}
+
+#new_note_div {
+
+	width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+#new_note_div a {
+
+	width: 100%;
+	height: 40px;
+
+	color: white;
+    font-size: 1em;
+	font-weight: bold;
+    line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(97,174,243);
+	border-radius: 8px;
+}
+
+#risk_div {
+
+    width: 25%;
+	height: 800px;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
+
+}
+
+#risk_title_div {
+
+	width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+}
+
+#risk_title_div label {
+
+	width: 90%;
+	height : 40px;
+
+    font-size: 1.5em;
+    line-height: 40px;
+ 	font-weight: bold;
+ 	text-align:center;
+}
+
+#general_criteria_div {
+
+	width: 90%;
+    height: 100px;
+
+    padding: 1em;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+
+}
+
+#medical_criteria_div {
+
+	width: 90%;
+    height: 400px;
+
+    padding: 1em;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+
+}
+
+#risk_result_div {
+
+	width: 90%;
+    height: 100px;
+
+    padding: 1em;
+
+   	border: 1px solid rgb(200,200,200);
+	border-radius: 8px;
+
+}
+
+footer {
+
+    font-family: Arial;
+}

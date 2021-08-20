@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+
+  user-interface:
+    build: "./userInterface/"
+    ports:
+      - 8080:8080
+    container_name: "userInterface-app"
+
+  patient-information:
+    build: "./patientInformation/"
+    ports:
+      - 8081:8081
+    container_name: "patientInformation-api"
+
+  patient-note:
+    build: "./patientNote/"
+    ports:
+      - 8082:8082
+    container_name: "patientNote-api"
+
+  patient-report:
+    build: "./patientReport/"
+    ports:
+      - 8083:8083
+    container_name: "patientReport-api"

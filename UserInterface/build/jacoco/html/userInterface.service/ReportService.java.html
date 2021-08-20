@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReportService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UserInterface</a> &gt; <a href="index.source.html" class="el_package">userInterface.service</a> &gt; <span class="el_source">ReportService.java</span></div><h1>ReportService.java</h1><pre class="source lang-java linenums">package userInterface.service;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import userInterface.model.DiabetesReport;
+import userInterface.model.Note;
+import userInterface.model.Patient;
+import userInterface.proxy.ReportProxy;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * This class is used to process requests related to patient report
+ */
+@Service
+public class ReportService implements ReportServiceInterface {
+
+<span class="fc" id="L21">    private Logger logger = LogManager.getLogger(getClass().getSimpleName());</span>
+
+    @Autowired
+    private ReportProxy reportProxy;
+
+    /**
+     * Creates a new ReportService
+     */
+<span class="fc" id="L29">    public ReportService() {</span>
+<span class="fc" id="L30">        logger.info(&quot;ReportService()&quot;);</span>
+
+<span class="fc" id="L32">    }</span>
+
+    /**
+     * Creates a new ReportService with the specified ReportProxy
+     * @param reportProxy : proxy that this service will use
+     */
+<span class="fc" id="L38">    public ReportService(ReportProxy reportProxy) {</span>
+<span class="fc" id="L39">        logger.info(&quot;ReportService(&quot; + reportProxy + &quot;)&quot;);</span>
+
+<span class="fc" id="L41">        this.reportProxy = reportProxy;</span>
+<span class="fc" id="L42">    }</span>
+
+    @Override
+    public DiabetesReport getDiabetesReport(Patient patient, List&lt;Note&gt; noteList) {
+<span class="fc" id="L46">        logger.info(&quot;getDiabetesReport(&quot; + patient + &quot;,&quot; + noteList + &quot;)&quot;);</span>
+
+<span class="fc" id="L48">        DiabetesReport diabetesReport = null;</span>
+
+<span class="pc bpc" id="L50" title="2 of 4 branches missed.">        if (patient != null &amp;&amp; noteList != null) {</span>
+
+<span class="fc" id="L52">            List&lt;String&gt; commentaryList = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            for (Note n : noteList) {</span>
+
+<span class="fc" id="L56">                commentaryList.add(n.getCommentary());</span>
+<span class="fc" id="L57">            }</span>
+
+<span class="fc" id="L59">            diabetesReport = reportProxy.assessDiabetes(</span>
+<span class="fc" id="L60">                    new DiabetesReport(patient.getGender(), patient.getBirthDate(), commentaryList));</span>
+        }
+
+<span class="fc" id="L63">        return diabetesReport;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

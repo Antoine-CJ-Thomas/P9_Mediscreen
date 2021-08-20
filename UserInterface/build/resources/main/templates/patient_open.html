@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+		<title>Medical Record</title>
+        <link rel="stylesheet" href="/css/patient_open.css" />
+
+    </head>
+
+    <body>
+
+	<header>
+
+		<div id="header_div">
+
+			<label>Medical Record of the patient</label>
+			<a href="/patient/list">Back To The Patient List</a>
+
+		</div>
+
+	</header>
+
+    	<section>
+
+			<div id="section_div">
+
+				<div id="information_div">
+
+					<div id="information_title_div">
+						<label>Informations</label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>First Name :</label>
+						<label th:text="*{patient.firstName}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Last Name :</label>
+						<label th:text="*{patient.lastName}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Birth Date :</label>
+						<label th:text="${#dates.format(patient.birthDate, 'dd-MM-yyyy')}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Address :</label>
+						<label th:text="*{patient.address}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Phone Number :</label>
+						<label th:text="*{patient.phoneNumber}"><label>
+					</div>
+
+					<div class="information_slot_div">
+						<label>Gender :</label>
+						<label th:text="*{patient.gender}"><label>
+					</div>
+
+					<div id="information_edit_div">
+
+						<a th:href="@{/patient/edit(patientId=${patient.id})}">Edit Informations</a>
+
+					</div>
+
+				</div>
+
+				<div id="note_div">
+
+					<div id="note_title_div">
+						<label>Notes</label>
+					</div>
+
+					<div id="note_list_div">
+
+						<th:block th:each="note : ${noteList}">
+
+							<div class="note_slot_div">
+
+								<label th:utext="${#dates.format(note.date, 'dd-MM-yyyy HH:mm')}"></label>
+								<p th:utext="${note.commentary}"></p>
+								<a th:href="@{/note/edit(patientId=${patient.id}, noteId=${note.id})}">Edit</a>
+								<label>|</label>
+								<a th:href="@{/note/delete(patientId=${patient.id}, noteId=${note.id})}">Delete</a>
+
+							</div>
+
+						</th:block>
+
+					</div>
+
+					<div id="new_note_div">
+
+						<a th:href="@{/note/add(patientId=${patient.id})}">Add A Note</a>
+
+					</div>
+
+
+				</div>
+
+
+				<div id="risk_div">
+
+					<div id="risk_title_div">
+						<label>Risks</label>
+					</div>
+
+
+
+					<div id="general_criteria_div">
+
+						<th:block th:each="triggerTerm : ${diabetesReport.generalTriggerTermList}">
+
+							<p th:utext="${triggerTerm}"></p>
+
+						</th:block>
+
+					</div>
+
+
+
+					<div id="medical_criteria_div">
+
+						<th:block th:each="triggerTerm : ${diabetesReport.medicalTriggerTermList}">
+
+							<p th:utext="${triggerTerm}"></p>
+
+						</th:block>
+
+					</div>
+
+
+
+					<div id="risk_result_div">
+
+						<p th:utext="${diabetesReport.riskLevel}"></p>
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+    	</section>
+
+		<footer>
+
+		</footer>
+
+    </body>
+
+</html>

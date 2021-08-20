@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.PatientControllerUnitTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:01" hostname="PC-ANTOINE" time="0.091">
+  <properties/>
+  <testcase name="update_status_200()" classname="unit.controller.PatientControllerUnitTest" time="0.058"/>
+  <testcase name="update_status_404()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="selectByLastName_status_200()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="selectByLastName_status_404()" classname="unit.controller.PatientControllerUnitTest" time="0.003"/>
+  <testcase name="delete_status_200()" classname="unit.controller.PatientControllerUnitTest" time="0.001"/>
+  <testcase name="delete_status_404()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="selectById_status_200()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="selectById_status_404()" classname="unit.controller.PatientControllerUnitTest" time="0.003"/>
+  <testcase name="list_status_200()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="list_status_404()" classname="unit.controller.PatientControllerUnitTest" time="0.003"/>
+  <testcase name="insert_status_200()" classname="unit.controller.PatientControllerUnitTest" time="0.002"/>
+  <testcase name="insert_status_400()" classname="unit.controller.PatientControllerUnitTest" time="0.003"/>
+  <system-out><![CDATA[2021-08-14 17:14:01.743  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1360456455,Mock for ObjectMapper, hashCode: 1287578399)
+2021-08-14 17:14:01.774  INFO 8760 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 125241487)
+2021-08-14 17:14:01.787  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 641012913,Mock for ObjectMapper, hashCode: 1247824918)
+2021-08-14 17:14:01.788  INFO 8760 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 487676969)
+2021-08-14 17:14:01.790  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1472581149,Mock for ObjectMapper, hashCode: 1507576008)
+2021-08-14 17:14:01.791  INFO 8760 --- [    Test worker] PatientController                        : selectByLastName(lastName)
+2021-08-14 17:14:01.793  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 108316934,Mock for ObjectMapper, hashCode: 2142784243)
+2021-08-14 17:14:01.793  INFO 8760 --- [    Test worker] PatientController                        : selectByLastName(lastName)
+2021-08-14 17:14:01.796  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 2015510596,Mock for ObjectMapper, hashCode: 1891750846)
+2021-08-14 17:14:01.797  INFO 8760 --- [    Test worker] PatientController                        : delete(1)
+2021-08-14 17:14:01.798  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1356666969,Mock for ObjectMapper, hashCode: 1829711715)
+2021-08-14 17:14:01.799  INFO 8760 --- [    Test worker] PatientController                        : delete(1)
+2021-08-14 17:14:01.801  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 130376422,Mock for ObjectMapper, hashCode: 2045185411)
+2021-08-14 17:14:01.801  INFO 8760 --- [    Test worker] PatientController                        : selectById(1)
+2021-08-14 17:14:01.804  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 2036210778,Mock for ObjectMapper, hashCode: 940875239)
+2021-08-14 17:14:01.805  INFO 8760 --- [    Test worker] PatientController                        : selectById(1)
+2021-08-14 17:14:01.807  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 2147114686,Mock for ObjectMapper, hashCode: 775488973)
+2021-08-14 17:14:01.808  INFO 8760 --- [    Test worker] PatientController                        : list()
+2021-08-14 17:14:01.811  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1891165227,Mock for ObjectMapper, hashCode: 888431152)
+2021-08-14 17:14:01.812  INFO 8760 --- [    Test worker] PatientController                        : list()
+2021-08-14 17:14:01.814  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1454152915,Mock for ObjectMapper, hashCode: 207466952)
+2021-08-14 17:14:01.815  INFO 8760 --- [    Test worker] PatientController                        : insert(Mock for Patient, hashCode: 1005819348)
+2021-08-14 17:14:01.817  INFO 8760 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 738301304,Mock for ObjectMapper, hashCode: 511303215)
+2021-08-14 17:14:01.818  INFO 8760 --- [    Test worker] PatientController                        : insert(Mock for Patient, hashCode: 2135687129)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

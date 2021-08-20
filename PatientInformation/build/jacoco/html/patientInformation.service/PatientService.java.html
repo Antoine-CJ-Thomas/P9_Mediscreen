@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PatientInformation</a> &gt; <a href="index.source.html" class="el_package">patientInformation.service</a> &gt; <span class="el_source">PatientService.java</span></div><h1>PatientService.java</h1><pre class="source lang-java linenums">package patientInformation.service;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import patientInformation.model.Patient;
+import patientInformation.repository.PatientRepository;
+
+import java.util.List;
+
+/**
+ * This class is used to process requests related to patient information
+ */
+@Service
+public class PatientService implements PatientServiceInterface {
+
+<span class="fc" id="L18">    private Logger logger = LogManager.getLogger(getClass().getSimpleName());</span>
+
+    @Autowired
+    private PatientRepository patientRepository;
+
+    /**
+     * Creates a new PatientService
+     */
+<span class="fc" id="L26">    public PatientService() {</span>
+<span class="fc" id="L27">        logger.info(&quot;PatientService()&quot;);</span>
+<span class="fc" id="L28">    }</span>
+
+    /**
+     * Creates a new PatientService with the specified PatientRepository
+     * @param patientRepository : repository that this service will use
+     */
+<span class="fc" id="L34">    public PatientService(PatientRepository patientRepository) {</span>
+<span class="fc" id="L35">        logger.info(&quot;PatientService(&quot; + patientRepository + &quot;)&quot;);</span>
+
+<span class="fc" id="L37">        this.patientRepository = patientRepository;</span>
+<span class="fc" id="L38">    }</span>
+
+    @Override
+    public String insert(Patient patient) {
+<span class="fc" id="L42">        logger.info(&quot;insert(&quot; + patient + &quot;)&quot;);</span>
+
+<span class="fc" id="L44">        String message = &quot;Invalid informations&quot;;</span>
+
+<span class="pc bpc" id="L46" title="1 of 4 branches missed.">        if (patient.getFirstName().length() &gt; 1 &amp;&amp; patient.getFirstName().length() &lt; 32) {</span>
+
+<span class="pc bpc" id="L48" title="2 of 4 branches missed.">            if (patient.getLastName().length() &gt; 1 &amp;&amp; patient.getLastName().length() &lt; 32) {</span>
+
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">                if (patient.getBirthDate() != null) {</span>
+
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">                    if (patient.getGender().length() == 1) {</span>
+
+<span class="pc bpc" id="L54" title="2 of 4 branches missed.">                        if (patient.getAddress().length() &gt; 1 &amp;&amp; patient.getAddress().length() &lt; 64) {</span>
+
+<span class="pc bpc" id="L56" title="2 of 4 branches missed.">                            if (patient.getPhoneNumber().length() &gt; 1 &amp;&amp; patient.getPhoneNumber().length() &lt; 15) {</span>
+
+<span class="fc" id="L58">                                patientRepository.save(patient);</span>
+
+<span class="fc" id="L60">                                message = &quot;OK&quot;;</span>
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+<span class="fc" id="L68">        return message;</span>
+    }
+
+    @Override
+    public Patient selectById(int id) {
+<span class="fc" id="L73">        logger.info(&quot;selectById(&quot; + id + &quot;)&quot;);</span>
+
+<span class="fc" id="L75">        Patient patient = null;</span>
+
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (patientRepository.existsById(id)) {</span>
+
+<span class="fc" id="L79">            patient = patientRepository.findById(id).get();</span>
+        }
+
+<span class="fc" id="L82">        return patient;</span>
+    }
+
+    @Override
+    public Patient selectByLastName(String lastName) {
+<span class="fc" id="L87">        logger.info(&quot;selectByLastName(&quot; + lastName + &quot;)&quot;);</span>
+
+<span class="fc" id="L89">        Patient patient = patientRepository.findByLastName(lastName);</span>
+
+<span class="fc" id="L91">        return patient;</span>
+    }
+
+    @Override
+    public List&lt;Patient&gt; list() {
+<span class="fc" id="L96">        logger.info(&quot;list()&quot;);</span>
+
+<span class="fc" id="L98">        List&lt;Patient&gt; patientList = (List&lt;Patient&gt;) patientRepository.findAll();</span>
+
+<span class="fc" id="L100">        return patientList;</span>
+    }
+
+    @Override
+    public String update(int id, Patient patient) {
+<span class="fc" id="L105">        logger.info(&quot;update(&quot; + id + &quot;,&quot; + patient + &quot;)&quot;);</span>
+
+<span class="fc" id="L107">        String message = &quot;Invalid id&quot;;</span>
+
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        if (patientRepository.existsById(id)) {</span>
+
+<span class="fc" id="L111">            patient.setId(id);</span>
+
+<span class="fc" id="L113">            patientRepository.save(patient);</span>
+
+<span class="fc" id="L115">            message = &quot;OK&quot;;</span>
+        }
+
+<span class="fc" id="L118">        return message;</span>
+    }
+
+    @Override
+    public String delete(int id) {
+<span class="fc" id="L123">        logger.info(&quot;delete(&quot; + id + &quot;)&quot;);</span>
+
+<span class="fc" id="L125">        String message = &quot;Invalid id&quot;;</span>
+
+<span class="fc bfc" id="L127" title="All 2 branches covered.">        if (patientRepository.existsById(id)) {</span>
+
+<span class="fc" id="L129">            patientRepository.deleteById(id);</span>
+
+<span class="fc" id="L131">            message = &quot;OK&quot;;</span>
+        }
+
+<span class="fc" id="L134">        return message;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

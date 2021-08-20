@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.PatientServiceUnitTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:01" hostname="PC-ANTOINE" time="0.03">
+  <properties/>
+  <testcase name="select_failure()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="list_failure()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="insert_failure()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="delete_success()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="delete_failure()" classname="unit.service.PatientServiceUnitTest" time="0.001"/>
+  <testcase name="update_success()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="select_success()" classname="unit.service.PatientServiceUnitTest" time="0.004"/>
+  <testcase name="list_success()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <testcase name="insert_success()" classname="unit.service.PatientServiceUnitTest" time="0.006"/>
+  <testcase name="update_failure()" classname="unit.service.PatientServiceUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-08-14 17:14:01.848  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1604336831)
+2021-08-14 17:14:01.849  INFO 8760 --- [    Test worker] PatientService                           : selectById(1)
+2021-08-14 17:14:01.851  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 426948946)
+2021-08-14 17:14:01.852  INFO 8760 --- [    Test worker] PatientService                           : list()
+2021-08-14 17:14:01.853  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1122159504)
+2021-08-14 17:14:01.854  INFO 8760 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 1155115806)
+2021-08-14 17:14:01.856  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1223504638)
+2021-08-14 17:14:01.856  INFO 8760 --- [    Test worker] PatientService                           : delete(1)
+2021-08-14 17:14:01.858  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 470277688)
+2021-08-14 17:14:01.859  INFO 8760 --- [    Test worker] PatientService                           : delete(1)
+2021-08-14 17:14:01.861  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 394757956)
+2021-08-14 17:14:01.862  INFO 8760 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 512708593)
+2021-08-14 17:14:01.863  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 486542288)
+2021-08-14 17:14:01.866  INFO 8760 --- [    Test worker] PatientService                           : selectById(1)
+2021-08-14 17:14:01.868  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 1742981947)
+2021-08-14 17:14:01.869  INFO 8760 --- [    Test worker] PatientService                           : list()
+2021-08-14 17:14:01.871  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 11576999)
+2021-08-14 17:14:01.874  INFO 8760 --- [    Test worker] PatientService                           : insert(Mock for Patient, hashCode: 616197072)
+2021-08-14 17:14:01.877  INFO 8760 --- [    Test worker] PatientService                           : PatientService(Mock for PatientRepository, hashCode: 295926635)
+2021-08-14 17:14:01.877  INFO 8760 --- [    Test worker] PatientService                           : update(1,Mock for Patient, hashCode: 565695558)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

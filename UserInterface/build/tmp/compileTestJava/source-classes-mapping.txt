@@ -1,0 +1,24 @@
+unit/controller/PatientControllerIUnitTest.java
+ unit.controller.PatientControllerIUnitTest
+integration/CommonControllerIntegrationTest.java
+ integration.CommonControllerIntegrationTest
+unit/model/NoteUnitTest.java
+ unit.model.NoteUnitTest
+unit/model/PatientUnitTest.java
+ unit.model.PatientUnitTest
+unit/service/ReportServiceUnitTest.java
+ unit.service.ReportServiceUnitTest
+unit/service/NoteServiceUnitTest.java
+ unit.service.NoteServiceUnitTest
+integration/NoteControllerIntegrationTest.java
+ integration.NoteControllerIntegrationTest
+unit/controller/CommonControllerIUnitTest.java
+ unit.controller.CommonControllerIUnitTest
+unit/model/DiabetesReportUnitTest.java
+ unit.model.DiabetesReportUnitTest
+integration/PatientControllerIntegrationTest.java
+ integration.PatientControllerIntegrationTest
+unit/controller/NoteControllerUnitTest.java
+ unit.controller.NoteControllerUnitTest
+unit/service/PatientServiceUnitTest.java
+ unit.service.PatientServiceUnitTest

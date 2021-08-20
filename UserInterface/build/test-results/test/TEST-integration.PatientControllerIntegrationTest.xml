@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="integration.PatientControllerIntegrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:57" hostname="PC-ANTOINE" time="0.297">
+  <properties/>
+  <testcase name="add()" classname="integration.PatientControllerIntegrationTest" time="0.033"/>
+  <testcase name="insert()" classname="integration.PatientControllerIntegrationTest" time="0.057"/>
+  <testcase name="edit()" classname="integration.PatientControllerIntegrationTest" time="0.079"/>
+  <testcase name="update()" classname="integration.PatientControllerIntegrationTest" time="0.059"/>
+  <testcase name="delete()" classname="integration.PatientControllerIntegrationTest" time="0.063"/>
+  <system-out><![CDATA[2021-08-14 17:14:57.028  INFO 16032 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PatientControllerIntegrationTest], using SpringBootContextLoader
+2021-08-14 17:14:57.030  INFO 16032 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PatientControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-08-14 17:14:57.035  INFO 16032 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-08-14 17:14:57.037  INFO 16032 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7273207c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35acc6a5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1ad9b66d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4728c5ef, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2c336db6, org.springframework.test.context.event.EventPublishingTestExecutionListener@7f790f7b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@28c4b427, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@29421b6d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1e2b9d2e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@299e4b47, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2476b7df, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1dd6594f]
+2021-08-14 17:14:57.042  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.042  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.044  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:57.046  INFO 16032 --- [    Test worker] PatientController                        : addPatient(userInterface.model.Patient@15904ee1,{patient=userInterface.model.Patient@15904ee1, org.springframework.validation.BindingResult.patient=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-14 17:14:57.077  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.077  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.080  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-14 17:14:57.091  INFO 16032 --- [    Test worker] PatientController                        : insert(userInterface.model.Patient@243a97c6,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{patient=userInterface.model.Patient@243a97c6, org.springframework.validation.BindingResult.patient=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-14 17:14:57.092  INFO 16032 --- [    Test worker] PatientService                           : insert(userInterface.model.Patient@243a97c6)
+2021-08-14 17:14:57.134  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.134  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.137  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:57.168  INFO 16032 --- [    Test worker] PatientController                        : editPatient(25,{})
+2021-08-14 17:14:57.168  INFO 16032 --- [    Test worker] PatientService                           : selectById(25)
+2021-08-14 17:14:57.216  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.216  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.219  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-14 17:14:57.243  INFO 16032 --- [    Test worker] PatientController                        : update(25,userInterface.model.Patient@2b3bae02,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{patient=userInterface.model.Patient@2b3bae02, org.springframework.validation.BindingResult.patient=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-14 17:14:57.243  INFO 16032 --- [    Test worker] PatientService                           : update(25,userInterface.model.Patient@2b3bae02)
+2021-08-14 17:14:57.275  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.275  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.277  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:57.300  INFO 16032 --- [    Test worker] PatientController                        : delete(25,{})
+2021-08-14 17:14:57.301  INFO 16032 --- [    Test worker] PatientService                           : delete(25)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

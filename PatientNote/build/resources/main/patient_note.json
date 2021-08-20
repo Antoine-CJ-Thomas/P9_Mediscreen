@@ -1,0 +1,291 @@
+[{
+  "_id": {
+    "$oid": "610812b19e2ee5687c65f38b"
+  },
+  "patientId": 1,
+  "date": {
+    "$date": "2021-08-02T15:43:45.431Z"
+  },
+  "commentary": "Le patient déclare qu'il « se sent très bien »\r\nPoids égal ou inférieur au poids recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812b99e2ee5687c65f38c"
+  },
+  "patientId": 1,
+  "date": {
+    "$date": "2021-08-02T15:43:53.734Z"
+  },
+  "commentary": "Le patient déclare qu'il se sent fatigué pendant la journée\r\nIl se plaint également de douleurs musculaires\r\nTests de laboratoire indiquant une microalbumine élevée",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812c09e2ee5687c65f38d"
+  },
+  "patientId": 1,
+  "date": {
+    "$date": "2021-08-02T15:44:00.197Z"
+  },
+  "commentary": "Le patient déclare qu'il ne se sent pas si fatigué que ça\r\nFumeur, il a arrêté dans les 12 mois précédents\r\nTests de laboratoire indiquant que les anticorps sont élevés",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812d19e2ee5687c65f38e"
+  },
+  "patientId": 2,
+  "date": {
+    "$date": "2021-08-02T15:44:17.472Z"
+  },
+  "commentary": "Le patient déclare qu'il ressent beaucoup de stress au travail\r\nIl se plaint également que son audition est anormale dernièrement",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812d79e2ee5687c65f38f"
+  },
+  "patientId": 2,
+  "date": {
+    "$date": "2021-08-02T15:44:23.960Z"
+  },
+  "commentary": "Le patient déclare avoir fait une réaction aux médicaments au cours des 3 derniers mois\r\nIl remarque également que son audition continue d'être anormale",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812e29e2ee5687c65f390"
+  },
+  "patientId": 2,
+  "date": {
+    "$date": "2021-08-02T15:44:34.847Z"
+  },
+  "commentary": "Tests de laboratoire indiquant une microalbumine élevée",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812e99e2ee5687c65f391"
+  },
+  "patientId": 2,
+  "date": {
+    "$date": "2021-08-02T15:44:41.363Z"
+  },
+  "commentary": "Le patient déclare que tout semble aller bien\r\nLe laboratoire rapporte que l'hémoglobine A1C dépasse le niveau recommandé\r\nLe patient déclare qu’il fume depuis longtemps",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610812fc9e2ee5687c65f392"
+  },
+  "patientId": 3,
+  "date": {
+    "$date": "2021-08-02T15:45:00.442Z"
+  },
+  "commentary": "Le patient déclare qu'il fume depuis peu",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813019e2ee5687c65f393"
+  },
+  "patientId": 3,
+  "date": {
+    "$date": "2021-08-02T15:45:05.205Z"
+  },
+  "commentary": "Tests de laboratoire indiquant une microalbumine élevée",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813099e2ee5687c65f394"
+  },
+  "patientId": 3,
+  "date": {
+    "$date": "2021-08-02T15:45:13.944Z"
+  },
+  "commentary": "Le patient déclare qu'il est fumeur et qu'il a cessé de fumer l'année dernière\r\nIl se plaint également de crises d’apnée respiratoire anormales\r\nTests de laboratoire indiquant un taux de cholestérol LDL élevé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108130f9e2ee5687c65f395"
+  },
+  "patientId": 3,
+  "date": {
+    "$date": "2021-08-02T15:45:19.976Z"
+  },
+  "commentary": "Tests de laboratoire indiquant un taux de cholestérol LDL élevé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108131c9e2ee5687c65f396"
+  },
+  "patientId": 4,
+  "date": {
+    "$date": "2021-08-02T15:45:32.962Z"
+  },
+  "commentary": "Le patient déclare qu'il lui est devenu difficile de monter les escaliers\r\nIl se plaint également d’être essoufflé\r\nTests de laboratoire indiquant que les anticorps sont élevés\r\nRéaction aux médicaments",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813219e2ee5687c65f397"
+  },
+  "patientId": 4,
+  "date": {
+    "$date": "2021-08-02T15:45:37.933Z"
+  },
+  "commentary": "Le patient déclare qu'il a mal au dos lorsqu'il reste assis pendant longtemps",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813289e2ee5687c65f398"
+  },
+  "patientId": 4,
+  "date": {
+    "$date": "2021-08-02T15:45:44.491Z"
+  },
+  "commentary": "Le patient déclare avoir commencé à fumer depuis peu\r\nHémoglobine A1C supérieure au niveau recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813339e2ee5687c65f399"
+  },
+  "patientId": 5,
+  "date": {
+    "$date": "2021-08-02T15:45:55.543Z"
+  },
+  "commentary": "Le patient déclare avoir des douleurs au cou occasionnellement\r\nLe patient remarque également que certains aliments ont un goût différent\r\nRéaction apparente aux médicaments\r\nPoids corporel supérieur au poids recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108133e9e2ee5687c65f39a"
+  },
+  "patientId": 5,
+  "date": {
+    "$date": "2021-08-02T15:46:06.014Z"
+  },
+  "commentary": "Le patient déclare avoir eu plusieurs épisodes de vertige depuis la dernière visite.\r\nTaille incluse dans la fourchette concernée",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813449e2ee5687c65f39b"
+  },
+  "patientId": 5,
+  "date": {
+    "$date": "2021-08-02T15:46:12.954Z"
+  },
+  "commentary": "Le patient déclare qu'il souffre encore de douleurs cervicales occasionnelles\r\nTests de laboratoire indiquant une microalbumine élevée\r\nFumeur, il a arrêté dans les 12 mois précédents",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108134a9e2ee5687c65f39c"
+  },
+  "patientId": 5,
+  "date": {
+    "$date": "2021-08-02T15:46:18.618Z"
+  },
+  "commentary": "Le patient déclare avoir eu plusieurs épisodes de vertige depuis la dernière visite.\r\nTests de laboratoire indiquant que les anticorps sont élevés",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813569e2ee5687c65f39d"
+  },
+  "patientId": 6,
+  "date": {
+    "$date": "2021-08-02T15:46:30.946Z"
+  },
+  "commentary": "Le patient déclare qu'il se sent bien\r\nPoids corporel supérieur au poids recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108135b9e2ee5687c65f39e"
+  },
+  "patientId": 6,
+  "date": {
+    "$date": "2021-08-02T15:46:35.633Z"
+  },
+  "commentary": "Le patient déclare qu'il se sent bien",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813689e2ee5687c65f39f"
+  },
+  "patientId": 7,
+  "date": {
+    "$date": "2021-08-02T15:46:48.162Z"
+  },
+  "commentary": "Le patient déclare qu'il se réveille souvent avec une raideur articulaire\r\nIl se plaint également de difficultés pour s’endormir\r\nPoids corporel supérieur au poids recommandé\r\nTests de laboratoire indiquant un taux de cholestérol LDL élevé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813729e2ee5687c65f3a0"
+  },
+  "patientId": 8,
+  "date": {
+    "$date": "2021-08-02T15:46:58.277Z"
+  },
+  "commentary": "Les tests de laboratoire indiquent que les anticorps sont élevés\r\nHémoglobine A1C supérieure au niveau recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108137c9e2ee5687c65f3a1"
+  },
+  "patientId": 9,
+  "date": {
+    "$date": "2021-08-02T15:47:08.400Z"
+  },
+  "commentary": "Le patient déclare avoir de la difficulté à se concentrer sur ses devoirs scolaires\r\nHémoglobine A1C supérieure au niveau recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813819e2ee5687c65f3a2"
+  },
+  "patientId": 9,
+  "date": {
+    "$date": "2021-08-02T15:47:13.588Z"
+  },
+  "commentary": "Le patient déclare qu'il s’impatiente facilement en cas d’attente prolongée\r\nIl signale également que les produits du distributeur automatique ne sont pas bons\r\nTests de laboratoire signalant des taux anormaux de cellules sanguines",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813879e2ee5687c65f3a3"
+  },
+  "patientId": 9,
+  "date": {
+    "$date": "2021-08-02T15:47:19.234Z"
+  },
+  "commentary": "Le patient signale qu'il est facilement irrité par des broutilles\r\nIl déclare également que l'aspirateur des voisins fait trop de bruit\r\nTests de laboratoire indiquant que les anticorps sont élevés",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108138f9e2ee5687c65f3a4"
+  },
+  "patientId": 10,
+  "date": {
+    "$date": "2021-08-02T15:47:27.599Z"
+  },
+  "commentary": "Le patient déclare qu'il n'a aucun problème",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813959e2ee5687c65f3a5"
+  },
+  "patientId": 10,
+  "date": {
+    "$date": "2021-08-02T15:47:33.580Z"
+  },
+  "commentary": "Le patient déclare qu'il n'a aucun problème\r\nTaille incluse dans la fourchette concernée\r\nHémoglobine A1C supérieure au niveau recommandé",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "6108139a9e2ee5687c65f3a6"
+  },
+  "patientId": 10,
+  "date": {
+    "$date": "2021-08-02T15:47:38.955Z"
+  },
+  "commentary": "Le patient déclare qu'il n'a aucun problème\r\nPoids corporel supérieur au poids recommandé\r\nLe patient a signalé plusieurs épisodes de vertige depuis sa dernière visite",
+  "_class": "patientNote.model.Note"
+},{
+  "_id": {
+    "$oid": "610813a19e2ee5687c65f3a7"
+  },
+  "patientId": 10,
+  "date": {
+    "$date": "2021-08-02T15:47:45.167Z"
+  },
+  "commentary": "Le patient déclare qu'il n'a aucun problème\r\nTests de laboratoire indiquant une microalbumine élevée",
+  "_class": "patientNote.model.Note"
+}]

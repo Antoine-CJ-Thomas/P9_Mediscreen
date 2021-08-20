@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - PatientControllerIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>PatientControllerIntegrationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/integration.html">integration</a> &gt; PatientControllerIntegrationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.291s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">add()</td>
+<td class="success">0.033s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">delete()</td>
+<td class="success">0.063s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">edit()</td>
+<td class="success">0.079s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">insert()</td>
+<td class="success">0.057s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update()</td>
+<td class="success">0.059s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2021-08-14 17:14:57.028  INFO 16032 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PatientControllerIntegrationTest], using SpringBootContextLoader
+2021-08-14 17:14:57.030  INFO 16032 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PatientControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-08-14 17:14:57.035  INFO 16032 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-08-14 17:14:57.037  INFO 16032 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7273207c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35acc6a5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1ad9b66d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4728c5ef, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2c336db6, org.springframework.test.context.event.EventPublishingTestExecutionListener@7f790f7b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@28c4b427, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@29421b6d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1e2b9d2e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@299e4b47, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2476b7df, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1dd6594f]
+2021-08-14 17:14:57.042  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.042  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.044  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:57.046  INFO 16032 --- [    Test worker] PatientController                        : addPatient(userInterface.model.Patient@15904ee1,{patient=userInterface.model.Patient@15904ee1, org.springframework.validation.BindingResult.patient=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-14 17:14:57.077  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.077  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.080  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-14 17:14:57.091  INFO 16032 --- [    Test worker] PatientController                        : insert(userInterface.model.Patient@243a97c6,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{patient=userInterface.model.Patient@243a97c6, org.springframework.validation.BindingResult.patient=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-14 17:14:57.092  INFO 16032 --- [    Test worker] PatientService                           : insert(userInterface.model.Patient@243a97c6)
+2021-08-14 17:14:57.134  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.134  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.137  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:57.168  INFO 16032 --- [    Test worker] PatientController                        : editPatient(25,{})
+2021-08-14 17:14:57.168  INFO 16032 --- [    Test worker] PatientService                           : selectById(25)
+2021-08-14 17:14:57.216  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.216  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.219  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2021-08-14 17:14:57.243  INFO 16032 --- [    Test worker] PatientController                        : update(25,userInterface.model.Patient@2b3bae02,org.springframework.validation.BeanPropertyBindingResult: 0 errors,{patient=userInterface.model.Patient@2b3bae02, org.springframework.validation.BindingResult.patient=org.springframework.validation.BeanPropertyBindingResult: 0 errors})
+2021-08-14 17:14:57.243  INFO 16032 --- [    Test worker] PatientService                           : update(25,userInterface.model.Patient@2b3bae02)
+2021-08-14 17:14:57.275  INFO 16032 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-14 17:14:57.275  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-14 17:14:57.277  INFO 16032 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-14 17:14:57.300  INFO 16032 --- [    Test worker] PatientController                        : delete(25,{})
+2021-08-14 17:14:57.301  INFO 16032 --- [    Test worker] PatientService                           : delete(25)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.8</a> at 14 août 2021 à 17:14:58</p>
+</div>
+</div>
+</body>
+</html>

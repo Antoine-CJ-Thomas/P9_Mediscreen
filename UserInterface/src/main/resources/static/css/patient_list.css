@@ -1,0 +1,113 @@
+header {
+
+    font-family: Arial;
+}
+
+#header_div {
+
+	margin-top: 8px;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
+}
+
+#header_div label {
+
+	width: 50%;
+	height : 40px;
+
+    font-size: 1.5em;
+    line-height: 40px;
+ 	font-weight: bold;
+}
+
+#header_div a {
+
+	width: 15%;
+	height: 40px;
+
+	color: white;
+    font-size: 1em;
+	font-weight: bold;
+    line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgb(97,174,243);
+	border-radius: 8px;
+}
+
+section {
+
+    font-family: Arial;
+}
+
+#section_div {
+
+	margin-top: 8px;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#patient_table_div {
+
+    width: 90%;
+
+    padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+    border: 1px solid black;
+	border-radius: 8px;
+}
+
+#patient_table {
+
+	width : 100%;
+
+	border: 1px solid black;
+   	border-color: rgb(200,200,200);
+  	border-collapse: collapse;
+}
+
+#patient_table th {
+
+	height: 40px;
+
+  	color: white;
+    font-size: 1.2em;
+    text-align: center;
+ 	font-weight: normal;
+ 	background-color: rgb(116,211,106);
+}
+
+#patient_table tr {
+
+	line-height: 40px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#patient_table tr:nth-child(even){
+
+  	background-color: rgb(245,245,245);
+}
+
+footer {
+
+    font-family: Arial;
+}

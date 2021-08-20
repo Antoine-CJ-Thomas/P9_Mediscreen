@@ -1,0 +1,5 @@
+patientNote
+patientNote.controller
+patientNote.model
+patientNote.repository
+patientNote.service

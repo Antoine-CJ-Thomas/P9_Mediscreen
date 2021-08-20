@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.NoteControllerUnitTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:21" hostname="PC-ANTOINE" time="0.091">
+  <properties/>
+  <testcase name="update_status_200()" classname="unit.controller.NoteControllerUnitTest" time="0.06"/>
+  <testcase name="update_status_400()" classname="unit.controller.NoteControllerUnitTest" time="0.004"/>
+  <testcase name="delete_status_200()" classname="unit.controller.NoteControllerUnitTest" time="0.003"/>
+  <testcase name="delete_status_400()" classname="unit.controller.NoteControllerUnitTest" time="0.004"/>
+  <testcase name="select_status_200()" classname="unit.controller.NoteControllerUnitTest" time="0.003"/>
+  <testcase name="select_status_404()" classname="unit.controller.NoteControllerUnitTest" time="0.003"/>
+  <testcase name="list_status_200()" classname="unit.controller.NoteControllerUnitTest" time="0.002"/>
+  <testcase name="list_status_404()" classname="unit.controller.NoteControllerUnitTest" time="0.002"/>
+  <testcase name="insert_status_200()" classname="unit.controller.NoteControllerUnitTest" time="0.002"/>
+  <testcase name="insert_status_400()" classname="unit.controller.NoteControllerUnitTest" time="0.003"/>
+  <system-out><![CDATA[2021-08-14 17:14:21.989  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 1256690193,Mock for ObjectMapper, hashCode: 1454390323)
+2021-08-14 17:14:22.018  INFO 8288 --- [    Test worker] NoteController                           : update(noteId,Mock for Note, hashCode: 1724782578)
+2021-08-14 17:14:22.035  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 1015054106,Mock for ObjectMapper, hashCode: 1274775043)
+2021-08-14 17:14:22.036  INFO 8288 --- [    Test worker] NoteController                           : update(noteId,Mock for Note, hashCode: 248056785)
+2021-08-14 17:14:22.039  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 264563849,Mock for ObjectMapper, hashCode: 813906628)
+2021-08-14 17:14:22.040  INFO 8288 --- [    Test worker] NoteController                           : delete(noteId)
+2021-08-14 17:14:22.042  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 668952905,Mock for ObjectMapper, hashCode: 1636723168)
+2021-08-14 17:14:22.042  INFO 8288 --- [    Test worker] NoteController                           : delete(noteId)
+2021-08-14 17:14:22.046  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 1225155068,Mock for ObjectMapper, hashCode: 1618618114)
+2021-08-14 17:14:22.048  INFO 8288 --- [    Test worker] NoteController                           : select(noteId)
+2021-08-14 17:14:22.050  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 778055802,Mock for ObjectMapper, hashCode: 1410579915)
+2021-08-14 17:14:22.051  INFO 8288 --- [    Test worker] NoteController                           : select(noteId)
+2021-08-14 17:14:22.053  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 1709228668,Mock for ObjectMapper, hashCode: 1158160658)
+2021-08-14 17:14:22.054  INFO 8288 --- [    Test worker] NoteController                           : list(1)
+2021-08-14 17:14:22.056  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 602947423,Mock for ObjectMapper, hashCode: 1088486015)
+2021-08-14 17:14:22.057  INFO 8288 --- [    Test worker] NoteController                           : list(1)
+2021-08-14 17:14:22.059  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 756183144,Mock for ObjectMapper, hashCode: 1785087159)
+2021-08-14 17:14:22.059  INFO 8288 --- [    Test worker] NoteController                           : insert(Mock for Note, hashCode: 217772152)
+2021-08-14 17:14:22.061  INFO 8288 --- [    Test worker] NoteController                           : PatientNoteController(Mock for NoteServiceInterface, hashCode: 1459236852,Mock for ObjectMapper, hashCode: 1758827635)
+2021-08-14 17:14:22.062  INFO 8288 --- [    Test worker] NoteController                           : insert(Mock for Note, hashCode: 818816546)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.controller.PatientControllerIUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:57" hostname="PC-ANTOINE" time="0.053">
+  <properties/>
+  <testcase name="delete()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
+  <testcase name="insert()" classname="unit.controller.PatientControllerIUnitTest" time="0.039"/>
+  <testcase name="update()" classname="unit.controller.PatientControllerIUnitTest" time="0.005"/>
+  <testcase name="editPatient()" classname="unit.controller.PatientControllerIUnitTest" time="0.003"/>
+  <testcase name="addPatient()" classname="unit.controller.PatientControllerIUnitTest" time="0.002"/>
+  <system-out><![CDATA[2021-08-14 17:14:57.716  INFO 16032 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1761836546)
+2021-08-14 17:14:57.716  INFO 16032 --- [    Test worker] PatientController                        : delete(1,Mock for Model, hashCode: 2060645630)
+2021-08-14 17:14:57.718  INFO 16032 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1485125894)
+2021-08-14 17:14:57.755  INFO 16032 --- [    Test worker] PatientController                        : insert(Mock for Patient, hashCode: 19561245,Mock for BindingResult, hashCode: 1713135368,Mock for Model, hashCode: 1322549518)
+2021-08-14 17:14:57.757  INFO 16032 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 607888493)
+2021-08-14 17:14:57.759  INFO 16032 --- [    Test worker] PatientController                        : update(1,Mock for Patient, hashCode: 1981530468,Mock for BindingResult, hashCode: 1920672944,Mock for Model, hashCode: 407701248)
+2021-08-14 17:14:57.762  INFO 16032 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1638711464)
+2021-08-14 17:14:57.763  INFO 16032 --- [    Test worker] PatientController                        : editPatient(1,Mock for Model, hashCode: 1234451736)
+2021-08-14 17:14:57.766  INFO 16032 --- [    Test worker] PatientController                        : PatientController(Mock for PatientServiceInterface, hashCode: 1650576958)
+2021-08-14 17:14:57.767  INFO 16032 --- [    Test worker] PatientController                        : addPatient(Mock for Patient, hashCode: 316973173,Mock for Model, hashCode: 357206785)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

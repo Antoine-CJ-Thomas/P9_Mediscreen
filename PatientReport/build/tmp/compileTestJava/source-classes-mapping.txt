@@ -1,0 +1,16 @@
+unit/model/NoteUnitTest.java
+ unit.model.NoteUnitTest
+unit/model/PatientUnitTest.java
+ unit.model.PatientUnitTest
+unit/service/NoteServiceUnitTest.java
+ unit.service.NoteServiceUnitTest
+unit/controller/DiabetesReportControllerUnitTest.java
+ unit.controller.DiabetesReportControllerUnitTest
+unit/service/DiabetesReportServiceUnitTest.java
+ unit.service.DiabetesReportServiceUnitTest
+unit/model/DiabetesReportUnitTest.java
+ unit.model.DiabetesReportUnitTest
+integration/DiabetesReportControllerIntegrationTest.java
+ integration.DiabetesReportControllerIntegrationTest
+unit/service/PatientServiceUnitTest.java
+ unit.service.PatientServiceUnitTest

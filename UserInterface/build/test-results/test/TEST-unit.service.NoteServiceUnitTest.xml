@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.service.NoteServiceUnitTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-14T15:14:57" hostname="PC-ANTOINE" time="0.074">
+  <properties/>
+  <testcase name="delete()" classname="unit.service.NoteServiceUnitTest" time="0.002"/>
+  <testcase name="insert()" classname="unit.service.NoteServiceUnitTest" time="0.002"/>
+  <testcase name="select()" classname="unit.service.NoteServiceUnitTest" time="0.002"/>
+  <testcase name="update()" classname="unit.service.NoteServiceUnitTest" time="0.001"/>
+  <testcase name="list()" classname="unit.service.NoteServiceUnitTest" time="0.066"/>
+  <system-out><![CDATA[2021-08-14 17:14:57.813  INFO 16032 --- [    Test worker] NoteService                              : PatientNoteService(Mock for NoteProxy, hashCode: 340735553)
+2021-08-14 17:14:57.814  INFO 16032 --- [    Test worker] NoteService                              : delete(noteId)
+2021-08-14 17:14:57.815  INFO 16032 --- [    Test worker] NoteService                              : PatientNoteService(Mock for NoteProxy, hashCode: 1398627533)
+2021-08-14 17:14:57.816  INFO 16032 --- [    Test worker] NoteService                              : insert(Mock for Note, hashCode: 1948133287)
+2021-08-14 17:14:57.817  INFO 16032 --- [    Test worker] NoteService                              : PatientNoteService(Mock for NoteProxy, hashCode: 66205063)
+2021-08-14 17:14:57.818  INFO 16032 --- [    Test worker] NoteService                              : select(noteId)
+2021-08-14 17:14:57.819  INFO 16032 --- [    Test worker] NoteService                              : PatientNoteService(Mock for NoteProxy, hashCode: 1860363910)
+2021-08-14 17:14:57.819  INFO 16032 --- [    Test worker] NoteService                              : update(noteId,Mock for Note, hashCode: 1465935011)
+2021-08-14 17:14:57.821  INFO 16032 --- [    Test worker] NoteService                              : PatientNoteService(Mock for NoteProxy, hashCode: 1380340471)
+2021-08-14 17:14:57.886  INFO 16032 --- [    Test worker] NoteService                              : list(1)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
